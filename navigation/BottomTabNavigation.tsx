@@ -19,6 +19,7 @@ const BottomTabNavigation = () => {
   const navigation = useNavigation(); // Hook pour accéder à DrawerActions
 
   return (
+    
     <Tab.Navigator
       screenOptions={{
         tabBarShowLabel: false,
