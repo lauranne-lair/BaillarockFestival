@@ -29,8 +29,11 @@ const BottomTabNavigation = () => {
           right: 0,
           left: 0,
           elevation: 0,
-          height: 60,
+          height: 90, // Hauteur du bandeau
           backgroundColor: COLORS.white,
+        },
+        tabBarIconStyle: {
+          marginTop : 5, // Baisse la position des icônes
         },
       }}
     >
@@ -42,7 +45,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'musical-notes' : 'musical-notes-outline'}
-              size={24}
+              size={30} // Taille de l'icône
               color={focused ? COLORS.primary : COLORS.gray}
             />
           ),
@@ -57,7 +60,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'beer' : 'beer-outline'}
-              size={24}
+              size={30}
               color={focused ? COLORS.primary : COLORS.gray}
             />
           ),
@@ -90,7 +93,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'home' : 'home-outline'}
-              size={24}
+              size={30}
               color={focused ? COLORS.primary : COLORS.gray}
             />
           ),
@@ -109,7 +112,7 @@ const BottomTabNavigation = () => {
             >
               <MaterialCommunityIcons
                 name="menu"
-                size={30}
+                size={35} // Taille de l'icône Menu
                 color={COLORS.primary}
               />
             </TouchableOpacity>
@@ -130,9 +133,9 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   homeButton: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+    width: 80, // Taille du bouton central
+    height: 80,
+    borderRadius: 40,
     backgroundColor: COLORS.white,
     justifyContent: 'center',
     alignItems: 'center',
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
   homeIcon: {
     width: '100%',
     height: '100%',
-    borderRadius: 35,
+    borderRadius: 40,
     resizeMode: 'cover',
   },
   menuButton: {

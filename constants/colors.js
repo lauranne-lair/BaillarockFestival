@@ -1,6 +1,6 @@
 const COLORS = {
     // Principales
-    primary: '#3498db', // Bleu principal
+    primary: 'rgb(17,93,8)', // Vert principal
     secondary: '#2ecc71', // Vert
     accent: '#e74c3c', // Rouge
   
