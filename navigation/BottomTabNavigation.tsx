@@ -29,11 +29,11 @@ const BottomTabNavigation = () => {
           right: 0,
           left: 0,
           elevation: 0,
-          height: 90, // Hauteur du bandeau
+          height: 70, // Hauteur du bandeau
           backgroundColor: COLORS.white,
         },
         tabBarIconStyle: {
-          marginTop : 5, // Baisse la position des icônes
+          marginTop : 12, // Baisse la position des icônes
         },
       }}
     >
@@ -76,7 +76,7 @@ const BottomTabNavigation = () => {
             <View style={styles.centerContainer}>
               <TouchableOpacity style={styles.homeButton}>
                 <Image
-                  source={require('../assets/Menu/Museau.png')} // Chemin vers l'image Museau.png
+                  source={require('../assets/menu/Museau.png')} // Chemin vers l'image Museau.png
                   style={styles.homeIcon} // Style appliqué à l'image
                 />
               </TouchableOpacity>
