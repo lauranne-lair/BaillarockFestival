@@ -21,6 +21,7 @@ const BottomTabNavigation = () => {
   return (
     
     <Tab.Navigator
+    initialRouteName="Home"
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
