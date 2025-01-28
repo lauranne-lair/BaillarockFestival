@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Image, Linking } from 'react-native';
+import { StyleSheet, Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Image, Linking, SafeAreaView } from 'react-native';
 import { Video } from 'expo-av';
 import { useRouter } from 'expo-router';
 import { homeConfig } from '../config/Config_HomePage';
@@ -92,117 +92,125 @@ const Home: React.FC = () => {
   };
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.scrollContainer}
-      onScroll={handleScroll}
-      scrollEventThrottle={16}
-    >
-      <View style={[styles.imageContainer, { height: screenHeight }]}>
-        {isScrolled ? (
-          <Image
-            source={homeConfig.assets.image}
-            style={styles.backgroundImage}
-            resizeMode="cover"
-          />
-        ) : (
-          <Video
-            source={homeConfig.assets.video}
-            style={styles.backgroundVideo}
-            resizeMode="cover"
-            shouldPlay
-            isLooping
-            isMuted
-          />
-        )}
-        <View style={styles.overlay}>
-          <Text style={styles.TitleText}>{homeConfig.festivalName}</Text>
-          {timeExpired ? (
-            <>
-              <Text style={styles.expiredText}>{homeConfig.messages.countdownExpired}</Text>
-              <TouchableOpacity style={styles.button} onPress={navigateToExplore}>
-                <Text style={styles.buttonText}>{homeConfig.messages.viewSchedule}</Text>
-              </TouchableOpacity>
-            </>
+    <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContainer}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      >
+        <View style={[styles.imageContainer, { height: screenHeight }]}>
+          {isScrolled ? (
+            <Image
+              source={homeConfig.assets.image}
+              style={styles.backgroundImage}
+              resizeMode="cover"
+            />
           ) : (
-            <>
-              <View style={styles.countdownContainer}>
-                <View style={styles.countdownRow}>
-                  {Object.keys(labels).map(unit => (
-                    <View key={unit} style={styles.countdownItem}>
-                      <Text style={styles.countdownNumber}>{timeLeft[unit]}</Text>
-                      <Text style={styles.countdownLabel}>{labels[unit]}</Text>
-                    </View>
-                  ))}
-                </View>
-              </View>
-              <Text style={styles.addressText}>{homeConfig.location}</Text>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => Linking.openURL(homeConfig.socialMediaLinks.shop)}
-              >
-                <Text style={styles.buttonText}>{homeConfig.messages.buyTickets}</Text>
-              </TouchableOpacity>
-            </>
+            <Video
+              source={homeConfig.assets.video}
+              style={styles.backgroundVideo}
+              resizeMode="cover"
+              shouldPlay
+              isLooping
+              isMuted
+            />
           )}
+          <View style={styles.overlay}>
+            <Text style={styles.TitleText}>{homeConfig.festivalName}</Text>
+            {timeExpired ? (
+              <>
+                <Text style={styles.expiredText}>{homeConfig.messages.countdownExpired}</Text>
+                <TouchableOpacity style={styles.button} onPress={navigateToExplore}>
+                  <Text style={styles.buttonText}>{homeConfig.messages.viewSchedule}</Text>
+                </TouchableOpacity>
+              </>
+            ) : (
+              <>
+                <View style={styles.countdownContainer}>
+                  <View style={styles.countdownRow}>
+                    {Object.keys(labels).map(unit => (
+                      <View key={unit} style={styles.countdownItem}>
+                        <Text style={styles.countdownNumber}>{timeLeft[unit]}</Text>
+                        <Text style={styles.countdownLabel}>{labels[unit]}</Text>
+                      </View>
+                    ))}
+                  </View>
+                </View>
+                <Text style={styles.addressText}>{homeConfig.location}</Text>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => Linking.openURL(homeConfig.socialMediaLinks.shop)}
+                >
+                  <Text style={styles.buttonText}>{homeConfig.messages.buyTickets}</Text>
+                </TouchableOpacity>
+              </>
+            )}
+          </View>
         </View>
-      </View>
 
-      <ThemedView style={styles.stepContainer}>
-        <View style={styles.titleContainer}>
-          <ThemedText style={styles.subtitle}>Plan du site</ThemedText>
-        </View>
-        <Image
-          source={homeConfig.assets.siteMap}
-          style={styles.planImage}
-          resizeMode="contain"
-        />
-        <TouchableOpacity onPress={openMaps} style={styles.buttonMaps}>
-          <Text style={styles.buttonTextMaps}>Y aller</Text>
-        </TouchableOpacity>
-      </ThemedView>
+        <ThemedView style={styles.stepContainer}>
+          <View style={styles.titleContainer}>
+            <ThemedText style={styles.subtitle}>Plan du site</ThemedText>
+          </View>
+          <Image
+            source={homeConfig.assets.siteMap}
+            style={styles.planImage}
+            resizeMode="contain"
+          />
+          <TouchableOpacity onPress={openMaps} style={styles.buttonMaps}>
+            <Text style={styles.buttonTextMaps}>Y aller</Text>
+          </TouchableOpacity>
+        </ThemedView>
 
-      <ThemedView style={styles.stepContainer}>
-        <View style={styles.titleContainer}>
-          <ThemedText style={styles.subtitle}>Suivez-nous sur les réseaux sociaux</ThemedText>
-        </View>
-        <View style={styles.socialMediaIcons}>
-          {Object.keys(homeConfig.socialMediaLinks).map(key => {
-            const iconData = homeConfig.assets.socialIcons[key];
-            if (!iconData) return null;
+        <ThemedView style={styles.stepContainer}>
+          <View style={styles.titleContainer}>
+            <ThemedText style={styles.subtitle}>Suivez-nous sur les réseaux sociaux</ThemedText>
+          </View>
+          <View style={styles.socialMediaIcons}>
+            {Object.keys(homeConfig.socialMediaLinks).map(key => {
+              const iconData = homeConfig.assets.socialIcons[key];
+              if (!iconData) return null;
 
-            const IconComponent =
-              iconData.iconType === 'FontAwesome' ? FontAwesome :
-              iconData.iconType === 'Ionicons' ? Ionicons :
-              iconData.iconType === 'MaterialIcons' ? MaterialIcons :
-              null;
+              const IconComponent =
+                iconData.iconType === 'FontAwesome' ? FontAwesome :
+                iconData.iconType === 'Ionicons' ? Ionicons :
+                iconData.iconType === 'MaterialIcons' ? MaterialIcons :
+                null;
 
-            return (
-              <TouchableOpacity
-                key={key}
-                onPress={() => Linking.openURL(homeConfig.socialMediaLinks[key])}
-              >
-                <IconComponent
-                  name={iconData.icon}
-                  size={30}
-                  color={iconData.color}
-                  style={styles.socialMediaIcon}
-                />
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-      </ThemedView>
-    </ScrollView>
+              return (
+                <TouchableOpacity
+                  key={key}
+                  onPress={() => Linking.openURL(homeConfig.socialMediaLinks[key])}
+                >
+                  <IconComponent
+                    name={iconData.icon}
+                    size={30}
+                    color={iconData.color}
+                    style={styles.socialMediaIcon}
+                  />
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </ThemedView>
+      </ScrollView>
+    </View>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
-  // Conteneur global pour le défilement
+  safeContainer: {
+    flex: 1,
+    backgroundColor: '#fff', // Fond blanc
+  },
   scrollContainer: {
     flexGrow: 1,
-  },
+    paddingBottom: 120, // Augmentation de l'espace pour la barre de navigation
+    backgroundColor: 'rgba(0, 0, 0, 0.9)'
+},
+  
   imageContainer: {
     position: 'relative',
     width: '100%',
@@ -218,15 +226,15 @@ const styles = StyleSheet.create({
     zIndex: -1, // Placer la vidéo en arrière-plan
   },
   // Style pour l'image en paysage
- backgroundImage: {
-  position: 'absolute',
-  bottom: 0, // Aligne l'image en bas de l'écran
-  left: 0,
-  width: '100%',
-  height: undefined, // La hauteur est calculée automatiquement
-  aspectRatio: 16 / 9, // Format paysage
-  zIndex: -1, // Place l'image derrière les autres éléments
-},
+    backgroundImage: {
+    position: 'absolute',
+    bottom: 0, // Aligne l'image en bas de l'écran
+    left: 0,
+    width: '100%',
+    height: undefined, // La hauteur est calculée automatiquement
+    aspectRatio: 16 / 9, // Format paysage
+    zIndex: -1, // Place l'image derrière les autres éléments
+    },
 
 
   overlay: {
