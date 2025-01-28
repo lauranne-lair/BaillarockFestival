@@ -6,6 +6,7 @@ import { homeConfig } from '../config/Config_HomePage';
 import { FontAwesome, Ionicons, MaterialIcons } from 'react-native-vector-icons';
 import { ThemedText } from '../components/ThemedText';
 import { ThemedView } from '../components/ThemedView';
+
 import * as Font from 'expo-font';
 
 const Home: React.FC = () => {
@@ -59,8 +60,8 @@ const Home: React.FC = () => {
     const loadFonts = async () => {
       try {
         await Font.loadAsync({
-          'Capsmall': require('../../assets/fonts/Capsmall.ttf'),
-          'Capsmall_clean': require('../../assets/fonts/Capsmall_clean.ttf'),
+          'Capsmall': require('../constants/fonts/Capsmall.ttf'),
+          'Capsmall_clean': require('../constants/fonts/Capsmall_clean.ttf'),
         });
         setFontLoaded(true);
       } catch (error) {

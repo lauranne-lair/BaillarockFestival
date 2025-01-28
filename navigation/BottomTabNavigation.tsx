@@ -69,21 +69,28 @@ const BottomTabNavigation = () => {
 
       {/* Bouton central avec l'image Museau.png */}
       <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarButton: () => (
-            <View style={styles.centerContainer}>
-              <TouchableOpacity style={styles.homeButton}>
-                <Image
-                  source={require('../assets/menu/Museau.png')} // Chemin vers l'image Museau.png
-                  style={styles.homeIcon} // Style appliqué à l'image
-                />
-              </TouchableOpacity>
-            </View>
-          ),
-        }}
-      />
+          name="Home"
+          component={Home}
+          options={{
+            tabBarButton: () => {
+              const navigation = useNavigation(); // Accès à la navigation
+
+              return (
+                <View style={styles.centerContainer}>
+                  <TouchableOpacity
+                    style={styles.homeButton}
+                    onPress={() => navigation.navigate('Home')} // Redirection vers Home
+                  >
+                    <Image
+                      source={require('../assets/menu/Museau.png')} // Image Museau.png
+                      style={styles.homeIcon}
+                    />
+                  </TouchableOpacity>
+                </View>
+              );
+            },
+          }}
+        />
 
       {/* Onglet Village */}
       <Tab.Screen
