@@ -1,26 +1,47 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, View, ScrollView, Dimensions, Image } from 'react-native';
+import {barConfig } from '../config/Config_BarPage';
 
-const Bar: React.FC = () => {
+
+export default function Boisson() {
+  // Récupérer la hauteur de l'écran
+  const screenHeight = Dimensions.get('window').height;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Bienvenue dans la section Bar</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.imageContainer}>
+        <Image
+          source={barConfig.assets.image}  // Utilisation de l'image définie dans barConfig
+          style={styles.backgroundImage}
+          resizeMode="cover"  // Ajuste l'image pour couvrir tout l'espace disponible
+        />
+      </View>
+    </ScrollView>
   );
-};
-
-export default Bar;
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+  scrollContainer: {
+    flexGrow: 1,
+    margin: 0, // Pas de marges autour du ScrollView
+    padding: 0, // Pas de padding autour du ScrollView
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
+  imageContainer: {
+    width: '100%',
+    // Hauteur dynamique de l'image pour permettre le défilement
+    height: 'auto', // Ajuster la hauteur en fonction de la taille de l'image
+    overflow: 'hidden', // Masquer les parties de l'image qui dépassent
+  },
+  backgroundImage: {
+    width: '100%',
+    height: 3000,  // Une hauteur arbitraire pour rendre l'image plus grande que l'écran
+  },
+  contentContainer: {
+    padding: 16,
+  },
+  text: {
+    fontSize: 18,
+    color: '#000',
+    textAlign: 'center',
   },
 });
