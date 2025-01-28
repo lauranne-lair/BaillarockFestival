@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
-import ExpoModal from '../popup/popUp_Partenaire';
-import { Exposants, backgroundImage } from '../data/ExposantsData';
+import ExpoModal from '../popup/popUp_Expo';
+import { backgroundImage, Exposants } from '../data/ExposantsData';
 import { Food } from '../data/FoodData';
 import * as Font from 'expo-font';
 
@@ -15,10 +15,13 @@ export type ListExpo = {
   genre: string;
   description: string;
   image: number;
-  facebookLink?: string;
-  instagramLink?: string; 
-  Link? : string,
-  websiteLink?: string,
+  imageBG: number;
+  socialLinks: SocialLink[];
+};
+
+export type SocialLink = {
+  name: string;
+  url: string;
 };
 
 export type ListFood = {
@@ -27,18 +30,16 @@ export type ListFood = {
   genre: string;
   description: string;
   image: number;
-  facebookLink?: string; 
-  instagramLink?: string; 
-  Link? : string,
-  websiteLink?: string,
+  imageBG: number;
+  socialLinks: SocialLink[];
 };
 
 export default function Village() {
-  const [selectedExpo, setSelectedExpo] = useState<ListExpo | null>(null);
+  const [selectedExpo, setSelectedExpo] = useState<ListExpo | ListFood | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [fontLoaded, setFontLoaded] = useState(false);
 
-  const handleExpoPress = (expo: ListExpo) => {
+  const handleExpoPress = (expo: ListExpo | ListFood) => {
     setSelectedExpo(expo);
     setModalVisible(true);
   };
@@ -80,14 +81,14 @@ export default function Village() {
         <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
           {Food.map((item) => (
             <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
-              <Image style={styles.expoImage} source={item.image} resizeMode="contain" />
+              <Image style={styles.foodImage} source={item.image} resizeMode="contain" />
               <Text style={styles.expoName}>{item.name || 'Nom inconnu'}</Text>
             </TouchableOpacity>
           ))}
         </ScrollView>
 
         {/* Modal commun */}
-        <ExpoModal visible={modalVisible} onClose={() => setModalVisible(false)} expo={selectedExpo} />
+        <ExpoModal visible={modalVisible} onClose={() => setModalVisible(false)} item={selectedExpo} />
       </View>
     </ImageBackground>
   );
@@ -143,12 +144,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   expoImage: {
-    width: 120, 
-    height: 120, // La hauteur doit être égale à la largeur pour un cercle
+    width: CONTAINER_WIDTH - 40,
+    height: IMAGE_HEIGHT,
     marginBottom: 8,
-    borderRadius: 60, 
+    borderRadius: 10,
   },
-  
+  foodImage: {
+    width: CONTAINER_WIDTH - 40,
+    height: CONTAINER_WIDTH - 40, // Assurez-vous que la largeur et la hauteur sont identiques
+    marginBottom: 8,
+    borderRadius: (CONTAINER_WIDTH - 40) / 2, // Pour rendre l'image circulaire
+  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, FlatList, Image, TouchableOpacity, ImageBackground } from 'react-native';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useNavigation, DrawerActions } from '@react-navigation/native'; 
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import PartModal from '../popup/popUp_Part';
+import PartModal from '../popup/popUp_Partenaire';
 import { Partenaires } from '../data/PartenaireData';
 import { backgroundImage } from '../data/ExposantsData';
 
@@ -24,21 +24,20 @@ export default function Partenaire() {
   const router = useRouter();
 
   useEffect(() => {
-      navigation.setOptions({
-        title: 'Partenaires',
-        headerLeft: () => null, // Supprime le bouton par défaut à gauche
-        headerRight: () => ( // Bouton "Menu" personnalisé à droite
-          <TouchableOpacity
-            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral
-            style={styles.menuButton}
-          >
-            <Ionicons name="menu" size={30} color="#0E5D08" />
-          </TouchableOpacity>
-        ),
-        headerShown: true,
-      });
-    }, [navigation]);
-
+        navigation.setOptions({
+          title: 'Partenaires',
+          headerLeft: () => null, // Supprime le bouton par défaut à gauche
+          headerRight: () => ( // Bouton "Menu" personnalisé à droite
+            <TouchableOpacity
+              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral
+              style={styles.menuButton}
+            >
+              <Ionicons name="menu" size={30} color="#0E5D08" />
+            </TouchableOpacity>
+          ),
+          headerShown: true,
+        });
+      }, [navigation]);
   const handlePartnerPress = (partner: ListPartners) => {
     setSelectedPart(partner);
     setModalVisible(true);
