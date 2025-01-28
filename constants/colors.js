@@ -1,63 +1,69 @@
-const tintColorLight = '#fff';
-const tintColorDark = '#fff';
+const tintColorLight = 'rgb(255,255,255)';
+const tintColorDark = 'rgb(255,255,255)';
 
 const Colors = {
   // Principales
-  primary: 'rgb(17,93,8)', // Vert principal
-  secondary: '#2ecc71', // Vert
-  accent: '#e74c3c', // Rouge
+  primary: 'rgb(28,114,44)', // Vert principal (1C722C)
+  secondary: 'rgb(159,199,65)', // Vert clair (9FC741)
+  accent: 'rgb(231,76,60)', // Rouge (E74C3C)
+  greeninspi: 'rgba(31, 84, 5, 0.7)',
 
   // Neutres
-  white: '#ffffff',
-  black: '#000000',
-  gray: '#7f8c8d',
-  lightGray: '#dfe6e9',
-  darkGray: '#2d3436',
+  white: 'rgb(255,255,255)',
+  black: 'rgb(5,10,5)', // Noir profond (050A05)
+  gray: 'rgb(76,94,85)', // Gris neutre (4C5E55)
+  lightGray: 'rgb(140,156,148)', // Gris clair (8C9C94)
+  darkGray: 'rgb(54,63,41)', // Gris foncé (363F29)
 
   // Backgrounds
-  background: '#f5f5f5',
-  cardBackground: '#ffffff',
+  background: 'rgb(5,10,5)', // Fond sombre (050A05)
+  cardBackground: 'rgba(22, 22, 22, 0.93)', // Fond de carte (363F29)
 
   // Textes
-  textPrimary: '#2c3e50',
-  textSecondary: '#95a5a6',
-  textAccent: '#e74c3c',
+  textPrimary: 'rgb(24,63,25)', // Vert très foncé (183F19)
+  textSecondary: 'rgb(148,148,141)', // Gris neutre (94948D)
+  textAccent: 'rgb(231,76,60)', // Rouge accent (E74C3C)
 
   // Couleurs spécifiques
-  success: '#27ae60',
-  warning: '#f1c40f',
-  error: '#e74c3c',
-  info: '#3498db',
+  success: 'rgb(28,114,44)', // Succès (1C722C)
+  warning: 'rgb(241,196,15)', // Avertissement
+  error: 'rgb(231,76,60)', // Erreur (E74C3C)
+  info: 'rgb(52,152,219)', // Information
   
+  // Couleur avec transparence 
+  blacktransparent3: 'rgba(0,0,0,0.3)',
+  blacktransparent7: 'rgba(0,0,0,0.7)',
+  blacktransparent9: 'rgba(0,0,0,0.9)',
+
   light: {
-    text: '#ECEDEE', // Couleur du texte dans le thème clair
-    background: '#f5f5f5', // Couleur de fond claire
-    tint: tintColorLight, // Couleur d'accentuation pour le thème clair
-    icon: '#9BA1A6', // Couleur des icônes
-    tabIconDefault: '#9BA1A6', // Couleur des icônes inactives
-    tabIconSelected: tintColorLight, // Couleur des icônes actives
-    primary: 'rgb(17,93,8)', // Vert principal
-    secondary: '#2ecc71', // Vert clair
-    accent: '#e74c3c', // Rouge pour accentuer
-    success: '#27ae60', // Vert pour le succès
-    warning: '#f1c40f', // Jaune pour les avertissements
-    error: '#e74c3c', // Rouge pour les erreurs
-    info: '#3498db', // Bleu pour les informations
+    text: 'rgb(236,237,238)',
+    background: 'rgb(5,10,5)',
+    tint: tintColorDark,
+    icon: 'rgb(155,161,166)',
+    tabIconDefault: 'rgb(155,161,166)',
+    tabIconSelected: tintColorDark,
+    primary: 'rgb(28,114,44)',
+    secondary: 'rgb(159,199,65)',
+    accent: 'rgb(231,76,60)',
+    success: 'rgb(28,114,44)',
+    warning: 'rgb(241,196,15)',
+    error: 'rgb(231,76,60)',
+    info: 'rgb(52,152,219)',
   },
   dark: {
-    text: '#ECEDEE', // Couleur du texte dans le thème sombre
-    background: '#151718', // Couleur de fond sombre
-    tint: tintColorDark, // Couleur d'accentuation pour le thème sombre
-    icon: '#9BA1A6', // Couleur des icônes
-    tabIconDefault: '#9BA1A6', // Couleur des icônes inactives
-    tabIconSelected: tintColorDark, // Couleur des icônes actives
-    primary: 'rgb(17,93,8)', // Vert principal
-    secondary: '#2ecc71', // Vert clair
-    accent: '#e74c3c', // Rouge pour accentuer
-    success: '#27ae60', // Vert pour le succès
-    warning: '#f1c40f', // Jaune pour les avertissements
-    error: '#e74c3c', // Rouge pour les erreurs
-    info: '#3498db', // Bleu pour les informations
+    text: 'rgb(236,237,238)',
+    background: 'rgb(5,10,5)',
+    tint: tintColorDark,
+    icon: 'rgb(155,161,166)',
+    tabIconDefault: 'rgb(155,161,166)',
+    tabIconSelected: tintColorDark,
+    primary: 'rgb(28,114,44)',
+    secondary: 'rgb(159,199,65)',
+    accent: 'rgb(231,76,60)',
+    success: 'rgb(28,114,44)',
+    warning: 'rgb(241,196,15)',
+    error: 'rgb(231,76,60)',
+    info: 'rgb(52,152,219)',
   },
 };
 

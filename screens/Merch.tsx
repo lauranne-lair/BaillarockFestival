@@ -15,6 +15,7 @@ import { useNavigation, DrawerActions } from '@react-navigation/native'; // Impo
 import { Ionicons } from '@expo/vector-icons';
 import ImageZoom from 'react-native-image-pan-zoom';
 import MerchConfig from '../config/Config_Merch';
+import Colors from '../constants/colors';
 
 const { width, height } = Dimensions.get('window');
 
@@ -32,7 +33,7 @@ const Merch: React.FC = () => {
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral
           style={styles.menuButton}
         >
-          <Ionicons name="menu" size={30} color="#0E5D08" />
+          <Ionicons name="menu" size={30} color= "#0E5D08"/>
         </TouchableOpacity>
       ),
       headerShown: true,
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: Colors.blacktransparent7,
   },
   scrollContainer: {
     paddingVertical: 20,
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#fff',
+    color: Colors.white,
     fontFamily: 'RockSalt',
     textAlign: 'center',
     marginBottom: 20,
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     width: 360,
     height: 280,
     marginBottom: 20,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOpacity: 0.8,
     shadowRadius: 15,
     shadowOffset: { width: 0, height: 10 },
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 120,
     marginBottom: 20,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOpacity: 0.8,
     shadowRadius: 15,
     shadowOffset: { width: 0, height: 10 },
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     width: 350,
     height: 370,
     marginBottom: 20,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOpacity: 0.8,
     shadowRadius: 15,
     shadowOffset: { width: 0, height: 10 },
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     height: 390,
     marginBottom: 60,
     opacity: 0.5,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOpacity: 0.5,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 5 },
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor:Colors.blacktransparent7,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
   },
   menuText: {
     marginLeft: 5,
-    color: '#0E5D08',
+    color: Colors.greeninspi,
     fontSize: 20,
   },
 });

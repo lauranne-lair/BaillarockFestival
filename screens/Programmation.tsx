@@ -3,9 +3,11 @@ import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions, 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import GroupModal from '../popup/popUp_Groups';
 import { dayOneGroups, dayTwoGroups } from '../data/groupsData';
+import COLORS from '../constants/colors'
+import colors from '../constants/colors';
 
 const { width, height } = Dimensions.get('window');
-const colors = {
+const colorss = {
   black: 'rgb(0, 0, 0)', 
   lightGray: 'rgb(131, 131, 131)',
   darkGray: 'rgb(93, 92, 92)',
@@ -175,11 +177,11 @@ export default function Programme() {
             justifyContent: 'center',
           },
           tabBarIndicatorStyle: {
-            backgroundColor: colors.green,
+            backgroundColor: colors.greeninspi,
             height: 4,
             borderRadius: 2,
           },
-          tabBarPressColor: colors.lightGreen,
+          tabBarPressColor: colors.lightGray,
         }}
       >
         <Tab.Screen name="Ven. 23 Mai">
@@ -196,7 +198,7 @@ export default function Programme() {
 const styles = StyleSheet.create({
   backgroundContainer: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.blacktransparent7,
   },
   screenContainer: {
     flex: 1,
@@ -212,7 +214,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: width * 0.03,
-    backgroundColor: 'rgb(131, 131, 131)',
+    backgroundColor: colors.lightGray,
     marginVertical: height * 0.01,
     marginHorizontal: width * 0.03,
     borderRadius: 10,
@@ -222,9 +224,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#e0e0e0',
   },
   currentGroup: {
-    backgroundColor: 'rgb(24, 153, 15)',
+    backgroundColor: colors.primary,
     borderWidth: 2,
-    borderColor: 'rgb(0, 255, 0)',
+    borderColor: colors.secondary,
     elevation: 5,
   },
   currentGroupImage: {

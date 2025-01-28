@@ -8,6 +8,7 @@ import { ThemedText } from '../components/ThemedText';
 import { ThemedView } from '../components/ThemedView';
 
 import * as Font from 'expo-font';
+import Colors from '../constants/colors';
 
 const Home: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -203,13 +204,18 @@ export default Home;
 const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
-    backgroundColor: '#fff', // Fond blanc
+    backgroundColor: Colors.white, // Fond blanc
   },
   scrollContainer: {
     flexGrow: 1,
     paddingBottom: 120, // Augmentation de l'espace pour la barre de navigation
-    backgroundColor: 'rgba(0, 0, 0, 0.9)'
+    backgroundColor: Colors.blacktransparent9,
 },
+
+container: {
+    flex: 1,
+    backgroundColor: Colors.black, // Utilise le thème sombre
+  },
   
   imageContainer: {
     position: 'relative',
@@ -245,14 +251,14 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond sombre pour assombrir la vidéo
+    backgroundColor: Colors.blacktransparent7, // Fond sombre pour assombrir la vidéo
     paddingBottom: 50, // Espacement pour ne pas que le bouton soit collé
   },
   
   TitleText: {
     fontSize: 65, // Taille du texte
     fontWeight: 'bold', // Gras
-    color: 'white', // Couleur blanche
+    color: Colors.white, // Couleur blanche
     marginBottom: 20, // Espacement entre le texte et le compteur
     textAlign: 'center', // Centrer horizontalement le texte
     fontFamily: 'Capsmall',
@@ -277,31 +283,31 @@ const styles = StyleSheet.create({
   countdownNumber: {
     fontSize: 37,
     fontWeight: 'bold',
-    color: '#fff', // Couleur blanche pour le texte
+    color: Colors.white, // Couleur blanche pour le texte
     fontFamily: 'People',
   },
   countdownLabel: {
     fontSize: 17,
     fontWeight: 'normal',
     fontFamily: 'People',
-    color: '#ddd', // Couleur douce pour les labels
+    color: Colors.white, // Couleur douce pour les labels
   },
   button: {
-    backgroundColor: 'rgba(31, 84, 5, 0.7)', // Couleur du bouton
+    backgroundColor: Colors.greeninspi, // Couleur du bouton
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 25,
     elevation: 3, // Ombre pour le bouton
   },
   buttonText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 18,
     fontWeight: 'bold',
   },
 
   locationText: {
     fontSize: 12,
-    color: '#fff',
+    color: Colors.white,
     marginVertical: 10, // Espacement au-dessus et en dessous
     fontStyle: 'italic',
     textAlign: 'center', // Centrer le texte
@@ -310,18 +316,18 @@ const styles = StyleSheet.create({
   buttonMaps: {
     marginTop: 10,
     padding: 10,
-    backgroundColor: 'rgb(14, 93, 8)', // Bleu typique des liens
+    backgroundColor: Colors.greeninspi, // Bleu typique des liens
     borderRadius: 5,
     alignItems: "center",
   },
   buttonTextMaps: {
-    color: "#fff",
+    color: Colors.white,
     fontWeight: "bold",
   },
 
  expiredText: {
   fontSize: 22,
-  color: '#fff',
+  color: Colors.white,
   marginVertical: 10, // Espacement au-dessus et en dessous
   fontWeight: 'bold',
   textAlign: 'center', // Centrer le texte
@@ -331,7 +337,7 @@ const styles = StyleSheet.create({
   addressText: {
     fontSize: 12, // Taille de police petite
     fontStyle: 'italic', // Texte en italique
-    color: '#fff', // Couleur blanche
+    color: Colors.white, // Couleur blanche
     marginBottom: 10, // Espacement au-dessus du bouton
     textAlign: 'center', // Centrer le texte
   },
@@ -352,11 +358,11 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 24, // Taille de police plus grande
     fontWeight: 'bold', // Gras pour un effet plus prononcé
-    color: 'rgb(14, 93, 8)', // Couleur vive (exemple : orange)
+    color: Colors.greeninspi, // Couleur vive (exemple : orange)
     textAlign: 'center', // Centré horizontalement
     textTransform: 'uppercase', // Transforme le texte en majuscules
     marginBottom: 10, // Espacement en bas du titre
-    textShadowColor: 'rgba(0, 0, 0, 0.3)', // Ajout d'une ombre
+    textShadowColor: Colors.blacktransparent3, // Ajout d'une ombre
     textShadowOffset: { width: 1, height: 1 }, // Décalage de l'ombre
     textShadowRadius: 4, // Flou de l'ombre
     fontFamily: 'Arial', // Police personnalisée (remplacez par votre choix si nécessaire)
@@ -380,14 +386,14 @@ const styles = StyleSheet.create({
     marginBottom: 40, // Espacement en bas de la section
     alignItems: 'center', // Centre les éléments horizontalement
     padding: 10,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond légèrement sombre
+    backgroundColor: Colors.blacktransparent9, // Fond légèrement sombre
     borderRadius: 10, // Coins arrondis
   },
   
   socialMediaTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff', // Texte blanc
+    color: Colors.white, // Texte blanc
     marginBottom: 10, // Espacement entre le titre et les icônes
   },
   

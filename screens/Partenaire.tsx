@@ -6,6 +6,7 @@ import { useRouter } from 'expo-router';
 import PartModal from '../popup/popUp_Partenaire';
 import { Partenaires } from '../data/PartenaireData';
 import { backgroundImage } from '../data/ExposantsData';
+import Colors from '../constants/colors';
 
 export type ListPartners = {
   id: string;
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
   },
   screenContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: Colors.blacktransparent7,
     padding: 8,
     paddingTop: 70,
   },
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
   partnerContainer: {
     flex: 1,
     padding: 8,
-    backgroundColor: '#444',
+    backgroundColor: Colors.darkGray,
     borderRadius: 8,
     margin: 8,
     alignItems: 'center',
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     marginTop: 8,
-    color: '#fff',
+    color: Colors.black,
     textAlign: 'center',
   },
   partnerImage: {
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   emptyText: {
-    color: '#fff',
+    color: Colors.black,
     textAlign: 'center',
     marginTop: 20,
   },
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   },
   backText: {
     marginLeft: 5,
-    color: 'rgb(14, 93, 8)',
+    color: Colors.greeninspi,
     fontSize: 20,
   },
   menuButton: {

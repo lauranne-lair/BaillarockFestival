@@ -4,6 +4,7 @@ import ExpoModal from '../popup/popUp_Expo';
 import { backgroundImage, Exposants } from '../data/ExposantsData';
 import { Food } from '../data/FoodData';
 import * as Font from 'expo-font';
+import Colors from '../constants/colors';
 
 const { width } = Dimensions.get('window');
 const CONTAINER_WIDTH = width / 2 - 60;
@@ -100,14 +101,14 @@ const styles = StyleSheet.create({
   },
   screenContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: Colors.blacktransparent9,
     padding: 8,
     paddingTop: 70,
   },
   pageTitle: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#fff',
+    color: Colors.white,
     textAlign: 'left',
     marginBottom: 15,
     fontFamily: 'Capsmall',
@@ -126,10 +127,10 @@ const styles = StyleSheet.create({
   container: {
     width: CONTAINER_WIDTH,
     padding: 8,
-    backgroundColor: '#444',
+    backgroundColor: Colors.darkGray,
     borderRadius: 8,
     marginHorizontal: 8,
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 2,
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     marginTop: 8,
-    color: '#fff',
+    color: Colors.white,
     textAlign: 'center',
   },
   expoImage: {
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   loadingText: {
-    color: 'white',
+    color: Colors.white,
     fontSize: 20,
   },
 });

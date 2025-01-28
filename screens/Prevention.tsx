@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router'; // Pour la navigation entre les pages
 import * as Font from 'expo-font'; // Pour charger les polices
 import { useNavigation, DrawerActions } from '@react-navigation/native'; 
+import Colors from '../constants/colors';
 
 export default function Prevention() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -67,7 +68,7 @@ export default function Prevention() {
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
-    backgroundColor: '#121212', // Fond noir pour un design moderne et contrasté
+    backgroundColor: Colors.blacktransparent9, // Fond noir pour un design moderne et contrasté
     padding: 16,
   },
   scrollContainer: {
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#0E5D08', // Vert pour un aspect rassurant
+    color: Colors.greeninspi, // Vert pour un aspect rassurant
     textAlign: 'center', // Centré
     marginBottom: 20,
     fontFamily: 'Capsmall_clean', // Appliquer la police personnalisée
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
   },
   bulletPoint: {
     fontSize: 22,
-    color: '#0E5D08',
+    color: Colors.greeninspi,
   },
   backButton: {
     flexDirection: 'row',
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
   },
   backText: {
     marginLeft: 5,
-    color: '#0E5D08',
+    color: Colors.greeninspi,
     fontSize: 20,
   },
   menuButton: {
