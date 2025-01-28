@@ -1,11 +1,11 @@
 const MerchConfig = {
     images: {
-      background: require('../assets/images/merch/Affiche_drag.png'),
-      top: require('../assets/images/merch/sweat.png'),
-      top: require('../assets/images/merch/sweat.png'),
-      logo: require('../assets/images/merch/logo.png'),
-      teeshirt: require('../assets/images/merch/teeshirt_fest.png'),
-      part: require('../assets/images/merch/part.png'),
+      background: require('../assets/images/Merch/Affiche_drag.png'),
+      top: require('../assets/images/Merch/sweat.png'),
+      top: require('../assets/images/Merch/sweat.png'),
+      logo: require('../assets/images/Merch/logo.png'),
+      teeshirt: require('../assets/images/Merch/teeshirt_fest.png'),
+      part: require('../assets/images/Merch/part.png'),
     },
     texts: {
       title: 'Merchandising',
