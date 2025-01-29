@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, View, TouchableOpacity, Image, Platform } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, Platform, Dimensions } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
@@ -18,6 +18,14 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigation = () => {
   const navigation = useNavigation(); // Hook pour accéder à DrawerActions
 
+
+// Obtenir la taille de l'écran pour adapter la barre et les icônes
+const { width, height } = Dimensions.get("window");
+
+// Ajustement dynamique de la barre et des icônes
+const iconSize = Math.max(20, Math.min(height* 0.09,26)); // entre 55px et 70 px
+const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur de l'écran
+
   return (
     
     <Tab.Navigator
@@ -31,11 +39,15 @@ const BottomTabNavigation = () => {
           right: 0,
           left: 0,
           elevation: 0,
-          height: 70, // Hauteur du bandeau
+          height: tabHeight, // Hauteur du bandeau
           backgroundColor: COLORS.white,
         },
         tabBarIconStyle: {
           marginTop : 12, // Baisse la position des icônes
+        },
+        headerTitleAlign: "center", // Centrer le titre dans le header
+        headerStyle: {
+          height: tabHeight, // Même hauteur que la BottomTabBar pour alignement
         },
       }}
     >
@@ -47,7 +59,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'musical-notes' : 'musical-notes-outline'}
-              size={30} // Taille de l'icône
+              size={iconSize} // Taille de l'icône
               color={focused ? COLORS.primary : COLORS.gray}
             />
           ),
@@ -62,7 +74,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'beer' : 'beer-outline'}
-              size={30}
+              size={iconSize}
               color={focused ? COLORS.primary : COLORS.gray}
             />
           ),
@@ -102,7 +114,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'home' : 'home-outline'}
-              size={30}
+              size={iconSize}
               color={focused ? COLORS.primary : COLORS.gray}
             />
           ),
@@ -121,7 +133,7 @@ const BottomTabNavigation = () => {
             >
               <MaterialCommunityIcons
                 name="menu"
-                size={35} // Taille de l'icône Menu
+                size={iconSize} // Taille de l'icône Menu
                 color={COLORS.primary}
               />
             </TouchableOpacity>

@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   container: {
     width: CONTAINER_WIDTH,
     padding: 8,
-    backgroundColor: Colors.darkGray,
+    backgroundColor: Colors.lightGray,
     borderRadius: 8,
     marginHorizontal: 8,
     shadowColor: Colors.black,
