@@ -7,7 +7,6 @@ export default function Boisson() {
   const screenHeight = Dimensions.get('window').height;
 
   return (
-    <SafeAreaView style={styles.safeContainer}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.imageContainer}>
           <Image
@@ -17,7 +16,6 @@ export default function Boisson() {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
   );
 }
 

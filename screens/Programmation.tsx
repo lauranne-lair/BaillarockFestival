@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions, SafeAreaView } from 'react-native';
+import { 
+  StyleSheet, 
+  View, 
+  Text, 
+  Image, 
+  FlatList, 
+  TouchableOpacity, 
+  Dimensions, 
+  SafeAreaView
+} from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import GroupModal from '../popup/popUp_Groups';
 import { dayOneGroups, dayTwoGroups } from '../data/groupsData';
-import COLORS from '../constants/colors'
-import colors from '../constants/colors';
+import COLORS from '../constants/colors';
 
 const { width, height } = Dimensions.get('window');
-const colorss = {
-  black: 'rgb(0, 0, 0)', 
-  lightGray: 'rgb(131, 131, 131)',
-  darkGray: 'rgb(93, 92, 92)',
-  green: 'rgb(40, 144, 9)',
-  lightGreen: 'rgb(131, 131, 131)',
-  background: 'rgb(84, 81, 81)',
-};
 
 export type SocialLink = {
   name: string;
@@ -27,32 +27,40 @@ export type Group = {
   genre: string;
   startTime: string;
   endTime: string;
-  image: any; // Remplacé par "any" pour simplifier le type de l'image
-  bannerImage: any; // Remplacé par "any" pour simplifier
+  image: any; // Image source
+  bannerImage: any;
   description: string;
   socialLinks: SocialLink[];
 };
 
 type DayScreenProps = {
   groups: Group[];
-  festivalDate: string; // Date au format "YYYY-MM-DD"
+  festivalDate: string;
 };
 
 function DayScreen({ groups, festivalDate }: DayScreenProps) {
   const flatListRef = useRef<FlatList<Group>>(null);
+  const now = new Date();
+  const today = now.toISOString().split('T')[0];
+
+  const [currentTime, setCurrentTime] = useState(now.getHours() + now.getMinutes() / 60);
+  const [selectedGroup, setSelectedGroup] = useState<Group | null>(null);
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const isToday = today === festivalDate;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      setCurrentTime(now.getHours() + now.getMinutes() / 60);
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   const timeToDecimal = (time: string) => {
     const [hours, minutes] = time.split(':').map((x) => parseFloat(x));
     return hours + minutes / 60;
   };
-
-  const now = new Date();
-  const today = now.toISOString().split('T')[0];
-  const [currentTime, setCurrentTime] = useState(
-    now.getHours() + now.getMinutes() / 60,
-  );
-
-  const isToday = today === festivalDate;
 
   const currentIndex = isToday
     ? groups.findIndex((group) => {
@@ -62,8 +70,11 @@ function DayScreen({ groups, festivalDate }: DayScreenProps) {
       })
     : -1;
 
-  const [selectedGroup, setSelectedGroup] = useState<Group | null>(null);
-  const [isModalVisible, setModalVisible] = useState(false);
+  useEffect(() => {
+    if (isToday && currentIndex >= 0 && flatListRef.current) {
+      flatListRef.current.scrollToIndex({ index: currentIndex, animated: true });
+    }
+  }, [currentIndex, isToday]);
 
   const openModal = (group: Group) => {
     setSelectedGroup(group);
@@ -74,21 +85,6 @@ function DayScreen({ groups, festivalDate }: DayScreenProps) {
     setSelectedGroup(null);
     setModalVisible(false);
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      setCurrentTime(now.getHours() + now.getMinutes() / 60);
-    }, 60000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (isToday && currentIndex >= 0 && flatListRef.current) {
-      flatListRef.current.scrollToIndex({ index: currentIndex, animated: true });
-    }
-  }, [currentIndex, isToday]);
 
   const getGroupStyle = (group: Group) => {
     const startTime = timeToDecimal(group.startTime);
@@ -143,7 +139,13 @@ function DayScreen({ groups, festivalDate }: DayScreenProps) {
             index,
           })}
           initialNumToRender={5}
-          contentContainerStyle={styles.listContent}
+          nestedScrollEnabled={true}
+          contentContainerStyle={{ flexGrow: 1 }}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+          scrollEnabled={true}
+          removeClippedSubviews={false}
+          ListFooterComponent={<View style={{ height: 100 }} />}
         />
       </View>
       <GroupModal visible={isModalVisible} onClose={closeModal} group={selectedGroup} />
@@ -163,25 +165,25 @@ export default function Programme() {
             fontSize: 20,
             fontWeight: 'bold',
             textTransform: 'none',
-            color: colors.black,
+            color: COLORS.black,
             textAlign: 'center',
             width: '100%',
           },
           tabBarStyle: {
             height: 80,
-            backgroundColor: colors.lightGray,
+            backgroundColor: COLORS.lightGray,
             elevation: 5,
-            shadowColor: colors.black,
+            shadowColor: COLORS.black,
             shadowOpacity: 0.2,
             shadowRadius: 4,
             justifyContent: 'center',
           },
           tabBarIndicatorStyle: {
-            backgroundColor: colors.greeninspi,
+            backgroundColor: COLORS.primary,
             height: 4,
             borderRadius: 2,
           },
-          tabBarPressColor: colors.lightGray,
+          tabBarPressColor: COLORS.lightGray,
         }}
       >
         <Tab.Screen name="Ven. 23 Mai">
@@ -196,16 +198,20 @@ export default function Programme() {
 }
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   backgroundContainer: {
     flex: 1,
-    backgroundColor: colors.blacktransparent7,
+    backgroundColor: COLORS.blacktransparent7,
   },
   screenContainer: {
     flex: 1,
   },
   safeArea: {
     flex: 1,
-    backgroundColor: colors.lightGray,
+    backgroundColor: COLORS.lightGray,
   },
   listContent: {
     paddingBottom: height * 0.02,
@@ -214,7 +220,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: width * 0.03,
-    backgroundColor: colors.lightGray,
+    backgroundColor: COLORS.lightGray,
     marginVertical: height * 0.01,
     marginHorizontal: width * 0.03,
     borderRadius: 10,
@@ -224,9 +230,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#e0e0e0',
   },
   currentGroup: {
-    backgroundColor: colors.primary,
+    backgroundColor: COLORS.primary,
     borderWidth: 2,
-    borderColor: colors.secondary,
+    borderColor: COLORS.secondary,
     elevation: 5,
   },
   currentGroupImage: {
@@ -237,7 +243,7 @@ const styles = StyleSheet.create({
   },
   futureGroup: {
     opacity: 0.8,
-    backgroundColor: colors.white,
+    backgroundColor: COLORS.white,
   },
   groupImage: {
     width: width * 0.2,
@@ -259,6 +265,6 @@ const styles = StyleSheet.create({
   groupTime: {
     fontSize: height * 0.015,
     fontWeight: '500',
-    color: colors.darkGray,
+    color: COLORS.darkGray,
   },
 });

@@ -14,22 +14,18 @@ import Merch from '../screens/Merch';
 import Village from '../screens/Village';
 
 const Tab = createBottomTabNavigator();
-
-const BottomTabNavigation = () => {
-  const navigation = useNavigation(); // Hook pour accéder à DrawerActions
-
-
-// Obtenir la taille de l'écran pour adapter la barre et les icônes
 const { width, height } = Dimensions.get("window");
 
-// Ajustement dynamique de la barre et des icônes
-const iconSize = Math.max(20, Math.min(height* 0.09,26)); // entre 55px et 70 px
-const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur de l'écran
+const tabHeight = Math.max(60, Math.min(height * 0.1, 80)); 
+const iconSize = 28;
+const homeButtonSize = Math.max(70, Math.min(height * 0.12, 90));
+
+const BottomTabNavigation = () => {
+  const navigation = useNavigation(); 
 
   return (
-    
     <Tab.Navigator
-    initialRouteName="Home"
+      initialRouteName="Accueil"
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
@@ -38,16 +34,19 @@ const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur 
           bottom: 0,
           right: 0,
           left: 0,
-          elevation: 0,
-          height: tabHeight, // Hauteur du bandeau
+          height: tabHeight,
           backgroundColor: COLORS.white,
+          paddingBottom: Platform.OS === 'ios' ? 10 : 5,
+          paddingTop: 5, 
+          paddingHorizontal: 10,
+          justifyContent: 'center', 
+          elevation: 10,
+          shadowColor: "#000",
+          shadowOpacity: 0.1,
+          shadowOffset: { width: 0, height: 5 },
         },
         tabBarIconStyle: {
-          marginTop : 12, // Baisse la position des icônes
-        },
-        headerTitleAlign: "center", // Centrer le titre dans le header
-        headerStyle: {
-          height: tabHeight, // Même hauteur que la BottomTabBar pour alignement
+          margin: 15, 
         },
       }}
     >
@@ -57,11 +56,13 @@ const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur 
         component={Programme}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'musical-notes' : 'musical-notes-outline'}
-              size={iconSize} // Taille de l'icône
-              color={focused ? COLORS.primary : COLORS.gray}
-            />
+            <View style={styles.iconContainer}>
+              <Ionicons
+                name={focused ? 'musical-notes' : 'musical-notes-outline'}
+                size={iconSize}
+                color={focused ? COLORS.primary : COLORS.gray}
+              />
+            </View>
           ),
         }}
       />
@@ -72,39 +73,38 @@ const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur 
         component={Bar}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'beer' : 'beer-outline'}
-              size={iconSize}
-              color={focused ? COLORS.primary : COLORS.gray}
-            />
+            <View style={styles.iconContainer}>
+              <Ionicons
+                name={focused ? 'beer' : 'beer-outline'}
+                size={iconSize}
+                color={focused ? COLORS.primary : COLORS.gray}
+              />
+            </View>
           ),
         }}
       />
 
-      {/* Bouton central avec l'image Museau.png */}
+      {/* Bouton central Home */}
       <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            tabBarButton: () => {
-              const navigation = useNavigation(); // Accès à la navigation
-
-              return (
-                <View style={styles.centerContainer}>
-                  <TouchableOpacity
-                    style={styles.homeButton}
-                    onPress={() => navigation.navigate('Home')} // Redirection vers Home
-                  >
-                    <Image
-                      source={require('../assets/menu/Museau.png')} // Image Museau.png
-                      style={styles.homeIcon}
-                    />
-                  </TouchableOpacity>
-                </View>
-              );
-            },
-          }}
-        />
+        name="Accueil"
+        component={Home}
+        options={{
+          tabBarButton: (props) => (
+            <View style={styles.centerContainer}>
+              <TouchableOpacity
+                style={[styles.homeButton, { width: homeButtonSize, height: homeButtonSize }]}
+                activeOpacity={1}
+                onPress={props.onPress}
+              >
+                <Image
+                  source={require('../assets/menu/Museau.png')}
+                  style={styles.homeIcon}
+                />
+              </TouchableOpacity>
+            </View>
+          ),
+        }}
+      />
 
       {/* Onglet Village */}
       <Tab.Screen
@@ -112,28 +112,30 @@ const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur 
         component={Village}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'home' : 'home-outline'}
-              size={iconSize}
-              color={focused ? COLORS.primary : COLORS.gray}
-            />
+            <View style={styles.iconContainer}>
+              <Ionicons
+                name={focused ? 'home' : 'home-outline'}
+                size={iconSize}
+                color={focused ? COLORS.primary : COLORS.gray}
+              />
+            </View>
           ),
         }}
       />
 
-      {/* Onglet Menu (ouvre le Drawer) */}
+      {/* Onglet Menu */}
       <Tab.Screen
         name="Menu"
-        component={Merch} // Peut être un écran neutre si nécessaire
+        component={Merch} 
         options={{
           tabBarButton: () => (
             <TouchableOpacity
               style={styles.menuButton}
-              onPress={() => navigation.dispatch(DrawerActions.openDrawer())} // Ouvre le Drawer
+              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
             >
               <MaterialCommunityIcons
                 name="menu"
-                size={iconSize} // Taille de l'icône Menu
+                size={iconSize}
                 color={COLORS.primary}
               />
             </TouchableOpacity>
@@ -147,16 +149,19 @@ const tabHeight = Math.max(30, Math.min(height* 0.09,200)); // 9% de la hauteur 
 export default BottomTabNavigation;
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   centerContainer: {
     position: 'absolute',
-    bottom: Platform.OS === 'ios' ? 25 : 20,
+    bottom: Platform.OS === 'ios' ? 20 : 15,
     alignSelf: 'center',
     zIndex: 2,
   },
   homeButton: {
-    width: 80, // Taille du bouton central
-    height: 80,
-    borderRadius: 40,
+    borderRadius: 50,
     backgroundColor: COLORS.white,
     justifyContent: 'center',
     alignItems: 'center',
@@ -171,8 +176,8 @@ const styles = StyleSheet.create({
   homeIcon: {
     width: '100%',
     height: '100%',
-    borderRadius: 40,
-    resizeMode: 'cover',
+    borderRadius: 50,
+    resizeMode: 'cover', 
   },
   menuButton: {
     flex: 1,
