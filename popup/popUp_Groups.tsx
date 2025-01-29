@@ -1,7 +1,18 @@
-import * as React from 'react';
-import { Modal, View, Text, ImageBackground, StyleSheet, TouchableOpacity, SafeAreaView, Linking } from 'react-native';
+import * as React from 'react'; 
+import { 
+  Modal, 
+  View, 
+  Text, 
+  ImageBackground, 
+  StyleSheet, 
+  TouchableOpacity, 
+  SafeAreaView, 
+  Linking, 
+  Dimensions,
+  Platform
+} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { Group, SocialLink } from '../screens/Programmation';
+import { Group } from '../screens/Programmation';
 
 export type GroupModalProps = {
   visible: boolean;
@@ -24,59 +35,66 @@ const getSocialIcon = (name: string): keyof typeof FontAwesome.glyphMap => {
 export default function GroupModal({ visible, onClose, group }: GroupModalProps) {
   if (!group) return null;
 
-  // Fonction pour ouvrir un lien
   const openLink = (url: string) => {
     Linking.openURL(url).catch(() => {
       alert("Impossible d'ouvrir le lien.");
     });
   };
 
+  const { width, height } = Dimensions.get('window'); // Récupération des dimensions de l'écran
+
   return (
     <Modal animationType="slide" transparent={true} visible={visible}>
-      <View style={styles.modalContainer}>
-        {/* Icône de fermeture */}
-        <SafeAreaView>
-          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+      <SafeAreaView style={styles.safeContainer}> 
+        <View style={styles.modalContainer}>
+          {/* Icône de fermeture */}
+          <TouchableOpacity 
+            style={[styles.closeButton, { top: Platform.OS === 'ios' ? height * 0.02 : height * 0.01, right: width * 0.01 }]} 
+            onPress={onClose}
+          >
             <FontAwesome name="times" size={30} color="green" />
           </TouchableOpacity>
-        </SafeAreaView>
 
-        {/* Bannière avec image de fond */}
-        <View style={styles.banner}>
-          <ImageBackground source={group.bannerImage} style={styles.bannerBackground} resizeMode="cover">
-            <View style={styles.textContainer}>
-              <Text style={styles.groupName}>{group.name}</Text>
-              <Text style={styles.groupGenre}>{group.genre}</Text>
+          {/* Bannière avec image de fond */}
+          <View style={styles.banner}>
+            <ImageBackground source={group.bannerImage} style={styles.bannerBackground} resizeMode="cover">
+              <View style={styles.textContainer}>
+                <Text style={styles.groupName}>{group.name}</Text>
+                <Text style={styles.groupGenre}>{group.genre}</Text>
+              </View>
+            </ImageBackground>
+          </View>
+
+          <View style={styles.content}>
+            <Text style={styles.description}>{group.description}</Text>
+
+            {/* Icônes des réseaux sociaux dynamiques */}
+            <View style={styles.socialIcons}>
+              {group.socialLinks.map((social, index) => (
+                <TouchableOpacity key={index} onPress={() => openLink(social.url)}>
+                  <FontAwesome 
+                    name={getSocialIcon(social.name)} 
+                    size={30} 
+                    color="#fff" 
+                    style={styles.socialIcon} 
+                  />
+                </TouchableOpacity>
+              ))}
             </View>
-          </ImageBackground>
-        </View>
-
-        <View style={styles.content}>
-          <Text style={styles.description}>{group.description}</Text>
-
-          {/* Icônes des réseaux sociaux dynamiques */}
-          <View style={styles.socialIcons}>
-            {group.socialLinks.map((social, index) => (
-              <TouchableOpacity key={index} onPress={() => openLink(social.url)}>
-                <FontAwesome 
-                  name={getSocialIcon(social.name)} 
-                  size={30} 
-                  color="#fff" 
-                  style={styles.socialIcon} 
-                />
-              </TouchableOpacity>
-            ))}
           </View>
         </View>
-      </View>
+      </SafeAreaView>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+    backgroundColor: 'rgb(40, 40, 40)', 
+  },
   modalContainer: {
     flex: 1,
-    backgroundColor: 'rgb(40, 40, 40)',
   },
   banner: {
     height: '30%',
@@ -121,10 +139,8 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     position: 'absolute',
-    top: 10,
-    right: 10,
     zIndex: 10,
-    padding: 5,
+    padding: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: 15,
   },

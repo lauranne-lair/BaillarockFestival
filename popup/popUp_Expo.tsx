@@ -1,56 +1,72 @@
 import * as React from 'react';
-import { Modal, View, Text, StyleSheet, TouchableOpacity, ImageBackground, SafeAreaView, Linking} from 'react-native';
+import { 
+  Modal, 
+  View, 
+  Text, 
+  StyleSheet, 
+  TouchableOpacity, 
+  ImageBackground, 
+  SafeAreaView, 
+  Linking, 
+  Dimensions, 
+  Platform 
+} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { ListFood, ListExpo, SocialLink } from '../screens/Village';
+import { ListFood, ListExpo } from '../screens/Village';
 
 export type FoodExpoModalProps = {
   visible: boolean;
   onClose: () => void;
-  item: ListFood | ListExpo | null; // Peut être un Food ou un Expo
+  item: ListFood | ListExpo | null; 
 };
 
 const socialIconMap: { [key: string]: keyof typeof FontAwesome.glyphMap } = {
   facebook: "facebook",
   instagram: "instagram",
-  website: "link", // Modifier ici pour faire correspondre le bon nom d'icône
+  website: "link",
 };
 
 const getSocialIcon = (name: string): keyof typeof FontAwesome.glyphMap => {
-  return socialIconMap[name] || "link"; // Valeur par défaut si rien n'est trouvé
+  return socialIconMap[name] || "link"; 
 };
 
 export default function FoodExpoModal({ visible, onClose, item }: FoodExpoModalProps) {
   if (!item) return null;
 
-  // Fonction pour ouvrir un lien
   const openLink = (url: string) => {
     Linking.openURL(url).catch(() => {
       alert("Impossible d'ouvrir le lien.");
     });
   };
 
+  const { width, height } = Dimensions.get('window');
+
   return (
     <Modal animationType="slide" transparent={true} visible={visible}>
-      <View style={styles.modalContainer}>
-        {/* Icône de fermeture */}
-        <SafeAreaView>
-          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+      <SafeAreaView style={styles.safeContainer}>
+        <View style={styles.modalContainer}>
+          
+          {/* Icône de fermeture */}
+          <TouchableOpacity 
+            style={[styles.closeButton, { top: Platform.OS === 'ios' ? height * 0.02 : height * 0.01, right: width * 0.01 }]} 
+            onPress={onClose}
+          >
             <FontAwesome name="times" size={30} color="green" />
           </TouchableOpacity>
-        </SafeAreaView>
 
-        {/* Bannière avec image de fond */}
-        <View style={styles.banner}>
-          <ImageBackground source={item.imageBG} style={styles.bannerBackground} resizeMode="cover">
-            <View style={styles.textContainer}>
-              <Text style={styles.itemName}>{item.name}</Text>
-              <Text style={styles.itemGenre}>{item.genre}</Text>
-            </View>
-          </ImageBackground>
-        </View>
+          {/* Bannière avec image de fond */}
+          <View style={styles.banner}>
+            <ImageBackground source={item.imageBG} style={styles.bannerBackground} resizeMode="cover">
+              <View style={styles.textContainer}>
+                <Text style={styles.itemName}>{item.name}</Text>
+                <Text style={styles.itemGenre}>{item.genre}</Text>
+              </View>
+            </ImageBackground>
+          </View>
 
-        <View style={styles.content}>
-          <Text style={styles.description}>{item.description}</Text>
+          {/* Contenu principal */}
+          <View style={styles.content}>
+            <Text style={styles.description}>{item.description}</Text>
 
             {/* Icônes des réseaux sociaux dynamiques */}
             <View style={styles.socialIcons}>
@@ -64,22 +80,24 @@ export default function FoodExpoModal({ visible, onClose, item }: FoodExpoModalP
                   />
                 </TouchableOpacity>
               ))}
+            </View>
           </View>
         </View>
-      </View>
+      </SafeAreaView>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+    backgroundColor: 'rgb(40, 40, 40)', 
+  },
   modalContainer: {
     flex: 1,
-    backgroundColor: 'rgb(40, 40, 40)',
-    position: 'relative',
   },
   banner: {
     height: '30%',
-    position: 'relative',
   },
   bannerBackground: {
     flex: 1,
@@ -121,9 +139,7 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     position: 'absolute',
-    top: 20,
-    right: 20,
-    zIndex: 999,
+    zIndex: 10,
     padding: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: 20,
