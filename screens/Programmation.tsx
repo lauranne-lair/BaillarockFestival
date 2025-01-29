@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   },
   futureGroup: {
     opacity: 0.8,
-    backgroundColor: 'rgb(225, 225, 225)',
+    backgroundColor: colors.white,
   },
   groupImage: {
     width: width * 0.2,
