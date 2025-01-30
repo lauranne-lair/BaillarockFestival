@@ -22,7 +22,7 @@ export default StyleSheet.create({
     listContent: {
       paddingBottom: height * 0.02,
     },
-    groupContainer: {
+    normalGroup: {
       flexDirection: 'row',
       alignItems: 'center',
       padding: width * 0.03,
@@ -36,24 +36,44 @@ export default StyleSheet.create({
       backgroundColor: Colors.darkGray,
     },
     currentGroup: {
-      backgroundColor: Colors.secondary,
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: Colors.secondary, 
       borderWidth: 2,
       borderColor: Colors.accent,
       elevation: 5,
+      overflow: 'hidden',
+      position: 'relative',
+      marginVertical: height * 0.01,
+      marginHorizontal: width * 0.03,
+      borderRadius: 10,
     },
-    currentGroupImage: {
-      width: width * 0.25,
-      height: width * 0.25,
-      borderRadius: 15,
-      marginRight: width * 0.03,
+    videoContainer: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: -1,
     },
-    futureGroup: {
+    videoBackground: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
       opacity: 0.8,
-      backgroundColor: Colors.lightGray,
     },
+        
     groupImage: {
       width: width * 0.2,
       height: width * 0.2,
+      borderRadius: 10,
+      marginRight: width * 0.03,
+    },
+    currentGroupImage: {
+      width: width * 0.3, 
+      height: width * 0.3,
       borderRadius: 10,
       marginRight: width * 0.03,
     },
@@ -63,15 +83,33 @@ export default StyleSheet.create({
     groupName: {
       fontSize: height * 0.02,
       fontWeight: 'bold',
-      color: Colors.dark.text,
+      color: Colors.white,
+    },
+    currentGroupText: {
+      color: Colors.black,
+      fontSize: height * 0.025, 
     },
     groupGenre: {
       fontSize: height * 0.018,
-      color: Colors.dark.accent,
+      color: Colors.secondary,
+    },
+    currentGenreText: {
+      color: Colors.darkGray,
     },
     groupTime: {
-      fontSize: height * 0.018,
+      fontSize: 16,
       fontWeight: '500',
-      color: Colors.white,
+      color: 'white',
+      textAlign: 'right',
+    },
+    currentTimeText: {
+      color: Colors.black,
+      fontWeight: 'bold',
+      fontSize: 18,
+      textAlign: 'right',
+    },
+    futureGroup: {
+      opacity: 0.8,
+      backgroundColor: Colors.lightGray,
     },
   });

@@ -9,6 +9,7 @@ export const dayOneGroups: Group[] = [
     endTime: '18:45', 
     image: require('../assets/images/programmation/logo_kibosh.png'),
     bannerImage: require('../assets/images/programmation/Affiche_KIBOSH.jpg'), 
+    videoBackground:require('../assets/videos/videohomepage.mp4'), 
     description: 'Kibosh est un groupe de metal hardcore né à Bordeaux en 2021,se distinguant par une musique incisive et chaotique.\n\nLeur son unique fusionne des influences variées, allant du metal extrême à l\'emo, tout en conservant une énergie et une intensité résolument punk hardcore.' ,
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/kiboshkiboshkibosh/?_rdr" },
@@ -23,7 +24,7 @@ export const dayOneGroups: Group[] = [
     startTime: '19:00', 
     endTime: '19:45', 
     image: require('../assets/images/programmation/logo_whoiam.png'),
-    bannerImage: require('../assets/images/programmation/affiche_whoiam.jpg'),  
+    bannerImage: require('../assets/images/programmation/affiche_whoiam.jpg'), 
     description: 'Tout droit débarqué de la côte de Los Angoulemes, plus sobrement connu sous le nom d’Angoulême, Who I Am arpente la scène depuis près de dix ans à grands coups de mosh parts et de 2-step.\n\nAprès plusieurs changements de line up, le groupe a trouvé son rythme de croisière à cinq sur scène et sortira un nouvel album en 2025 enregistré en Angleterre au Studio 6 (Malevolence, Guilt Trip, Brutality Will Prevail).\n\nSe détachant petit à petit du NYHC, la formation intègre désormais des teintes plus métallisées et new school, influencée par des groupes comme Incendiary, Suburban Scum, ou Terror.' ,
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/whoiamhc" },
