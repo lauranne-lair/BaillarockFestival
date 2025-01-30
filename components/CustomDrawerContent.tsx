@@ -6,7 +6,7 @@ import COLORS from '../constants/colors';
 const CustomDrawerContent = (props: any) => {
   return (
     <ImageBackground
-      source={require('../assets/images/Dragon_Drawer_BW.png')}
+      source={require('../assets/images/Dragon_Drawer_v2_BW.png')}
       style={{ flex: 1 }}
       resizeMode="cover"
     >

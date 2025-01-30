@@ -25,8 +25,10 @@ const DrawerNavigation = () => {
         headerStyle: {
           backgroundColor: COLORS.black,
         },
-        headerShown: false, // Masquer l'en-tête du Drawer
+        headerShown: false,
         headerTintColor: COLORS.white,
+        drawerActiveBackgroundColor: COLORS.primary.replace('rgb', 'rgba').replace(')', ', 0.5)'), // Couleur de fond de l'élément actif
+        drawerActiveTintColor: COLORS.white,
         drawerLabelStyle: {
           color: COLORS.white,
           fontSize: 14,
@@ -39,8 +41,8 @@ const DrawerNavigation = () => {
         name="Accueil"
         component={BottomTabNavigation}
         options={{
-          drawerLabel: 'Accueil',
-          title: 'Accueil',
+          drawerLabel: 'Retour',
+          title: 'Retour',
           drawerIcon: ({ color }) => (
             <Ionicons name="home-outline" size={24} color={COLORS.white} />
           ),

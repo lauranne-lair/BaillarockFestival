@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Image, Linking, SafeAreaView } from 'react-native';
+import { Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Image, Linking, SafeAreaView } from 'react-native';
 import { Video } from 'expo-av';
 import { useRouter } from 'expo-router';
 import { homeConfig } from '../config/Config_HomePage';
