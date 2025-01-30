@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  StyleSheet, 
-  View, 
-  Text, 
-  Image, 
-  FlatList, 
-  TouchableOpacity, 
-  Dimensions, 
-  SafeAreaView
-} from 'react-native';
+import { View,  Text,  Image,  FlatList,  TouchableOpacity,  Dimensions,  SafeAreaView } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import GroupModal from '../popup/popUp_Groups';
 import { dayOneGroups, dayTwoGroups } from '../data/groupsData';
-import COLORS from '../constants/colors';
+import styles from '../styles/Programmation_Styles'
+import Colors from '../constants/colors';
 
 const { width, height } = Dimensions.get('window');
 
@@ -165,25 +157,25 @@ export default function Programme() {
             fontSize: 20,
             fontWeight: 'bold',
             textTransform: 'none',
-            color: COLORS.black,
+            color: Colors.black,
             textAlign: 'center',
             width: '100%',
           },
           tabBarStyle: {
             height: 80,
-            backgroundColor: COLORS.lightGray,
+            backgroundColor: Colors.lightGray,
             elevation: 5,
-            shadowColor: COLORS.black,
+            shadowColor: Colors.black,
             shadowOpacity: 0.2,
             shadowRadius: 4,
             justifyContent: 'center',
           },
           tabBarIndicatorStyle: {
-            backgroundColor: COLORS.primary,
+            backgroundColor: Colors.primary,
             height: 4,
             borderRadius: 2,
           },
-          tabBarPressColor: COLORS.lightGray,
+          tabBarPressColor: Colors.lightGray,
         }}
       >
         <Tab.Screen name="Ven. 23 Mai">
@@ -196,75 +188,3 @@ export default function Programme() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  scrollContainer: {
-    flexGrow: 1,
-    paddingBottom: 20,
-  },
-  backgroundContainer: {
-    flex: 1,
-    backgroundColor: COLORS.blacktransparent7,
-  },
-  screenContainer: {
-    flex: 1,
-  },
-  safeArea: {
-    flex: 1,
-    backgroundColor: COLORS.lightGray,
-  },
-  listContent: {
-    paddingBottom: height * 0.02,
-  },
-  groupContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: width * 0.03,
-    backgroundColor: COLORS.lightGray,
-    marginVertical: height * 0.01,
-    marginHorizontal: width * 0.03,
-    borderRadius: 10,
-  },
-  pastGroup: {
-    opacity: 0.5,
-    backgroundColor: '#e0e0e0',
-  },
-  currentGroup: {
-    backgroundColor: COLORS.primary,
-    borderWidth: 2,
-    borderColor: COLORS.secondary,
-    elevation: 5,
-  },
-  currentGroupImage: {
-    width: width * 0.25,
-    height: width * 0.25,
-    borderRadius: 15,
-    marginRight: width * 0.03,
-  },
-  futureGroup: {
-    opacity: 0.8,
-    backgroundColor: COLORS.white,
-  },
-  groupImage: {
-    width: width * 0.2,
-    height: width * 0.2,
-    borderRadius: 10,
-    marginRight: width * 0.03,
-  },
-  groupDetails: {
-    flex: 1,
-  },
-  groupName: {
-    fontSize: height * 0.02,
-    fontWeight: 'bold',
-  },
-  groupGenre: {
-    fontSize: height * 0.018,
-    color: '#555',
-  },
-  groupTime: {
-    fontSize: height * 0.015,
-    fontWeight: '500',
-    color: COLORS.darkGray,
-  },
-});

@@ -4,7 +4,7 @@ import ExpoModal from '../popup/popUp_Expo';
 import { backgroundImage, Exposants } from '../data/ExposantsData';
 import { Food } from '../data/FoodData';
 import * as Font from 'expo-font';
-import Colors from '../constants/colors';
+import styles from '../styles/Village_Styles'
 
 const { width } = Dimensions.get('window');
 const CONTAINER_WIDTH = width / 2 - 60;
@@ -94,76 +94,3 @@ export default function Village() {
     </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-  },
-  screenContainer: {
-    flex: 1,
-    backgroundColor: Colors.blacktransparent9,
-    padding: 8,
-    paddingTop: 70,
-  },
-  pageTitle: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: Colors.white,
-    textAlign: 'left',
-    marginBottom: 15,
-    fontFamily: 'Capsmall',
-  },
-  expoTitle: {
-    marginTop: 90,
-  },
-  foodTitle: {
-    marginTop: -20,
-  },
-  horizontalListContent: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    paddingHorizontal: 8,
-  },
-  container: {
-    width: CONTAINER_WIDTH,
-    padding: 8,
-    backgroundColor: Colors.lightGray,
-    borderRadius: 8,
-    marginHorizontal: 8,
-    shadowColor: Colors.black,
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  expoName: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginTop: 8,
-    color: Colors.white,
-    textAlign: 'center',
-  },
-  expoImage: {
-    width: CONTAINER_WIDTH - 40,
-    height: IMAGE_HEIGHT,
-    marginBottom: 8,
-    borderRadius: 10,
-  },
-  foodImage: {
-    width: CONTAINER_WIDTH - 40,
-    height: CONTAINER_WIDTH - 40, // Assurez-vous que la largeur et la hauteur sont identiques
-    marginBottom: 8,
-    borderRadius: (CONTAINER_WIDTH - 40) / 2, // Pour rendre l'image circulaire
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
-  },
-  loadingText: {
-    color: Colors.white,
-    fontSize: 20,
-  },
-});
