@@ -154,16 +154,16 @@ export default function Programme() {
         screenOptions={{
           swipeEnabled: true,
           tabBarLabelStyle: {
-            fontSize: 20,
+            fontSize: 22,
             fontWeight: 'bold',
             textTransform: 'none',
-            color: Colors.black,
+            color: Colors.white,
             textAlign: 'center',
             width: '100%',
           },
           tabBarStyle: {
             height: 80,
-            backgroundColor: Colors.lightGray,
+            backgroundColor: Colors.black,
             elevation: 5,
             shadowColor: Colors.black,
             shadowOpacity: 0.2,
@@ -171,11 +171,11 @@ export default function Programme() {
             justifyContent: 'center',
           },
           tabBarIndicatorStyle: {
-            backgroundColor: Colors.primary,
+            backgroundColor: Colors.dark.accent,
             height: 4,
             borderRadius: 2,
           },
-          tabBarPressColor: Colors.lightGray,
+          tabBarPressColor: Colors.accent,
         }}
       >
         <Tab.Screen name="Ven. 23 Mai">

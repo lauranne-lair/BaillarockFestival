@@ -4,20 +4,20 @@ import Colors from '../constants/colors';
 export default StyleSheet.create({
     screenContainer: {
       flex: 1,
-      backgroundColor: Colors.blacktransparent9, // Fond noir pour un design moderne et contrasté
+      backgroundColor: Colors.dark.background,
       padding: 16,
     },
     scrollContainer: {
-      alignItems: 'center', // Centrer les éléments horizontalement
+      alignItems: 'center', 
       paddingBottom: 30,
     },
     title: {
       fontSize: 28,
       fontWeight: 'bold',
-      color: Colors.greeninspi, // Vert pour un aspect rassurant
-      textAlign: 'center', // Centré
+      color: Colors.dark.accent, 
+      textAlign: 'center',
       marginBottom: 20,
-      fontFamily: 'Capsmall_clean', // Appliquer la police personnalisée
+      fontFamily: 'Capsmall_clean', 
     },
     text: {
       fontSize: 18,

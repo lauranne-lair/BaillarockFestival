@@ -11,7 +11,7 @@ export default StyleSheet.create({
     },
     screenContainer: {
       flex: 1,
-      backgroundColor: Colors.blacktransparent9,
+      backgroundColor: Colors.blacktransparent7,
       padding: 8,
       paddingTop: 70,
     },
@@ -37,7 +37,7 @@ export default StyleSheet.create({
     container: {
       width: CONTAINER_WIDTH,
       padding: 8,
-      backgroundColor: Colors.lightGray,
+      backgroundColor: Colors.dark.secondary.replace('rgb', 'rgba').replace(')', ', 0.8)'),
       borderRadius: 8,
       marginHorizontal: 8,
       shadowColor: Colors.black,

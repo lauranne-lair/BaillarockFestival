@@ -10,7 +10,7 @@ export default StyleSheet.create({
     },
     backgroundContainer: {
       flex: 1,
-      backgroundColor: Colors.blacktransparent7,
+      backgroundColor: Colors.darkGray.replace('rgb', 'rgba').replace(')', ', 0.9)'),
     },
     screenContainer: {
       flex: 1,
@@ -26,19 +26,19 @@ export default StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       padding: width * 0.03,
-      backgroundColor: Colors.lightGray,
+      backgroundColor: Colors.dark.background,
       marginVertical: height * 0.01,
       marginHorizontal: width * 0.03,
       borderRadius: 10,
     },
     pastGroup: {
       opacity: 0.5,
-      backgroundColor: '#e0e0e0',
+      backgroundColor: Colors.darkGray,
     },
     currentGroup: {
-      backgroundColor: Colors.primary,
+      backgroundColor: Colors.secondary,
       borderWidth: 2,
-      borderColor: Colors.secondary,
+      borderColor: Colors.accent,
       elevation: 5,
     },
     currentGroupImage: {
@@ -49,7 +49,7 @@ export default StyleSheet.create({
     },
     futureGroup: {
       opacity: 0.8,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightGray,
     },
     groupImage: {
       width: width * 0.2,
@@ -63,14 +63,15 @@ export default StyleSheet.create({
     groupName: {
       fontSize: height * 0.02,
       fontWeight: 'bold',
+      color: Colors.dark.text,
     },
     groupGenre: {
       fontSize: height * 0.018,
-      color: '#555',
+      color: Colors.dark.accent,
     },
     groupTime: {
-      fontSize: height * 0.015,
+      fontSize: height * 0.018,
       fontWeight: '500',
-      color: Colors.darkGray,
+      color: Colors.white,
     },
   });

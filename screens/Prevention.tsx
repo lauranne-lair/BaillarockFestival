@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router'; // Pour la navigation entre les pages
 import * as Font from 'expo-font'; // Pour charger les polices
 import { useNavigation, DrawerActions } from '@react-navigation/native'; 
 import styles from '../styles/Prevention_Styles'
+import Colors from '../constants/colors';
 
 export default function Prevention() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -32,7 +33,7 @@ export default function Prevention() {
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral
             style={styles.menuButton}
           >
-            <Ionicons name="menu" size={30} color="#0E5D08" />
+            <Ionicons name="menu" size={30} color={Colors.dark.accent} />
           </TouchableOpacity>
         ),
         headerShown: true,

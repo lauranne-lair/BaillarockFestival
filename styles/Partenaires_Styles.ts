@@ -18,7 +18,7 @@ export default StyleSheet.create({
     partnerContainer: {
       flex: 1,
       padding: 8,
-      backgroundColor: Colors.darkGray,
+      backgroundColor: Colors.dark.secondary,
       borderRadius: 8,
       margin: 8,
       alignItems: 'center',
@@ -28,7 +28,7 @@ export default StyleSheet.create({
       fontSize: 14,
       fontWeight: 'bold',
       marginTop: 8,
-      color: Colors.black,
+      color: Colors.white,
       textAlign: 'center',
     },
     partnerImage: {
@@ -55,6 +55,6 @@ export default StyleSheet.create({
     menuButton: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingRight: 10, // Bouton aligné à droite
+      paddingRight: 10,
     },
   });

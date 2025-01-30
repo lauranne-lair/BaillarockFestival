@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import ImageZoom from 'react-native-image-pan-zoom';
 import MerchConfig from '../config/Config_Merch';
 import styles from '../styles/Merch_Styles'
+import Colors from '../constants/colors';
 
 const { width, height } = Dimensions.get('window');
 
@@ -23,7 +24,7 @@ const Merch: React.FC = () => {
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral
           style={styles.menuButton}
         >
-          <Ionicons name="menu" size={30} color= "#0E5D08"/>
+          <Ionicons name="menu" size={30} color={Colors.dark.accent}/>
         </TouchableOpacity>
       ),
       headerShown: true,

@@ -8,16 +8,18 @@ import BottomTabNavigation from './BottomTabNavigation';
 import Merch from '../screens/Merch';
 import Prevention from '../screens/Prevention';
 import Partenaire from '../screens/Partenaire';
+import CustomDrawerContent from '../components/CustomDrawerContent'; // Import du menu customisé
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   return (
     <Drawer.Navigator
+      drawerContent={(props) => <CustomDrawerContent {...props} />} // Ajout du menu personnalisé
       screenOptions={{
         drawerPosition: 'right',
         drawerStyle: {
-          backgroundColor: COLORS.darkGray,
+          backgroundColor: 'transparent', // On met transparent pour laisser voir l'image
           width: 250,
         },
         headerStyle: {

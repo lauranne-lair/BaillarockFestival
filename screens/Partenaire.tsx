@@ -7,6 +7,7 @@ import PartModal from '../popup/popUp_Partenaire';
 import { Partenaires } from '../data/PartenaireData';
 import { backgroundImage } from '../data/ExposantsData';
 import styles from '../styles/Partenaires_Styles'
+import Colors from '../constants/colors';
 
 export type ListPartners = {
   id: string;
@@ -33,7 +34,7 @@ export default function Partenaire() {
               onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral
               style={styles.menuButton}
             >
-              <Ionicons name="menu" size={30} color="#0E5D08" />
+              <Ionicons name="menu" size={30} color={Colors.dark.accent} />
             </TouchableOpacity>
           ),
           headerShown: true,

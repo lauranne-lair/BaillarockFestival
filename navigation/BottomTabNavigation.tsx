@@ -36,13 +36,14 @@ const BottomTabNavigation = () => {
           right: 0,
           left: 0,
           height: tabHeight,
-          backgroundColor: COLORS.white,
+          backgroundColor: COLORS.darkGray,
+          borderColor: COLORS.black,
           paddingBottom: Platform.OS === 'ios' ? 10 : 5,
           paddingTop: 5, 
           paddingHorizontal: 10,
           justifyContent: 'center', 
           elevation: 10,
-          shadowColor: "#000",
+          shadowColor: COLORS.blacktransparent3,
           shadowOpacity: 0.1,
           shadowOffset: { width: 0, height: 5 },
         },
@@ -61,7 +62,7 @@ const BottomTabNavigation = () => {
               <Ionicons
                 name={focused ? 'musical-notes' : 'musical-notes-outline'}
                 size={iconSize}
-                color={focused ? COLORS.primary : COLORS.gray}
+                color={focused ? COLORS.secondary : COLORS.white}
               />
             </View>
           ),
@@ -78,7 +79,7 @@ const BottomTabNavigation = () => {
               <Ionicons
                 name={focused ? 'beer' : 'beer-outline'}
                 size={iconSize}
-                color={focused ? COLORS.primary : COLORS.gray}
+                color={focused ? COLORS.secondary : COLORS.white}
               />
             </View>
           ),
@@ -117,7 +118,7 @@ const BottomTabNavigation = () => {
               <Ionicons
                 name={focused ? 'home' : 'home-outline'}
                 size={iconSize}
-                color={focused ? COLORS.primary : COLORS.gray}
+                color={focused ? COLORS.secondary : COLORS.white}
               />
             </View>
           ),
@@ -137,7 +138,7 @@ const BottomTabNavigation = () => {
               <MaterialCommunityIcons
                 name="menu"
                 size={iconSize}
-                color={COLORS.primary}
+                color={COLORS.secondary}
               />
             </TouchableOpacity>
           ),
