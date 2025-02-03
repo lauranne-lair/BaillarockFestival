@@ -220,7 +220,7 @@ export default function Programme() {
         }}
       >
         <Tab.Screen name="Ven. 23 Mai">
-          {() => <DayScreen groups={dayOneGroups} festivalDate="2025-01-30" />}
+          {() => <DayScreen groups={dayOneGroups} festivalDate="2025-05-23" />}
         </Tab.Screen>
         <Tab.Screen name="Sam. 24 Mai">
           {() => <DayScreen groups={dayTwoGroups} festivalDate="2025-05-24" />}
