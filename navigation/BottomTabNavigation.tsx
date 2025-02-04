@@ -48,7 +48,7 @@ const BottomTabNavigation = () => {
           shadowOffset: { width: 0, height: 5 },
         },
         tabBarLabelStyle: {
-          fontSize: 8,
+          fontSize: 10,
           marginTop: 2,
           color: COLORS.white, // Couleur du texte
         },
@@ -134,21 +134,23 @@ const BottomTabNavigation = () => {
       {/* Onglet Menu */}
       <Tab.Screen
           name="Menu"
-          component={() => null} // Empêche l'ouverture d'un écran
+          component={() => null} // Éviter l’ouverture d’un écran
           options={{
             tabBarLabel: "",
             tabBarButton: () => (
-              <TouchableOpacity
-                style={{ alignItems: 'center', justifyContent: 'center' }}
-                onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-              >
-                <MaterialCommunityIcons
-                  name="menu"
-                  size={iconSize}
-                  color={COLORS.secondary}
-                />
-                <Text style={{ color: COLORS.white, fontSize: 8, marginTop: 2 }}>Menu</Text>
-              </TouchableOpacity>
+              <View style={{ alignItems: 'center', justifyContent: 'center', height: 50 }}>
+                <TouchableOpacity
+                  style={{ alignItems: 'center', justifyContent: 'center' }} // Assurer l'alignement vertical
+                  onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+                >
+                  <MaterialCommunityIcons
+                    name="menu"
+                    size={iconSize}
+                    color={COLORS.white}
+                  />
+                </TouchableOpacity>
+                <Text style={{ color: COLORS.white, fontSize: 10, marginTop: 2 }}>Menu</Text>
+              </View>
             ),
           }}
         />
