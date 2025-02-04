@@ -138,7 +138,7 @@ const BottomTabNavigation = () => {
           options={{
             tabBarLabel: "",
             tabBarButton: () => (
-              <View style={{ alignItems: 'center', justifyContent: 'center', height: 50 }}>
+              <View style={{ alignItems: 'center', justifyContent: 'center', height: 54 }}>
                 <TouchableOpacity
                   style={{ alignItems: 'center', justifyContent: 'center' }} // Assurer l'alignement vertical
                   onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
@@ -149,7 +149,7 @@ const BottomTabNavigation = () => {
                     color={COLORS.white}
                   />
                 </TouchableOpacity>
-                <Text style={{ color: COLORS.white, fontSize: 10, marginTop: 2 }}>Menu</Text>
+                <Text style={{ color: COLORS.white, fontSize: 12, marginTop: 1 }}>Menu</Text>
               </View>
             ),
           }}

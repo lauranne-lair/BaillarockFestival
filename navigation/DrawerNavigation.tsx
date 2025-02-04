@@ -2,6 +2,7 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import COLORS from '../constants/colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import BottomTabNavigation from './BottomTabNavigation';
 
 // Import des écrans
@@ -9,7 +10,7 @@ import Merch from '../screens/Merch';
 import Prevention from '../screens/Prevention';
 import Partenaire from '../screens/Partenaire';
 import CustomDrawerContent from '../components/CustomDrawerContent'; // Import du menu customisé
-
+import Parrainage from '../screens/Parrainage'
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
@@ -41,10 +42,10 @@ const DrawerNavigation = () => {
         name="Accueil"
         component={BottomTabNavigation}
         options={{
-          drawerLabel: 'Retour',
+          drawerLabel: ' Retour',
           title: 'Retour',
           drawerIcon: ({ color }) => (
-            <Ionicons name="home-outline" size={24} color={COLORS.white} />
+            <FontAwesome5 name="dragon" size={20} color={COLORS.white} />
           ),
         }}
       />
@@ -56,7 +57,7 @@ const DrawerNavigation = () => {
         options={{
           drawerLabel: 'Boutique Merch',
           drawerIcon: ({ color }) => (
-            <Ionicons name="cart-outline" size={24} color={COLORS.white} />
+            <Ionicons name="cart" size={24} color={COLORS.white} />
           ),
         }}
       />
@@ -68,7 +69,7 @@ const DrawerNavigation = () => {
         options={{
           drawerLabel: 'Prévention',
           drawerIcon: ({ color }) => (
-            <Ionicons name="shield-checkmark-outline" size={24} color={COLORS.white} />
+            <Ionicons name="shield-checkmark" size={24} color={COLORS.white} />
           ),
         }}
       />
@@ -80,7 +81,19 @@ const DrawerNavigation = () => {
         options={{
           drawerLabel: 'Partenaires',
           drawerIcon: ({ color }) => (
-            <Ionicons name="people-outline" size={24} color={COLORS.white} />
+            <Ionicons name="people" size={24} color={COLORS.white} />
+          ),
+        }}
+      />
+
+      {/* Parrainage */}
+      <Drawer.Screen
+        name="Parrainage"
+        component={Parrainage}
+        options={{
+          drawerLabel: 'Parrainage',
+          drawerIcon: ({ color }) => (
+            <FontAwesome5 name="hands-helping" size={24} color={COLORS.white} />
           ),
         }}
       />
