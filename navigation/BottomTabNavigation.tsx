@@ -1,11 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, View, TouchableOpacity, Image, Platform, Dimensions } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, Platform, Dimensions, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import COLORS from '../constants/colors';
-import styles from '../styles/BottomTabNavigation_Styles'
+import styles from '../styles/BottomTabNavigation_Styles';
 
 // Import des écrans
 import Home from '../screens/Accueil';
@@ -28,7 +28,7 @@ const BottomTabNavigation = () => {
     <Tab.Navigator
       initialRouteName="Accueil"
       screenOptions={{
-        tabBarShowLabel: false,
+        tabBarShowLabel: true, // Affichage des labels sous les icônes
         headerShown: false,
         tabBarStyle: {
           position: 'absolute',
@@ -47,8 +47,10 @@ const BottomTabNavigation = () => {
           shadowOpacity: 0.1,
           shadowOffset: { width: 0, height: 5 },
         },
-        tabBarIconStyle: {
-          margin: 15, 
+        tabBarLabelStyle: {
+          fontSize: 8,
+          marginTop: 2,
+          color: COLORS.white, // Couleur du texte
         },
       }}
     >
@@ -57,6 +59,7 @@ const BottomTabNavigation = () => {
         name="Programme"
         component={Programme}
         options={{
+          tabBarLabel: "Programme",
           tabBarIcon: ({ focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons
@@ -74,6 +77,7 @@ const BottomTabNavigation = () => {
         name="Bar"
         component={Bar}
         options={{
+          tabBarLabel: "Bar",
           tabBarIcon: ({ focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons
@@ -91,6 +95,7 @@ const BottomTabNavigation = () => {
         name="Accueil"
         component={Home}
         options={{
+          tabBarLabel: "",
           tabBarButton: (props) => (
             <View style={styles.centerContainer}>
               <TouchableOpacity
@@ -113,6 +118,7 @@ const BottomTabNavigation = () => {
         name="Village"
         component={Village}
         options={{
+          tabBarLabel: "Village",
           tabBarIcon: ({ focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons
@@ -127,23 +133,26 @@ const BottomTabNavigation = () => {
 
       {/* Onglet Menu */}
       <Tab.Screen
-        name="Menu"
-        component={Merch} 
-        options={{
-          tabBarButton: () => (
-            <TouchableOpacity
-              style={styles.menuButton}
-              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-            >
-              <MaterialCommunityIcons
-                name="menu"
-                size={iconSize}
-                color={COLORS.secondary}
-              />
-            </TouchableOpacity>
-          ),
-        }}
-      />
+          name="Menu"
+          component={() => null} // Empêche l'ouverture d'un écran
+          options={{
+            tabBarLabel: "",
+            tabBarButton: () => (
+              <TouchableOpacity
+                style={{ alignItems: 'center', justifyContent: 'center' }}
+                onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+              >
+                <MaterialCommunityIcons
+                  name="menu"
+                  size={iconSize}
+                  color={COLORS.secondary}
+                />
+                <Text style={{ color: COLORS.white, fontSize: 8, marginTop: 2 }}>Menu</Text>
+              </TouchableOpacity>
+            ),
+          }}
+        />
+
     </Tab.Navigator>
   );
 };
