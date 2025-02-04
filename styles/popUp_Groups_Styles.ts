@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Colors from '../constants/colors';
 
 export default StyleSheet.create({
     safeContainer: {
@@ -53,7 +54,7 @@ export default StyleSheet.create({
       position: 'absolute',
       zIndex: 10,
       padding: 10,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      backgroundColor: Colors.gray,
       borderRadius: 15,
     },
   });

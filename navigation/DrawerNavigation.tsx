@@ -34,7 +34,7 @@ const DrawerNavigation = () => {
         drawerLabelStyle: {
           color: COLORS.white,
           fontSize: 14,
-          marginLeft: -10,
+          marginLeft: -5,
         },
       }}
     >
