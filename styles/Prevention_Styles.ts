@@ -13,7 +13,6 @@ export default StyleSheet.create({
     },
     title: {
       fontSize: 28,
-      fontWeight: 'bold',
       color: Colors.dark.accent, 
       textAlign: 'center',
       marginBottom: 20,
@@ -25,7 +24,6 @@ export default StyleSheet.create({
       lineHeight: 26,
       textAlign: 'left',
       marginBottom: 20,
-      fontFamily: 'Capsmall_clean',
     },
     bulletPoint: {
       fontSize: 22,
