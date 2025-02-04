@@ -11,6 +11,7 @@ import Prevention from '../screens/Prevention';
 import Partenaire from '../screens/Partenaire';
 import CustomDrawerContent from '../components/CustomDrawerContent'; // Import du menu customisé
 import Parrainage from '../screens/Parrainage'
+import APropos from '../screens/Apropos'
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
@@ -93,7 +94,19 @@ const DrawerNavigation = () => {
         options={{
           drawerLabel: 'Parrainage',
           drawerIcon: ({ color }) => (
-            <FontAwesome5 name="hands-helping" size={24} color={COLORS.white} />
+            <FontAwesome5 name="hands-helping" size={20} color={COLORS.white} />
+          ),
+        }}
+      />
+
+      {/* APropos */}
+      <Drawer.Screen
+        name="À propos"
+        component={APropos}
+        options={{
+          drawerLabel: 'À propos',
+          drawerIcon: ({ color }) => (
+            <Ionicons name="information-circle-sharp" size={24} color={COLORS.white} />
           ),
         }}
       />

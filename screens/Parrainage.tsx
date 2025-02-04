@@ -58,8 +58,8 @@ export default function Parrainage() {
         </Text>
 
         {/* Section pour inviter un ami */}
-        <TouchableOpacity style={styles.inviteButton} onPress={() => alert("Lien de parrainage généré !")}>
-          <Text style={styles.inviteText}>📩 Inviter un ami</Text>
+        <TouchableOpacity style={style.inviteButton} onPress={() => alert("Lien de parrainage généré !")}>
+          <Text style={style.inviteText}>📩 Inviter un ami</Text>
         </TouchableOpacity>
 
         <Text style={styles.text}>
@@ -70,3 +70,15 @@ export default function Parrainage() {
     </View>
   );
 }
+
+
+
+const style = StyleSheet.create({
+  inviteText: {
+    color: Colors.white
+  },
+
+  inviteButton:{
+  
+  }
+});
