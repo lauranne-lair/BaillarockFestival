@@ -50,7 +50,6 @@ export default StyleSheet.create({
   },
   TitleText: {
     fontSize: 65,
-    fontWeight: 'bold',
     color: Colors.white,
     marginBottom: 20,
     textAlign: 'center',
