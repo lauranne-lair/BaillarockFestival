@@ -45,7 +45,7 @@ export default StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.blacktransparent7,
+    backgroundColor: Colors.blacktransparent5,
     paddingBottom: 50,
   },
   TitleText: {
@@ -138,7 +138,7 @@ export default StyleSheet.create({
   subtitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: Colors.greeninspi,
+    color: Colors.white,
     textAlign: 'center',
     textTransform: 'uppercase',
     marginBottom: 10,
