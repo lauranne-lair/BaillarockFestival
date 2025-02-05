@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Colors from '../constants/colors';
+
+const { width } = Dimensions.get('window')
 
 export default StyleSheet.create({
   safeContainer: {
@@ -49,7 +51,7 @@ export default StyleSheet.create({
     paddingBottom: 50,
   },
   TitleText: {
-    fontSize: 65,
+    fontSize: width* 0.15,
     color: Colors.white,
     marginBottom: 20,
     textAlign: 'center',
@@ -71,13 +73,13 @@ export default StyleSheet.create({
     fontFamily: 'Capsmall_clean',
   },
   countdownNumber: {
-    fontSize: 37,
+    fontSize: width* 0.09,
     fontWeight: 'bold',
     color: Colors.white,
     fontFamily: 'People',
   },
   countdownLabel: {
-    fontSize: 17,
+    fontSize: width* 0.04,
     fontWeight: 'normal',
     fontFamily: 'People',
     color: Colors.white,
