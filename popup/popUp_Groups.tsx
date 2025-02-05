@@ -34,17 +34,9 @@ export default function GroupModal({ visible, onClose, group }: GroupModalProps)
   const { width, height } = Dimensions.get('window'); // Récupération des dimensions de l'écran
 
   return (
-    <Modal animationType="slide" transparent={true} visible={visible}>
-      <SafeAreaView style={styles.safeContainer}> 
+    <Modal animationType="slide" transparent={true} visible={visible} onRequestClose={onClose}>
+      <SafeAreaView style={styles.safeContainer}>
         <View style={styles.modalContainer}>
-          {/* Icône de fermeture */}
-          <TouchableOpacity 
-            style={[styles.closeButton, { top: Platform.OS === 'ios' ? height * 0.02 : height * 0.01, right: width * 0.01 }]} 
-            onPress={onClose}
-          >
-            <FontAwesome name="times" size={30} color="green" />
-          </TouchableOpacity>
-
           {/* Bannière avec image de fond */}
           <View style={styles.banner}>
             <ImageBackground source={group.bannerImage} style={styles.bannerBackground} resizeMode="cover">
@@ -72,6 +64,11 @@ export default function GroupModal({ visible, onClose, group }: GroupModalProps)
               ))}
             </View>
           </View>
+
+          {/* Barre de fermeture en bas */}
+          <TouchableOpacity style={styles.closeBar} onPress={onClose}>
+            <Text style={styles.closeText}>Fermer</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </Modal>

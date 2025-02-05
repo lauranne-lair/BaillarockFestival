@@ -50,12 +50,23 @@ export default StyleSheet.create({
     socialIcon: {
       marginHorizontal: 10,
     },
-    closeButton: {
+    closeBar: {
+      backgroundColor: Colors.black,
+      paddingVertical: 15,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
       position: 'absolute',
-      zIndex: 10,
-      padding: 10,
-      backgroundColor: Colors.gray,
-      borderRadius: 15,
+      bottom: 0,
+      borderTopLeftRadius: 10,
+      borderTopRightRadius: 10,
+    },
+    
+    closeText: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: 'white',
+      textTransform: 'uppercase',
     },
   });
   
