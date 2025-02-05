@@ -13,6 +13,8 @@ import Bar from '../screens/Bar';
 import Programme from '../screens/Programmation';
 import Merch from '../screens/Merch';
 import Village from '../screens/Village';
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator();
 const { width, height } = Dimensions.get("window");
@@ -121,8 +123,8 @@ const BottomTabNavigation = () => {
           tabBarLabel: "Village",
           tabBarIcon: ({ focused }) => (
             <View style={styles.iconContainer}>
-              <Ionicons
-                name={focused ? 'home' : 'home-outline'}
+              <MaterialIcons
+                name={focused ? 'storefront' : 'storefront'}
                 size={iconSize}
                 color={focused ? COLORS.secondary : COLORS.white}
               />
