@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {  Modal,  View,  Text,  TouchableOpacity,  ImageBackground,  SafeAreaView,  Linking,  Dimensions,  Platform } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, ImageBackground, SafeAreaView, Linking, Dimensions } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import styles from '../styles/popUp_Partenaires'
+import styles from '../styles/popUp_Partenaires';
 
 export type Part = {
   name: string;
@@ -32,24 +32,14 @@ export default function PartModal({ visible, onClose, part }: PartModalProps) {
 
   const openLink = (url: string) => {
     Linking.openURL(url).catch(() => {
-      alert('Impossible d\'ouvrir le lien.');
+      alert("Impossible d'ouvrir le lien.");
     });
   };
 
-  const { width, height } = Dimensions.get('window');
-
   return (
-    <Modal animationType="slide" transparent={true} visible={visible}>
+    <Modal animationType="slide" transparent={true} visible={visible} onRequestClose={onClose}>
       <SafeAreaView style={styles.safeContainer}>
         <View style={styles.modalContainer}>
-          
-          {/* Icône de fermeture */}
-          <TouchableOpacity 
-            style={[styles.closeButton, { top: Platform.OS === 'ios' ? height * 0.01 : height * 0.01, right: width * 0.01 }]} 
-            onPress={onClose}
-          >
-            <FontAwesome name="times" size={30} color="green" />
-          </TouchableOpacity>
 
           {/* Bannière avec image de fond */}
           <View style={styles.banner}>
@@ -61,7 +51,7 @@ export default function PartModal({ visible, onClose, part }: PartModalProps) {
             </ImageBackground>
           </View>
 
-          {/* Contenu de la description */}
+          {/* Contenu principal */}
           <View style={styles.content}>
             <Text style={styles.description}>{part.description}</Text>
 
@@ -79,6 +69,12 @@ export default function PartModal({ visible, onClose, part }: PartModalProps) {
               ))}
             </View>
           </View>
+
+          {/* Barre de fermeture en bas */}
+          <TouchableOpacity style={styles.closeBar} onPress={onClose}>
+            <Text style={styles.closeText}>Fermer</Text>
+          </TouchableOpacity>
+
         </View>
       </SafeAreaView>
     </Modal>
