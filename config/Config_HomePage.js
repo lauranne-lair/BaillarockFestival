@@ -2,6 +2,7 @@
 import video from '../assets/videos/videohomepage.mp4';
 import image from '../assets/images/Dragon.png';
 import siteMap from '../assets/images/Plan_baillarock.png';
+import arrowAnimation from '../assets/animation/Arrow3.json';
 
 
 // Localisation de la salle
@@ -33,6 +34,7 @@ export const homeConfig = {
     website: "https://www.baillarockfestival.fr/"
   },
   assets: {
+    arrowAnimation,
     video, // Fichier vidéo de la page d'accueil
     image, // Image de fond lorsque l'on fait glisser vers le bas pour cacher la vidéo
     siteMap, // Plan du site

@@ -12,6 +12,7 @@ import { ThemedView } from '../components/ThemedView';
 import styles from '../styles/Accueil_Styles';
 
 import * as Font from 'expo-font';
+import LottieView from 'lottie-react-native';
 
 const Home: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -149,6 +150,14 @@ const Home: React.FC = () => {
                 </TouchableOpacity>
               </>
             )}
+            <View style={styles.ArrowAnimation}>
+              <LottieView 
+              source={homeConfig.assets.arrowAnimation} // 🔥 Utilisation correcte du fichier JSON
+              autoPlay
+              loop
+              style={styles.ArrowAnimation} 
+              />
+            </View>
           </View>
         </View>
 
