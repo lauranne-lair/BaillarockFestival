@@ -6,11 +6,11 @@ const { width, height } = Dimensions.get('window')
 export default StyleSheet.create({
   ArrowAnimation: {
     position: 'absolute',
-    top: height * 0.38,   // 🔥 Ajuste la position verticale (modifiable)
-    left: '50%',          // 🔥 Positionne la flèche au centre de l'écran
-    transform: [{ translateX: -60 }], // 🔥 Centre la flèche en tenant compte de sa nouvelle largeur
-    width: 120,           // 🔥 Augmente la largeur
-    height: 80,          // 🔥 Augmente la hauteur
+    top: height * 0.38,   
+    left: '50%',          
+    transform: [{ translateX: -60 }], 
+    width: 120,           
+    height: 80,          
   },
   
   safeContainer: {

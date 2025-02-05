@@ -1,8 +1,9 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { CommonActions, useNavigation } from '@react-navigation/native';
 import COLORS from '../constants/colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import BottomTabNavigation from './BottomTabNavigation';
 
 // Import des écrans
@@ -10,11 +11,14 @@ import Merch from '../screens/Merch';
 import Prevention from '../screens/Prevention';
 import Partenaire from '../screens/Partenaire';
 import CustomDrawerContent from '../components/CustomDrawerContent'; // Import du menu customisé
-import Parrainage from '../screens/Parrainage'
-import APropos from '../screens/Apropos'
+import Parrainage from '../screens/Parrainage';
+import APropos from '../screens/Apropos';
+
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
+  const navigation = useNavigation(); // 🔥 Permet d'intercepter la navigation pour la rediriger
+
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />} // Ajout du menu personnalisé
@@ -38,16 +42,27 @@ const DrawerNavigation = () => {
         },
       }}
     >
-      {/* Accueil */}
+      {/* 🔥 Accueil - Redirection forcée vers Accueil */}
       <Drawer.Screen
         name="Accueil"
         component={BottomTabNavigation}
         options={{
-          drawerLabel: ' Retour',
-          title: 'Retour',
+          drawerLabel: 'Retour à l’Accueil',
+          title: 'Retour à l’Accueil',
           drawerIcon: ({ color }) => (
             <FontAwesome5 name="dragon" size={20} color={COLORS.white} />
           ),
+        }}
+        listeners={{
+          drawerItemPress: (e) => {
+            e.preventDefault(); // 🔥 Empêche la navigation normale
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 0,
+                routes: [{ name: 'Drawer', params: { screen: 'Accueil' } }], // 🔥 Va directement à l'onglet Accueil
+              })
+            );
+          },
         }}
       />
 
@@ -99,7 +114,7 @@ const DrawerNavigation = () => {
         }}
       />
 
-      {/* APropos */}
+      {/* À Propos */}
       <Drawer.Screen
         name="À propos"
         component={APropos}
