@@ -20,28 +20,50 @@ export default StyleSheet.create({
     },
     text: {
       fontSize: 18,
-      color: '#fff',
+      color: Colors.white,
       lineHeight: 26,
       textAlign: 'left',
       marginBottom: 20,
     },
-    bulletPoint: {
-      fontSize: 22,
-      color: Colors.dark.accent,
+    sectionContainer: {
+      alignSelf: 'stretch', 
+      width: '100%', 
+      marginBottom: 10, 
     },
-    backButton: {
+    sectionTitle: {
+      fontSize: 20,
+      color: Colors.white,
+      fontWeight: 'bold',
+      marginBottom: 5,
+      textAlign: 'left',
+    },
+    bulletPointContainer: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingLeft: 10,
+      marginBottom: 5,
     },
-    backText: {
-      marginLeft: 5,
-      color: Colors.greeninspi,
-      fontSize: 20,
+    bulletPointText: {
+      fontSize: 18,
+      color: Colors.white,
+      lineHeight: 26,
+      textAlign: 'left', 
+      flexShrink: 1,
+    },
+    bulletPoint: {
+      fontSize: 24,
+      color: Colors.dark.accent,
+      margin: 5,
+    },
+    closingText: {
+      fontSize: 18,
+      color: Colors.white,
+      marginTop: 10,
+      textAlign: 'center',
     },
     menuButton: {
       flexDirection: 'row',
       alignItems: 'center',
       paddingRight: 10,
     },
+      
   });

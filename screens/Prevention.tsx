@@ -51,17 +51,21 @@ export default function Prevention() {
         <Text style={styles.title}>{preventionConfig.title}</Text>
 
         {preventionConfig.sections.map((section, index) => (
-          <View key={index}>
-            <Text style={styles.text}>{section.title}</Text>
-            {section.points.map((point, idx) => (
-              <Text key={idx} style={styles.text}>
-                <Text style={styles.bulletPoint}>•</Text> {point}
-              </Text>
+          <View key={index} style={styles.sectionContainer}> 
+            <Text style={styles.sectionTitle}>{section.title}</Text> 
+
+            {section.points.map((point, i) => (
+              <View key={i} style={styles.bulletPointContainer}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletPointText}>{point}</Text>
+              </View>
             ))}
           </View>
         ))}
 
-        <Text style={styles.text}>{preventionConfig.closingText}</Text>
+
+
+        <Text style={styles.closingText}>{preventionConfig.closingText}</Text>
       </ScrollView>
     </View>
   );
