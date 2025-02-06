@@ -125,15 +125,15 @@ function DayScreen({ groups, festivalDate }: DayScreenProps) {
       >
         <View style={styles.videoContainer}>
           {isCurrent && item.videoBackground && (
+            <View style={[styles.videoContainer]}>
             <Video
-              source={{ uri: item.videoBackground }}
+              source={typeof item.videoBackground === 'string' ? { uri: item.videoBackground } : item.videoBackground}
               style={styles.videoBackground}
               shouldPlay
               isLooping
               resizeMode="cover"
-              muted
-              onError={(error) => console.log('Erreur de vidéo:', error)}
             />
+          </View>
           )}
         </View>
   
@@ -220,7 +220,7 @@ export default function Programme() {
         }}
       >
         <Tab.Screen name="Ven. 23 Mai">
-          {() => <DayScreen groups={dayOneGroups} festivalDate="2025-05-23" />}
+          {() => <DayScreen groups={dayOneGroups} festivalDate="2025-02-05" />}
         </Tab.Screen>
         <Tab.Screen name="Sam. 24 Mai">
           {() => <DayScreen groups={dayTwoGroups} festivalDate="2025-05-24" />}

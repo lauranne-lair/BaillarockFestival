@@ -9,7 +9,6 @@ export const dayOneGroups: Group[] = [
     endTime: '18:45', 
     image: require('../assets/images/programmation/logo_kibosh.png'),
     bannerImage: require('../assets/images/programmation/Affiche_KIBOSH.jpg'), 
-    videoBackground:require('../assets/videos/videohomepage.mp4'), 
     description: 'Kibosh est un groupe de metal hardcore né à Bordeaux en 2021,se distinguant par une musique incisive et chaotique.\n\nLeur son unique fusionne des influences variées, allant du metal extrême à l\'emo, tout en conservant une énergie et une intensité résolument punk hardcore.' ,
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/kiboshkiboshkibosh/?_rdr" },
@@ -70,7 +69,7 @@ export const dayOneGroups: Group[] = [
     endTime: '23:00', 
     image: require('../assets/images/programmation/logo_satanicsurfers.png'), 
     bannerImage: require('../assets/images/programmation/Affiche_SatanicSurfers.jpg'), 
-    description: 'pas de description',
+    description: 'Les punks suédois Satanic Surfers se sont formés à l’automne 1989 autour du chanteur Erik et du batteur Rodrigo; le guitariste Frederick et Magnus ont rapidement rejoint la formation, tout comme le bassiste Tomek, bien que le premier album du groupe, Skate to Hell, n’apparaisse qu’en 1993. Le chanteur Ulf remplace Erik pour la suite, Keep Out de 1994, et avec le départ ultérieur de Ulf, Rodrigo accepte d’assumer des fonctions vocales pour Hero of Our Time, publié l’année suivante.\n\n666 Motor Inn a suivi en 1997, et après avoir terminé Going Nowhere Fast en 1999, Tomek a quitté les Satanic Surfers pour être remplacé par le bassiste Matthias. Au milieu de l’année 2000, le groupe publie Songs from the Crypt et Fragments and Fractions. Le groupe a ajouté le batteur Martin Svensson pour les tournées et est revenu en studio début 2002. Les résultats, Unconsciously Confined, sont sortis au printemps de la même année.',
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/satanic.surfers.official" },
       { name: "link", url: "https://satanicsurfers.bandcamp.com/?fbclid=IwY2xjawIASh9leHRuA2FlbQIxMAABHR-NkjINH15KIAZPypxQpIII9pDeAifco9JmII6Wj-to9cUfso-d09-2cA_aem_vufVR8v6UUsCzpzfraBwGA" },
@@ -148,7 +147,7 @@ export const dayTwoGroups: Group[] = [
     endTime: '20:45', 
     image: require('../assets/images/programmation/logo_noturningback.png'), 
     bannerImage: require('../assets/images/programmation/affiche_noturningback.jpg'), 
-    description: 'pas encore de description pour ce groupe',
+    description: 'Depuis plus de deux décennies, No Turning Back est une force inébranlable dans la scène hardcore, qui bat avec l’énergie du genre. Depuis sa création en 1997, cette force néerlandaise a démontré qu’avec une détermination implacable, une persévérance trempée de sueur et la foi dans ses aspirations, tout est possible. En parcourant le monde sans relâche, laissant des scènes en ruine et des échos de leurs hymnes dans leur sillage, No Turning Back a écrit son propre chapitre dans le manuel DIY.\n\nAvec une discographie très étendue, comptant dix disques hardcore réputés et publiés dans le monde entier sur différents labels, le groupe a consolidé son statut de pierre angulaire de la communauté hardcore mondiale. Leur musique est caractérisée par des sillons sismiques, des transitions rapides et des chants anthémiques qui résonnent dans la moelle de vos os.',
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/NoTurningBackHC" },
       { name: "spotify", url: "https://open.spotify.com/intl-fr/album/729WkK6B60buewwoIShyvK?si=aOdEWZVJTuO3xZ-a9cUmRg&nd=1&dlsi=96fade1912304a1c" },
