@@ -27,7 +27,7 @@ export default StyleSheet.create({
     },
     bulletPoint: {
       fontSize: 22,
-      color: Colors.greeninspi,
+      color: Colors.dark.accent,
     },
     backButton: {
       flexDirection: 'row',
@@ -42,6 +42,6 @@ export default StyleSheet.create({
     menuButton: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingRight: 10, // Bouton aligné à droite
+      paddingRight: 10,
     },
   });

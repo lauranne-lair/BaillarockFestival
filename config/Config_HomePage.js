@@ -55,8 +55,8 @@ export const homeConfig = {
         color: 'rgba(132, 132, 132, 0.7)' 
       },       
       website: { 
-        icon: "web", 
-        iconType: "MaterialIcons", 
+        icon: "link", 
+        iconType: "FontAwesome", 
         color: 'rgba(132, 132, 132, 0.7)' 
       },       
     }

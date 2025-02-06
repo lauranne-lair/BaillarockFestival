@@ -5,7 +5,7 @@ import { Video } from 'expo-av';
 import GroupModal from '../popup/popUp_Groups';
 import { dayOneGroups, dayTwoGroups } from '../data/groupsData';
 import styles from '../styles/Programmation_Styles'
-import Colors from '../constants/colors';
+import { programmationConfig } from "../config/Config_Programmation";
 
 const { width, height } = Dimensions.get('window');
 
@@ -191,40 +191,17 @@ const Tab = createMaterialTopTabNavigator();
 export default function Programme() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Tab.Navigator
-        screenOptions={{
-          swipeEnabled: true,
-          tabBarLabelStyle: {
-            fontSize: 22,
-            fontWeight: 'bold',
-            textTransform: 'none',
-            color: Colors.white,
-            textAlign: 'center',
-            width: '100%',
-          },
-          tabBarStyle: {
-            height: 80,
-            backgroundColor: Colors.black,
-            elevation: 5,
-            shadowColor: Colors.black,
-            shadowOpacity: 0.2,
-            shadowRadius: 4,
-            justifyContent: 'center',
-          },
-          tabBarIndicatorStyle: {
-            backgroundColor: Colors.dark.accent,
-            height: 4,
-            borderRadius: 2,
-          },
-          tabBarPressColor: Colors.accent,
-        }}
-      >
-        <Tab.Screen name="Ven. 23 Mai">
-          {() => <DayScreen groups={dayOneGroups} festivalDate="2025-02-05" />}
-        </Tab.Screen>
-        <Tab.Screen name="Sam. 24 Mai">
-          {() => <DayScreen groups={dayTwoGroups} festivalDate="2025-05-24" />}
-        </Tab.Screen>
+      <Tab.Navigator screenOptions={programmationConfig.tabNavigatorOptions}>
+        {programmationConfig.festivalDates.map((festival, index) => (
+          <Tab.Screen key={index} name={festival.name}>
+            {() => (
+              <DayScreen
+                groups={index === 0 ? dayOneGroups : dayTwoGroups}
+                festivalDate={festival.date}
+              />
+            )}
+          </Tab.Screen>
+        ))}
       </Tab.Navigator>
     </SafeAreaView>
   );

@@ -17,8 +17,7 @@ const Merch: React.FC = () => {
 
   useEffect(() => {
     navigation.setOptions({
-      title: 'Merchandising',
-      headerLeft: () => null, // Supprime le bouton par défaut à gauche
+      headerLeft: () => null,
       headerRight: () => ( // Bouton "Menu" personnalisé à droite
         <TouchableOpacity
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} // Ouvre le menu latéral

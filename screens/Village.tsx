@@ -5,6 +5,8 @@ import { backgroundImage, Exposants } from '../data/ExposantsData';
 import { Food } from '../data/FoodData';
 import * as Font from 'expo-font';
 import styles from '../styles/Village_Styles'
+import { villageConfig } from '../config/Config_Village';
+
 
 const { width } = Dimensions.get('window');
 const CONTAINER_WIDTH = width / 2 - 60;
@@ -67,7 +69,9 @@ export default function Village() {
     <ImageBackground source={backgroundImage} style={styles.backgroundImage} resizeMode="cover">
       <View style={styles.screenContainer}>
         {/* Section Exposants */}
-        <Text style={[styles.pageTitle, styles.expoTitle]}>Exposants</Text>
+        <Text style={[styles.pageTitle, styles.expoTitle]}>
+          {villageConfig.sectionTitles.exposants}
+        </Text>
         <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
           {Exposants.map((item) => (
             <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
@@ -78,8 +82,10 @@ export default function Village() {
         </ScrollView>
 
         {/* Section Food */}
-        <Text style={[styles.pageTitle, styles.foodTitle]}>Food</Text>
-        <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
+        <Text style={[styles.pageTitle, styles.foodTitle]}>
+          {villageConfig.sectionTitles.food}
+        </Text>
+        <ScrollView {...villageConfig.scrollViewOptions}>
           {Food.map((item) => (
             <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
               <Image style={styles.foodImage} source={item.image} resizeMode="contain" />

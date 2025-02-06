@@ -8,7 +8,6 @@ const MerchConfig = {
       part: require('../assets/images/Merch/part.png'),
     },
     texts: {
-      title: 'Merchandising',
       backText: 'Retour',
     },
     colors: {
