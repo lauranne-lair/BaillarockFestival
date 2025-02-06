@@ -36,8 +36,8 @@ export const Partenaires: ListPartners[] = [
     image: require('../assets/images/Logo_Part/Grand_Poitiers/Logo_GrandPoitiers.png'),
     imageBG: require('../assets/images/Logo_Part/Grand_Poitiers/Bg_GrandPoitiers.png'),
     socialLinks: [
-      { name: "facebook", url: "https://www.instagram.com/grandpoitiers/?hl=fr" },
-      { name: "instagram", url: "https://fr-fr.facebook.com/GrandPoitiers/" },
+      { name: "facebook", url: "https://fr-fr.facebook.com/GrandPoitiers/" },
+      { name: "instagram", url: "https://www.instagram.com/grandpoitiers/?hl=fr" },
       { name: "website", url: "https://www.grandpoitiers.fr/" },
     ],
   },
@@ -57,12 +57,67 @@ export const Partenaires: ListPartners[] = [
 
 
   {
-    id: '2',
+    id: '5',
     name: 'Crédit Agricole',
     genre: 'Banque',
     description:'Description Crédit Agricole',
-    image: require('../assets/images/Logo_Part/CA.png'),
-    imageBG: require('../assets/images/Logo_Part/CA.png'),
+    image: require('../assets/images/Logo_Part/Credit_Agricole/CA.png'),
+    imageBG: require('../assets/images/Logo_Part/Credit_Agricole/CA.png'),
+    socialLinks: [
+      { name: "facebook", url: "https://www.facebook.com/CreditAgricole" },
+      { name: "instagram", url: "https://www.instagram.com/creditagricole/" },
+      { name: "website", url: "https://www.credit-agricole.fr/" },
+    ],
+  },
+
+  {
+    id: '6',
+    name: 'Square Habitat',
+    genre: 'Réseau d\'agences immobilières',
+    description:'Description Square Habitat',
+    image: require('../assets/images/Logo_Part/Square_Habitat/SquareHabitat_logo.jpg'),
+    imageBG: require('../assets/images/Logo_Part/Square_Habitat/SquareHabitat_bg.jpg'),
+    socialLinks: [
+      { name: "facebook", url: "https://www.facebook.com/SquareHabitatCA" },
+      { name: "instagram", url: "https://www.instagram.com/squarehabitatfrance/" },
+      { name: "website", url: "https://www.squarehabitat.fr/" },
+    ],
+  },
+
+  {
+    id: '7',
+    name: 'American Socks',
+    genre: 'Boutique en ligne',
+    description:'A travers vos pieds, American Socks se veut le reflet des cultures alternatives et du streetwear. Fondée en 2013, la marque a commencé à rééditer et à améliorer les chaussettes à rayures classiques utilisées par les premiers skateurs dans les années 80.\n\nNous avons pris la route pour participer à des festivals de musique et de sports dans toute l\'Europe, construisant une communauté de #Sockers, tout en améliorant et en développant de nouvelles générations de produits originaux inspirés par la musique rock, la culture des tatouages et les sports extrêmes. Nous sommes la marque audacieuse et excentrique qui ose se différencier par le design.\n\nNous sommes basés à Barcelone, mais vous pouvez trouver nos produits dans des magasins de skate et de streetwear dans plus de 25 pays.',
+    image: require('../assets/images/Logo_Part/American_Socks/AmericanSocks_logo.jpg'),
+    imageBG: require('../assets/images/Logo_Part/American_Socks/AmericanSocks_bg.png'),
+    socialLinks: [
+      { name: "facebook", url: "https://www.facebook.com/AmericanSocks/" },
+      { name: "instagram", url: "https://www.instagram.com/americansocks/" },
+      { name: "website", url: "https://www.americansocks.com/fr-fr" },
+    ],
+  },
+
+  {
+    id: '8',
+    name: 'Studio Ludo',
+    genre: 'Photographie et impression numérique',
+    description:'Le Studio LUDO, installé à Poitiers depuis 30 ans, met chaque jour à votre service le meilleur de la technique dans les domaines de la photographie et de l\'impression numérique.',
+    image: require('../assets/images/Logo_Part/Studio_Ludo/StudioLudo_logo.jpg'),
+    imageBG: require('../assets/images/Logo_Part/Studio_Ludo/StudioLudo_bg.jpg'),
+    socialLinks: [
+      { name: "facebook", url: "https://www.facebook.com/profile.php?id=100063639638554" },
+      { name: "website", url: "https://www.studioludo.com/" },
+    ],
+  },
+
+  {
+    id: '9',
+    name: 'Bee Factory',
+    genre: 'Sérigraphie',
+    description:'?',
+    image: require('../assets/images/Logo_Part/Credit_Agricole/CA.png'),
+    imageBG: require('../assets/images/Logo_Part/Credit_Agricole/CA.png'),
     socialLinks: [
       { name: "facebook", url: "https://www.instagram.com/creditagricole/" },
       { name: "instagram", url: "https://www.facebook.com/CreditAgricole" },
