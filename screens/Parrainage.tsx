@@ -39,7 +39,7 @@ export default function Parrainage() {
   return (
     <View style={styles.screenContainer}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <Text style={styles.title}>Qu'est ce que le Parrainage ?</Text>
+        <Text style={styles.title}>{parrainageConfig.title}</Text>
         <Text style={styles.text}>{parrainageConfig.messages.intro}</Text>
         {parrainageConfig.messages.steps.map((step, index) => (
           <View key={index} style={styles.bulletPointContainer}>
