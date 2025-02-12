@@ -30,6 +30,7 @@ export default StyleSheet.create({
       fontFamily: 'RockSalt',
       textAlign: 'center',
       marginBottom: 20,
+      alignSelf: 'center',
     },
     topImage: {
       width: 360,

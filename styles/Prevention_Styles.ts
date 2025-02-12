@@ -17,6 +17,7 @@ export default StyleSheet.create({
       textAlign: 'center',
       marginBottom: 20,
       fontFamily: 'Capsmall_clean', 
+      alignSelf: 'center',
     },
     text: {
       fontSize: 18,

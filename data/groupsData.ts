@@ -7,7 +7,7 @@ export const dayOneGroups: Group[] = [
     genre: 'Metal / Hardcore', 
     startTime: '18:00', 
     endTime: '18:45', 
-    image: require('../assets/images/programmation/logo_kibosh.png'),
+    image: require('../assets/images/programmation/logo_kibosh.jpg'),
     bannerImage: require('../assets/images/programmation/Affiche_KIBOSH.jpg'), 
     description: 'Kibosh est un groupe de metal hardcore né à Bordeaux en 2021,se distinguant par une musique incisive et chaotique.\n\nLeur son unique fusionne des influences variées, allant du metal extrême à l\'emo, tout en conservant une énergie et une intensité résolument punk hardcore.' ,
     socialLinks: [
@@ -22,7 +22,7 @@ export const dayOneGroups: Group[] = [
     genre: 'Hardcore', 
     startTime: '19:00', 
     endTime: '19:45', 
-    image: require('../assets/images/programmation/logo_whoiam.png'),
+    image: require('../assets/images/programmation/logo_whoiam.jpg'),
     bannerImage: require('../assets/images/programmation/affiche_whoiam.jpg'), 
     description: 'Tout droit débarqué de la côte de Los Angoulemes, plus sobrement connu sous le nom d’Angoulême, Who I Am arpente la scène depuis près de dix ans à grands coups de mosh parts et de 2-step.\n\nAprès plusieurs changements de line up, le groupe a trouvé son rythme de croisière à cinq sur scène et sortira un nouvel album en 2025 enregistré en Angleterre au Studio 6 (Malevolence, Guilt Trip, Brutality Will Prevail).\n\nSe détachant petit à petit du NYHC, la formation intègre désormais des teintes plus métallisées et new school, influencée par des groupes comme Incendiary, Suburban Scum, ou Terror.' ,
     socialLinks: [
@@ -37,7 +37,7 @@ export const dayOneGroups: Group[] = [
     genre: 'Death Metal', 
     startTime: '20:00', 
     endTime: '20:45', 
-    image: require('../assets/images/programmation/logo_akiavel.png'),
+    image: require('../assets/images/programmation/logo_akiavel.jpg'),
     bannerImage: require('../assets/images/programmation/Band_Akiavel.jpg'),  
     description: 'Akiavel est un groupe de Death Metal originaire de la région PACA formé en 2018 par Chris (guitare), Jay (basse), Auré (chant) et Butch (batterie).\n\nLe groupe sort son premier EP "Akiavel" en décembre 2018, disponible sur toutes les plateformes de streaming, et montre ainsi sa marque de fabrique, mêlant groove, thrash et death metal "old-school", mâtiné de riffs mélodiques et de rythmiques lourdes aux sonorités hardcore.\n\nLe groupe puise ses multiples influences dans les groupes mythiques tels que Gojira, Metallica, Trivium, Morbid Angel, Deicide, Obituary, Cannibal Corpse ou Testament.',
     socialLinks: [
@@ -52,7 +52,7 @@ export const dayOneGroups: Group[] = [
     genre: 'Punk/Hardcore Fusion', 
     startTime: '21:00', 
     endTime: '21:45', 
-    image: require('../assets/images/programmation/logo_slope.png'), 
+    image: require('../assets/images/programmation/logo_slope.jpg'), 
     bannerImage: require('../assets/images/programmation/affiche_slope.jpg'), 
     description: 'Un mélange explosif de Punk et Hardcore tout droit venu d’Allemagne.',
     socialLinks: [
@@ -67,7 +67,7 @@ export const dayOneGroups: Group[] = [
     genre: 'Skate Punk', 
     startTime: '22:00', 
     endTime: '23:00', 
-    image: require('../assets/images/programmation/logo_satanicsurfers.png'), 
+    image: require('../assets/images/programmation/logo_satanicsurfers.jpg'), 
     bannerImage: require('../assets/images/programmation/Affiche_SatanicSurfers.jpg'), 
     description: 'Les punks suédois Satanic Surfers se sont formés à l’automne 1989 autour du chanteur Erik et du batteur Rodrigo; le guitariste Frederick et Magnus ont rapidement rejoint la formation, tout comme le bassiste Tomek, bien que le premier album du groupe, Skate to Hell, n’apparaisse qu’en 1993. Le chanteur Ulf remplace Erik pour la suite, Keep Out de 1994, et avec le départ ultérieur de Ulf, Rodrigo accepte d’assumer des fonctions vocales pour Hero of Our Time, publié l’année suivante.\n\n666 Motor Inn a suivi en 1997, et après avoir terminé Going Nowhere Fast en 1999, Tomek a quitté les Satanic Surfers pour être remplacé par le bassiste Matthias. Au milieu de l’année 2000, le groupe publie Songs from the Crypt et Fragments and Fractions. Le groupe a ajouté le batteur Martin Svensson pour les tournées et est revenu en studio début 2002. Les résultats, Unconsciously Confined, sont sortis au printemps de la même année.',
     socialLinks: [
@@ -85,7 +85,7 @@ export const dayTwoGroups: Group[] = [
     genre: 'Heavy Pop-punk', 
     startTime: '16:00', 
     endTime: '16:45', 
-    image: require('../assets/images/programmation/logo_mirabelle.png'), 
+    image: require('../assets/images/programmation/logo_mirabelle.jpg'), 
     bannerImage: require('../assets/images/programmation/Affiche_mirabelle.png'), 
     description: 'mirabelle. est un quatuor de Heavy Pop-Punk parisien fondé en 2021. Très inspiré par la scène américaine du début des années 2010, le groupe effleure les sujets des plus joyeux aux plus sombres avec une touche de nihilisme teintée de joie de vivre.\n\nAprès un premier EP en 2023, le groupe viendra défendre sur les routes françaises leur premier album « Welcome To My Funeral » disponible en septembre 2024.',
     socialLinks: [
@@ -115,7 +115,7 @@ export const dayTwoGroups: Group[] = [
     genre: 'Crossover - Thrash/Metal/Hardcore', 
     startTime: '18:00', 
     endTime: '18:45', 
-    image: require('../assets/images/programmation/logo_eightsins.png'), 
+    image: require('../assets/images/programmation/logo_eightsins.jpg'), 
     bannerImage: require('../assets/images/programmation/Affiche_eightsins.jpg'), 
     description: 'BEERS & MOSHPIT : Deux mots qui définissent parfaitement EIGHT SINS\n\nGroupe de crossover (metal-hardcore, thrash), fondé en 2006 par une bande de potes animés par le même objectif et la même passion : donner le meilleur d\'eux-mêmes sur scène quoiqu’il arrive.\n\nEight Sins est clairement influencé par le thrash américain ainsi que par la scène hardcore de New York.\n\nLeur musique est rapide, lourde, précise et taillée pour le live. Après plus de dix ans d\'existence, six enregistrements studio, plusieurs clips musicaux originaux et de nombreux concerts en Europe, le groupe s\'est forgé une solide réputation dans la scène metal française.',
     socialLinks: [
@@ -130,7 +130,7 @@ export const dayTwoGroups: Group[] = [
     genre: 'Slipknot cover band', 
     startTime: '19:00', 
     endTime: '19:45', 
-    image: require('../assets/images/programmation/logo_earlymaggots.png'), 
+    image: require('../assets/images/programmation/logo_earlymaggots.jpg'), 
     bannerImage: require('../assets/images/programmation/Affiche_Earlymaggots.jpg'), 
     description: 'L\'esprit de EARLY MAGGOTS est né de la volonté de faire connaitre et perdurer l’œuvre de SLIPKNOT en live.\n\nCe groupe, fruit d\'une rencontre entre membres expérimentés de la scène métal française n\'a qu\'un but : transmettre leur passion aux néophytes et satisfaire les Maggots de la première heure.\n\nA travers l\'imagerie et les morceaux les plus emblématiques de SLIPKNOT, EARLY MAGGOTS a bien l\'intention de faire vivre au public une expérience dans les coins les plus sombres de l\'Iowa.',
     socialLinks: [

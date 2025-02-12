@@ -1,4 +1,5 @@
 export const parrainageConfig = {
+  title: "Qu'est ce que le Parrainage ?",
   messages: {
     intro: "Tous les ans, lors du festival, United We Fest soutient une association dont l’action correspond aux valeurs de cœur de ses membres.",
     steps: [

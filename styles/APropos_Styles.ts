@@ -17,9 +17,10 @@ export default StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
       color: Colors.white,
-      textAlign: 'left',
+      textAlign: 'center',
       marginBottom: 20,
       fontFamily: 'Capsmall_clean',
+      alignSelf: 'center',
     },
     sectionTitle: {
       fontSize: 18,

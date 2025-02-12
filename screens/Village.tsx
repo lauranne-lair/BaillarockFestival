@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Dimensions, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text, Dimensions, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
 import ExpoModal from '../popup/popUp_Expo';
 import { backgroundImage, Exposants } from '../data/ExposantsData';
 import { Food } from '../data/FoodData';
@@ -63,44 +63,47 @@ export default function Village() {
   }
 
   return (
-    <ImageBackground source={backgroundImage} style={styles.backgroundImage} resizeMode="cover">
-      <ScrollView 
-        style={{ flex: 1 }}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} 
-        keyboardShouldPersistTaps="handled"
-      >
-        <View style={styles.screenContainer}>
-          
-          {/* Section Exposants */}
-          <Text style={[styles.pageTitle, styles.expoTitle]}>
-            {villageConfig.sectionTitles.exposants}
-          </Text>
-          <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
-            {Exposants.map((item) => (
-              <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
-                <Image style={styles.expoImage} source={item.image} resizeMode="contain" />
-                <Text style={styles.expoName}>{item.name || 'Nom inconnu'}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageBackground source={backgroundImage} style={styles.backgroundImage} resizeMode="cover">
+        <ScrollView 
+          style={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}
+          keyboardShouldPersistTaps="handled"
+        >
+          <View style={styles.screenContainer}>
 
-          {/* Section Food */}
-          <Text style={[styles.pageTitle, styles.foodTitle]}>
-            {villageConfig.sectionTitles.food}
-          </Text>
-          <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
-            {Food.map((item) => (
-              <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
-                <Image style={styles.foodImage} source={item.image} resizeMode="contain" />
-                <Text style={styles.expoName}>{item.name || 'Nom inconnu'}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+            {/* Section Exposants */}
+            <Text style={[styles.pageTitle, styles.expoTitle]}>
+              {villageConfig.sectionTitles.exposants}
+            </Text>
+            <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
+              {Exposants.map((item) => (
+                <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
+                  <Image style={styles.expoImage} source={item.image} resizeMode="contain" />
+                  <Text style={styles.expoName}>{item.name || 'Nom inconnu'}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
 
-          {/* Modal commun */}
-          <ExpoModal visible={modalVisible} onClose={() => setModalVisible(false)} item={selectedExpo} />
-        </View>
-      </ScrollView>
-    </ImageBackground>
+            {/* Section Food */}
+            <Text style={[styles.pageTitle, styles.foodTitle]}>
+              {villageConfig.sectionTitles.food}
+            </Text>
+            <ScrollView horizontal contentContainerStyle={styles.horizontalListContent} showsHorizontalScrollIndicator={false}>
+              {Food.map((item) => (
+                <TouchableOpacity key={item.id} style={styles.container} onPress={() => handleExpoPress(item)}>
+                  <Image style={styles.foodImage} source={item.image} resizeMode="contain" />
+                  <Text style={styles.expoName}>{item.name || 'Nom inconnu'}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+
+            {/* Modal commun */}
+            <ExpoModal visible={modalVisible} onClose={() => setModalVisible(false)} item={selectedExpo} />
+            
+          </View>
+        </ScrollView>
+      </ImageBackground>
+    </SafeAreaView>
   );
 }
