@@ -9,7 +9,7 @@ export default StyleSheet.create({
       flex: 1,
       backgroundColor: Colors.blacktransparent7,
       padding: 8,
-      paddingTop: 70,
+      paddingTop: 10,
     },
     listContent: {
       paddingBottom: 16,
