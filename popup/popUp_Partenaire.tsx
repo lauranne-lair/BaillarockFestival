@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Modal, View, Text, TouchableOpacity, ImageBackground, SafeAreaView, Linking, Dimensions } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, ImageBackground, SafeAreaView, Linking, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../styles/popUp_Partenaires';
 
@@ -51,24 +51,26 @@ export default function PartModal({ visible, onClose, part }: PartModalProps) {
             </ImageBackground>
           </View>
 
-          {/* Contenu principal */}
-          <View style={styles.content}>
-            <Text style={styles.description}>{part.description}</Text>
+          {/* Contenu principal avec ScrollView */}
+          <ScrollView style={styles.scrollContainer}>
+            <View style={styles.content}>
+              <Text style={styles.description}>{part.description}</Text>
 
-            {/* Icônes des réseaux sociaux dynamiques */}
-            <View style={styles.socialIcons}>
-              {part.socialLinks.map((social, index) => (
-                <TouchableOpacity key={index} onPress={() => openLink(social.url)}>
-                  <FontAwesome 
-                    name={getSocialIcon(social.name)} 
-                    size={30} 
-                    color="#fff" 
-                    style={styles.socialIcon} 
-                  />
-                </TouchableOpacity>
-              ))}
+              {/* Icônes des réseaux sociaux dynamiques */}
+              <View style={styles.socialIcons}>
+                {part.socialLinks.map((social, index) => (
+                  <TouchableOpacity key={index} onPress={() => openLink(social.url)}>
+                    <FontAwesome 
+                      name={getSocialIcon(social.name)} 
+                      size={30} 
+                      color="#fff" 
+                      style={styles.socialIcon} 
+                    />
+                  </TouchableOpacity>
+                ))}
+              </View>
             </View>
-          </View>
+          </ScrollView>
 
           {/* Barre de fermeture en bas */}
           <TouchableOpacity style={styles.closeBar} onPress={onClose}>

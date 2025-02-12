@@ -18,7 +18,7 @@ export default StyleSheet.create({
     partnerContainer: {
       flex: 1,
       padding: 8,
-      backgroundColor: Colors.dark.secondary,
+      backgroundColor: Colors.greentransparent9,
       borderRadius: 8,
       margin: 8,
       alignItems: 'center',

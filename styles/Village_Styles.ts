@@ -62,9 +62,9 @@ export default StyleSheet.create({
     },
     foodImage: {
       width: CONTAINER_WIDTH - 40,
-      height: CONTAINER_WIDTH - 40, // Assurez-vous que la largeur et la hauteur sont identiques
+      height: CONTAINER_WIDTH - 40, 
       marginBottom: 8,
-      borderRadius: (CONTAINER_WIDTH - 40) / 2, // Pour rendre l'image circulaire
+      borderRadius: (CONTAINER_WIDTH - 40) / 2, 
     },
     loadingContainer: {
       flex: 1,
