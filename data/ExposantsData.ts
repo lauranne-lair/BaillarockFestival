@@ -93,8 +93,8 @@ export const Exposants: ListExpo[] = [
     name: 'Manosymundos',
     genre: '?',
     description: 'Nous sommes un couple d\'artisans commerçants. \nNous proposons un stand plein de beaux bijoux en macramé, métaux et cuir, et aussi quelques accessoires et vêtements dans le style métal-gothique. \nVenez découvrir notre univers créatif.',
-    image: require('../assets/images/Logo_Part/SaintG.png'),
-    imageBG: require('../assets/images/Logo_FoodT/bg_ness_no.png'),
+    image: require('../assets/images/Exposants/Manosymundos.png'),
+    imageBG: require('../assets/images/Exposants/Manosymundos.png'),
     socialLinks: [
       { name: 'instagram', url: 'https://www.instagram.com/manosymundos?igsh=MWtrMzJvN3A1cDM2dw%3D%3D' },
     ],
