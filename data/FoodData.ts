@@ -20,7 +20,7 @@ export const Food: ListFood[] = [
     genre: 'Restaurant français - Poitiers',
     description: '\nFinaliste 🏆 : \n\n\tCoupe de France du Burger Sud : 2020 - 2021 - 2022 - 2023 - 2024\n\nDepuis plusieurs années la cuisine de comptoir vous offre une cuisine simple, élaborée à partir de produits frais et locaux.\nTout est fait ici pour créer un endroit convivial, autour de vrais produits d’artisans, une cuisine aux goûts de tous, que vous soyez végétarien, amateur de belles viandes, de poissons fins ou de burgers bien faits ! Vive le Fait Maison !',
     image: require('../assets/images/Logo_FoodT/logo_cuisinecomptoir.png'),
-    imageBG: require('../assets/images/Logo_FoodT/bg_ness_no.png'),
+    imageBG: require('../assets/images/Logo_Part/Cuisine_de_Comptoir/background.png'),
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/lacuisinedecomptoir" },
       { name: "instagram", url: "https://www.instagram.com/lacuisinedecomptoir86/" },
