@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Modal, SafeAreaView, Linking } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, SafeAreaView, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import COLORS from '../constants/colors';
 import styles from '../styles/APropos_Styles';
 import AProposConfig from '../config/Config_APropos';
+import AProposModal from '../popup/popUp_APropos';
 
 const APropos: React.FC = () => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
+  const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedContent, setSelectedContent] = useState([]);
 
   useEffect(() => {
@@ -26,7 +28,8 @@ const APropos: React.FC = () => {
     });
   }, [navigation]);
 
-  const openModal = (content: any[]) => {
+  const openModal = (title: string, content: any[]) => {
+    setSelectedTitle(title);
     setSelectedContent(content);
     setModalVisible(true);
   };
@@ -45,7 +48,7 @@ const APropos: React.FC = () => {
 
           {/* Sections cliquables */}
           {AProposConfig.sections.map((section, index) => (
-            <TouchableOpacity key={index} onPress={() => openModal(section.content)} style={styles.categoryButton}>
+            <TouchableOpacity key={index} onPress={() => openModal(section.title, section.content)} style={styles.categoryButton}>
               <Text style={styles.categoryButtonText}>{section.title}</Text>
               <Ionicons name="chevron-down" size={24} color="white" />
             </TouchableOpacity>
@@ -58,30 +61,8 @@ const APropos: React.FC = () => {
           </TouchableOpacity>
         </ScrollView>
 
-        {/* Modal amélioré */}
-        <Modal animationType="slide" transparent={true} visible={modalVisible}>
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalContent}>
-              <ScrollView>
-                {selectedContent.map((section, index) => (
-                  <View key={index} style={{ marginBottom: 15 }}>
-                    <Text style={styles.modalHeading}>{section.heading}</Text>
-                    <Text style={styles.modalText}>{section.text}</Text>
-                    {section.link && (
-                      <TouchableOpacity onPress={() => Linking.openURL(section.link)}>
-                        <Text style={styles.modalLink}>{section.linkText}</Text>
-                      </TouchableOpacity>
-                    )}
-                    {section.extraText && <Text style={styles.modalText}>{section.extraText}</Text>}
-                  </View>
-                ))}
-              </ScrollView>
-              <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.modalCloseButton}>
-                <Text style={styles.modalCloseText}>Fermer</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </Modal>
+        {/* Utilisation du composant modal */}
+        <AProposModal visible={modalVisible} onClose={() => setModalVisible(false)} title={selectedTitle} content={selectedContent} />
       </View>
     </SafeAreaView>
   );

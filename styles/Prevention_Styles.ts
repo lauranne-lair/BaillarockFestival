@@ -25,6 +25,7 @@ export default StyleSheet.create({
       lineHeight: 26,
       textAlign: 'left',
       marginBottom: 20,
+      fontFamily:'Raleway_400Regular',
     },
     sectionContainer: {
       alignSelf: 'stretch', 
