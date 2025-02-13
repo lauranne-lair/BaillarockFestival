@@ -140,11 +140,13 @@ export default StyleSheet.create({
     paddingVertical: 30,
   },
   planImage: {
-    width: '170%',
-    height: 200,
+    width: '90%',  
+    height: undefined,
+    aspectRatio: 16 / 9,  
     alignSelf: 'center',
     marginTop: 10,
   },
+  
   subtitle: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -184,4 +186,23 @@ export default StyleSheet.create({
     height: 40,
     marginHorizontal: 10,
   },
+  modalContainer: {
+    flex: 1,
+    backgroundColor:Colors.blacktransparent7,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  zoomedImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 50,
+    right: 20,
+    zIndex: 3,
+    backgroundColor: 'transparent',
+  },
+  
 });

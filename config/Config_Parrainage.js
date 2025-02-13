@@ -1,13 +1,12 @@
 export const parrainageConfig = {
+  title: "Qu'est ce que le Parrainage ?",
   messages: {
-    intro: "Rejoins notre programme de parrainage et profite d'avantages exclusifs !",
+    intro: "Tous les ans, lors du festival, United We Fest soutient une association dont l’action correspond aux valeurs de cœur de ses membres.",
     steps: [
-      "Invite tes amis à rejoindre l'application.",
-      "Pour chaque ami inscrit grâce à toi, tu gagnes des récompenses.",
-      "Ton ami bénéficie également d’un bonus de bienvenue."
+      { text: "À cette fin, en plus de la visibilité et de la présence de l’association sur le site du festival, une initiative incite les festivaliers à s’engager dans ce soutien, puisque :", icon: "music" },
+      { text: "Toutes les consignes des gobelets non réclamées à la fin du festival seront reversées à l’association parrainée.", icon: "trash" },
+      { text: "Un espace dédié est prévu pour collecter les gobelets destinés au soutien.", icon: "hand-holding-heart" }
     ],
-    inviteButton: "📩 Inviter un ami",
-    inviteAlert: "Lien de parrainage généré !",
-    outro: "🎉 Plus tu parraines, plus tu gagnes ! Partage ton lien et cumule les récompenses dès maintenant.",
+    outro: "UWF remercie chaleureusement tous les festivaliers qui participent à cette belle initiative.\n\nCette année, UWF soutient :",
   }
 };

@@ -11,6 +11,15 @@ export default StyleSheet.create({
     flexGrow: 1,
     paddingVertical: 20,
   },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: Colors.dark.accent,
+    textAlign: 'center',
+    marginBottom: 15,
+    fontFamily: 'Capsmall_clean', 
+    alignSelf: 'center',
+  },
   text: {
     fontSize: 18,
     color: Colors.white,
@@ -21,34 +30,13 @@ export default StyleSheet.create({
   },
   bulletPointContainer: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     marginBottom: 8,
   },
   bulletPoint: {
-    fontSize: 36,
-    color: Colors.accent,
-    marginRight: 5,
-  },
-  inviteButton: {
-    backgroundColor: Colors.greeninspi,
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    elevation: 3,
-    alignItems: 'center',
-    marginTop: 15,
-  },
-  inviteText: {
-    color: Colors.white,
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  animationContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 20,
+    marginRight: 8,
   },
   menuButton: {
     paddingRight: 15,
-  },
+  }
 });

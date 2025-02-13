@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Modal, View, Text, TouchableOpacity, ImageBackground, SafeAreaView, Linking, Dimensions } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, ImageBackground, SafeAreaView, Linking, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import styles from '../styles/popUp_Partenaires';
+import styles from '../styles/popUp_Partenaires_Styles';
 
 export type Part = {
   name: string;
@@ -40,7 +40,6 @@ export default function PartModal({ visible, onClose, part }: PartModalProps) {
     <Modal animationType="slide" transparent={true} visible={visible} onRequestClose={onClose}>
       <SafeAreaView style={styles.safeContainer}>
         <View style={styles.modalContainer}>
-
           {/* Bannière avec image de fond */}
           <View style={styles.banner}>
             <ImageBackground source={part.imageBG} style={styles.bannerBackground} resizeMode="cover">
@@ -50,31 +49,32 @@ export default function PartModal({ visible, onClose, part }: PartModalProps) {
               </View>
             </ImageBackground>
           </View>
-
-          {/* Contenu principal */}
-          <View style={styles.content}>
-            <Text style={styles.description}>{part.description}</Text>
-
-            {/* Icônes des réseaux sociaux dynamiques */}
-            <View style={styles.socialIcons}>
-              {part.socialLinks.map((social, index) => (
-                <TouchableOpacity key={index} onPress={() => openLink(social.url)}>
-                  <FontAwesome 
-                    name={getSocialIcon(social.name)} 
-                    size={30} 
-                    color="#fff" 
-                    style={styles.socialIcon} 
-                  />
-                </TouchableOpacity>
-              ))}
+          
+          {/* Ajout du ScrollView pour le contenu */}
+          <ScrollView style={styles.scrollContainer} contentContainerStyle={{paddingBottom: 50}}>
+            <View style={styles.content}>
+              <Text style={styles.description}>{part.description}</Text>
+              
+              {/* Icônes des réseaux sociaux dynamiques */}
+              <View style={styles.socialIcons}>
+                {part.socialLinks.map((social, index) => (
+                  <TouchableOpacity key={index} onPress={() => openLink(social.url)}>
+                    <FontAwesome 
+                      name={getSocialIcon(social.name)} 
+                      size={30} 
+                      color="#fff" 
+                      style={styles.socialIcon} 
+                    />
+                  </TouchableOpacity>
+                ))}
+              </View>
             </View>
-          </View>
+          </ScrollView>
 
           {/* Barre de fermeture en bas */}
           <TouchableOpacity style={styles.closeBar} onPress={onClose}>
             <Text style={styles.closeText}>Fermer</Text>
           </TouchableOpacity>
-
         </View>
       </SafeAreaView>
     </Modal>
