@@ -6,7 +6,7 @@ const AProposConfig = {
   },
   sections: [
     {
-      title: "📜 Mentions Légales",
+      title: "Mentions Légales",
       content: [
         {
           heading: "1. ÉDITEUR DE L’APPLICATION",
@@ -34,7 +34,7 @@ const AProposConfig = {
       ],
     },
     {
-      title: "🔒 Politique de Confidentialité & Données Personnelles (RGPD)",
+      title: "Politique de Confidentialité \n& Données Personnelles (RGPD)",
       content: [
         {
           heading: "1. RESPONSABLE DU TRAITEMENT DES DONNÉES",

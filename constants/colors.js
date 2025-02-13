@@ -35,6 +35,7 @@ const Colors = {
   blacktransparent5: 'rgba(8,10,6,0.5)',
   blacktransparent7: 'rgba(8,10,6,0.7)',
   blacktransparent9: 'rgba(8,10,6,0.9)',
+  greentransparent9: 'rgba(31, 84, 5,0.8)',
 
   light: {
     text: 'rgb(24, 63, 25)', // Texte vert foncé
