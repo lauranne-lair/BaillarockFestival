@@ -67,5 +67,8 @@ export default StyleSheet.create({
       color: 'white',
       textTransform: 'uppercase',
     },
-  });
-  
+    scrollContainer: {  
+      flexGrow: 1,  
+      paddingBottom: 20, 
+    },
+});

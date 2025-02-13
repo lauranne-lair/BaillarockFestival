@@ -111,19 +111,19 @@ export const Partenaires: ListPartners[] = [
     ],
   },
 
-  {
-    id: '9',
-    name: 'Bee Factory',
-    genre: 'Sérigraphie',
-    description:'Bee Factory est une entreprise Poitevine spécialisée dans la création d\'objets publicitaires et la sérigraphie. Derrière les manettes, il y a Franck. \nPartenaire depuis la première heure, partageant les valeurs de notre association, Franck est tout simplement considéré comme un membre de notre association par son soutien et son investissement dans l\'organisation du Baillarock Festival. \nNotre relation va au-delà du partenariat, c\'est un ami ! \nToujours réactif, très professionnel et d\'une gentillesse extraordinaire. Il conçoit tous les supports du festival et nous lui sommes très reconnaissant ! \nLes t-shirts et sweats que vous portez ont été désignés et fabriqué par lui ! Les gobelets du fest et vos bracelets aussi ! \nSi vous chercher pour votre entreprise ou votre association un professionnel dans la création d\'objets publicitaires, foncez les yeux fermés et contactez Franck de chez Bee Factory ! \nMerci Franck !',
-    image: require('../assets/images/Logo_Part/Bee_Fact/bee_fact.jpg'),
-    imageBG: require('../assets/images/Logo_Part/Bee_Fact/bee_fact.jpg'),
-    socialLinks: [
-      { name: "facebook"},
-      { name: "instagram"},
-      { name: "website"},
-    ],
-  },
+  //{
+    //id: '9',
+    //name: 'Bee Factory',
+    //genre: 'Sérigraphie',
+    //description:'Bee Factory est une entreprise Poitevine spécialisée dans la création d\'objets publicitaires et la sérigraphie.Derrière les manettes, il y a Franck. \nPartenaire depuis la première heure, partageant les valeurs de notre association, Franck est tout simplement considéré comme un membre de notre association par son soutien et son investissement dans l\'organisation du Baillarock Festival. \nNotre relation va au-delà du partenariat, c\'est un ami ! \nToujours réactif, très professionnel et d\'une gentillesse extraordinaire. Il conçoit tous les supports du festival et nous lui sommes très reconnaissant ! \nLes t-shirts et sweats que vous portez ont été désignés et fabriqué par lui ! Les gobelets du fest et vos bracelets aussi ! \nSi vous chercher pour votre entreprise ou votre association un professionnel dans la création d\'objets publicitaires, foncez les yeux fermés et contactez Franck de chez Bee Factory ! \nMerci Franck !',
+    //image: require('../assets/images/Logo_Part/Bee_Fact/bee_fact.jpg'),
+    //imageBG: require('../assets/images/Logo_Part/Bee_Fact/bee_fact.jpg'),
+    //socialLinks: [
+      //{ name: "facebook"},
+      //{ name: "instagram"},
+      //{ name: "website"},
+    //],
+  //},
   {
     id: '10',
     name: 'Crossfit daemon',
