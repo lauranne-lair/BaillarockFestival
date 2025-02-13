@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import * as Font from 'expo-font';
@@ -13,7 +13,6 @@ export default function Prevention() {
   const router = useRouter();
   const navigation = useNavigation();
 
-  // Charger les polices
   useEffect(() => {
     const loadFonts = async () => {
       await Font.loadAsync({
@@ -24,7 +23,6 @@ export default function Prevention() {
     loadFonts();
   }, []);
 
-  // Personnaliser l'en-tête
   useEffect(() => {
     navigation.setOptions({
       title: 'Prévention',
@@ -51,9 +49,8 @@ export default function Prevention() {
         <Text style={styles.title}>{preventionConfig.title}</Text>
 
         {preventionConfig.sections.map((section, index) => (
-          <View key={index} style={styles.sectionContainer}> 
-            <Text style={styles.sectionTitle}>{section.title}</Text> 
-
+          <View key={index} style={styles.sectionContainer}>
+            <Text style={styles.sectionTitle}>{section.title}</Text>
             {section.points.map((point, i) => (
               <View key={i} style={styles.bulletPointContainer}>
                 <Text style={styles.bulletPoint}>•</Text>
@@ -63,9 +60,10 @@ export default function Prevention() {
           </View>
         ))}
 
-
-
         <Text style={styles.closingText}>{preventionConfig.closingText}</Text>
+
+        {/* ✅ Image ajoutée en bas */}
+        <Image source={preventionConfig.assets.image} style={styles.bottomImage} />
       </ScrollView>
     </View>
   );
