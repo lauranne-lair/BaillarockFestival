@@ -1,23 +1,33 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Dimensions, Image, SafeAreaView } from 'react-native';
+import { View, ScrollView, Image, TouchableOpacity, Text, Linking, Dimensions } from 'react-native';
 import { barConfig } from '../config/Config_BarPage';
 import styles from '../styles/Bar_Styles';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-export default function Boisson() {
-  // Récupérer la hauteur de l'écran
-  const screenHeight = Dimensions.get('window').height;
-
+const Boisson: React.FC = () => {
   return (
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={barConfig.assets.image} // Utilisation de l'image définie dans barConfig
-            style={styles.backgroundImage}
-            resizeMode="cover" // Ajuste l'image pour couvrir tout l'espace disponible
-          />
-        </View>
-      </ScrollView>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      {/* Conteneur de l'image et des boutons */}
+      <View style={styles.imageContainer}>
+        {/* IMAGE PRINCIPALE */}
+        <Image source={barConfig.assets.image} style={styles.backgroundImage} resizeMode="cover" />
+
+        {/* BOUTON 1 */}
+        <TouchableOpacity 
+          style={[styles.button, styles.button1]} 
+          onPress={() => Linking.openURL('https://www.instagram.com/brasserie_du_treize/')}>
+          <FontAwesome name="instagram" size={30} color="#fff" /> 
+        </TouchableOpacity>
+
+        {/* BOUTON 2 */}
+        <TouchableOpacity 
+          style={[styles.button, styles.button2]} 
+          onPress={() => Linking.openURL('https://www.instagram.com/piratesduclain/')}>
+          <FontAwesome name="instagram" size={30} color="#fff" /> 
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
-}
+};
 
-
+export default Boisson;

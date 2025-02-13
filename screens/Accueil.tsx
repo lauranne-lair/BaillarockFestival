@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Image, Linking, SafeAreaView } from 'react-native';
+import { Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Modal, Image, Linking, SafeAreaView } from 'react-native';
 import { Video } from 'expo-av';
 import { useRouter } from 'expo-router';
 import { homeConfig } from '../config/Config_HomePage';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import ImageZoom from 'react-native-image-pan-zoom';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
 import { ThemedText } from '../components/ThemedText';
 import { ThemedView } from '../components/ThemedView';
 import styles from '../styles/Accueil_Styles';
@@ -14,7 +14,13 @@ import styles from '../styles/Accueil_Styles';
 import * as Font from 'expo-font';
 import LottieView from 'lottie-react-native';
 
+
+const { width, height } = Dimensions.get('window');
+
 const Home: React.FC = () => {
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+  
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -96,6 +102,17 @@ const Home: React.FC = () => {
     router.push('/(tabs)/explore');
   };
 
+  const handleImagePress = (image: any) => {
+    console.log("Image sélectionnée :", image);
+    setSelectedImage(image);
+    setModalVisible(true);
+  };
+  
+  const closeModal = () => {
+    setModalVisible(false);
+    setSelectedImage(null);
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -165,11 +182,15 @@ const Home: React.FC = () => {
           <View style={styles.titleContainer}>
             <ThemedText style={styles.subtitle}>Plan du site</ThemedText>
           </View>
-          <Image
-            source={homeConfig.assets.siteMap}
-            style={styles.planImage}
-            resizeMode="contain"
-          />
+          <TouchableOpacity onPress={() => handleImagePress(homeConfig.assets.siteMap)}>
+            <Image 
+              source={homeConfig.assets.siteMap} 
+              style={styles.planImage} 
+              resizeMode="contain" 
+            />
+          </TouchableOpacity>
+
+
           <TouchableOpacity onPress={openMaps} style={styles.buttonMaps}>
             <Text style={styles.buttonTextMaps}>Y aller</Text>
           </TouchableOpacity>
@@ -207,6 +228,24 @@ const Home: React.FC = () => {
           </View>
         </ThemedView>
       </ScrollView>
+
+      <Modal visible={modalVisible} transparent animationType="fade" onRequestClose={closeModal}>
+        <View style={styles.modalContainer}>
+          <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
+            <FontAwesome name="times" size={30} color={homeConfig.colors.backButton} />
+          </TouchableOpacity>
+          {selectedImage && (
+            <ImageZoom
+              cropWidth={width}
+              cropHeight={height}
+              imageWidth={width * 0.9}
+              imageHeight={width * 0.9}
+            >
+              <Image source={selectedImage} style={styles.zoomedImage} />
+            </ImageZoom>
+          )}
+        </View>
+      </Modal>
     </View>
   );
 };

@@ -1,8 +1,8 @@
 // Import des fichiers multimédias statiques
 import video from '../assets/videos/videohomepage.mp4';
 import image from '../assets/images/Dragon.png';
-import siteMap from '../assets/images/Plan_baillarock.png';
 import arrowAnimation from '../assets/animation/Arrow3.json';
+import siteMap from '../assets/images/Plan_baillarock.png';
 
 
 // Localisation de la salle
@@ -27,7 +27,7 @@ export const homeConfig = {
   mapsLocalisation: "Route du Stade, Saint Georges Les Baillargeaux, France",
   location: "Saint Georges Les Baillargeaux",
   socialMediaLinks: {
-    shop : "https://my.weezevent.com/BaillarockFestival2025",
+    shop: "https://my.weezevent.com/BaillarockFestival2025",
     instagram: "https://www.instagram.com/baillarock_unitedwefest/",
     facebook: "https://www.facebook.com/UnitedWeFest/",
     youtube: "https://www.youtube.com/channel/UCUzh0r_ru-REV_5OFLzamAw",
@@ -37,29 +37,32 @@ export const homeConfig = {
     arrowAnimation,
     video, // Fichier vidéo de la page d'accueil
     image, // Image de fond lorsque l'on fait glisser vers le bas pour cacher la vidéo
-    siteMap, // Plan du site
+    siteMap, // ✅ Correction : maintenant `siteMap` est bien défini ici !
     socialIcons: {
-      instagram: { 
-        icon: "instagram", 
-        iconType: "FontAwesome", 
+      instagram: {
+        icon: "instagram",
+        iconType: "FontAwesome",
         color: 'rgba(132, 132, 132, 0.7)'
-      }, 
-      facebook: { 
-        icon: "facebook", 
-        iconType: "FontAwesome", 
-        color: 'rgba(132, 132, 132, 0.7)' 
-      },    
-      youtube: { 
-        icon: "youtube", 
-        iconType: "FontAwesome", 
-        color: 'rgba(132, 132, 132, 0.7)' 
-      },       
-      website: { 
-        icon: "link", 
-        iconType: "FontAwesome", 
-        color: 'rgba(132, 132, 132, 0.7)' 
-      },       
+      },
+      facebook: {
+        icon: "facebook",
+        iconType: "FontAwesome",
+        color: 'rgba(132, 132, 132, 0.7)'
+      },
+      youtube: {
+        icon: "youtube",
+        iconType: "FontAwesome",
+        color: 'rgba(132, 132, 132, 0.7)'
+      },
+      website: {
+        icon: "link",
+        iconType: "FontAwesome",
+        color: 'rgba(132, 132, 132, 0.7)'
+      },
     }
+  },
+  colors: {
+    backButton: 'rgb(14, 93, 8)',
   },
   messages: {
     countdownExpired: "C'est maintenant !",

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Colors from '../constants/colors';
 
 export default StyleSheet.create({
@@ -61,12 +61,14 @@ export default StyleSheet.create({
       borderTopLeftRadius: 10,
       borderTopRightRadius: 10,
     },
-    
     closeText: {
       fontSize: 18,
       fontWeight: 'bold',
       color: 'white',
       textTransform: 'uppercase',
     },
+    scrollView: {
+      maxHeight: Dimensions.get('window').height * 0.5,
+    },      
   });
   

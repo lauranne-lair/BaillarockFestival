@@ -13,7 +13,7 @@ export default StyleSheet.create({
       flex: 1,
       backgroundColor: Colors.blacktransparent7,
       padding: 8,
-      paddingTop: 70,
+      paddingTop: 20,
     },
     pageTitle: {
       fontSize: 30,
@@ -27,7 +27,7 @@ export default StyleSheet.create({
       marginTop: 90,
     },
     foodTitle: {
-      marginTop: -20,
+      marginTop: -60,
     },
     horizontalListContent: {
       flexDirection: 'row',
@@ -62,9 +62,9 @@ export default StyleSheet.create({
     },
     foodImage: {
       width: CONTAINER_WIDTH - 40,
-      height: CONTAINER_WIDTH - 40, // Assurez-vous que la largeur et la hauteur sont identiques
+      height: CONTAINER_WIDTH - 40, 
       marginBottom: 8,
-      borderRadius: (CONTAINER_WIDTH - 40) / 2, // Pour rendre l'image circulaire
+      borderRadius: (CONTAINER_WIDTH - 40) / 2, 
     },
     loadingContainer: {
       flex: 1,

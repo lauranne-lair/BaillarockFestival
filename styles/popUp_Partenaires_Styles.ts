@@ -64,8 +64,11 @@ export default StyleSheet.create({
     closeText: {
       fontSize: 18,
       fontWeight: 'bold',
-      color: 'white',
+      color: Colors.white,
       textTransform: 'uppercase',
     },
-  });
-  
+    scrollContainer: {  
+      flexGrow: 1,  
+      paddingBottom: 20, 
+    },
+});
