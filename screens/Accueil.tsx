@@ -14,10 +14,9 @@ import styles from '../styles/Accueil_Styles';
 import * as Font from 'expo-font';
 import LottieView from 'lottie-react-native';
 
-
 const { width, height } = Dimensions.get('window');
 
-const Home: React.FC = () => {
+const Home: React.FC = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<any>(null);
   
@@ -98,8 +97,13 @@ const Home: React.FC = () => {
     setIsScrolled(contentOffsetY > threshold);
   };
 
+<<<<<<< HEAD
   const navigateToProgrammation = () => {
     router.push(homeConfig.internalLinks.programmationPage); // Redirection vers la page interne
+=======
+  const navigateToExplore = () => {
+    router.push(homeConfig.internalLinks.programmationPage);
+>>>>>>> ec514b06c56f3c45b023c1fb2f5188f059282a2a
   };
 
   const handleImagePress = (image: any) => {
@@ -140,12 +144,16 @@ const Home: React.FC = () => {
           <View style={styles.overlay}>
             <Text style={styles.TitleText}>{homeConfig.festivalName}</Text>
             {timeExpired ? (
+<<<<<<< HEAD
               <>
                 <Text style={styles.expiredText}>{homeConfig.messages.countdownExpired}</Text>
                 <TouchableOpacity style={styles.button} onPress={navigateToProgrammation}>
                   <Text style={styles.buttonText}>{homeConfig.messages.viewSchedule}</Text>
                 </TouchableOpacity>
               </>
+=======
+              <Text style={styles.expiredText}>{homeConfig.messages.countdownExpired}</Text>
+>>>>>>> ec514b06c56f3c45b023c1fb2f5188f059282a2a
             ) : (
               <>
                 <View style={styles.countdownContainer}>
@@ -158,7 +166,6 @@ const Home: React.FC = () => {
                     ))}
                   </View>
                 </View>
-                <Text style={styles.addressText}>{homeConfig.location}</Text>
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => Linking.openURL(homeConfig.socialMediaLinks.shop)}
@@ -167,6 +174,7 @@ const Home: React.FC = () => {
                 </TouchableOpacity>
               </>
             )}
+
             <View style={styles.ArrowAnimation}>
               <LottieView 
               source={homeConfig.assets.arrowAnimation} // 🔥 Utilisation correcte du fichier JSON
