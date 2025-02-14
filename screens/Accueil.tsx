@@ -98,8 +98,8 @@ const Home: React.FC = () => {
     setIsScrolled(contentOffsetY > threshold);
   };
 
-  const navigateToExplore = () => {
-    router.push('/(tabs)/explore');
+  const navigateToProgrammation = () => {
+    router.push(homeConfig.internalLinks.programmationPage); // Redirection vers la page interne
   };
 
   const handleImagePress = (image: any) => {
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
             {timeExpired ? (
               <>
                 <Text style={styles.expiredText}>{homeConfig.messages.countdownExpired}</Text>
-                <TouchableOpacity style={styles.button} onPress={navigateToExplore}>
+                <TouchableOpacity style={styles.button} onPress={navigateToProgrammation}>
                   <Text style={styles.buttonText}>{homeConfig.messages.viewSchedule}</Text>
                 </TouchableOpacity>
               </>
