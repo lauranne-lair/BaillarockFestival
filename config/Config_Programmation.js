@@ -2,7 +2,7 @@ import Colors from '../constants/colors'
 
 export const programmationConfig = {
     festivalDates: [
-      { name: "Ven. 23 Mai", date: "2025-02-05" },
+      { name: "Ven. 23 Mai", date: "2025-05-23" },
       { name: "Sam. 24 Mai", date: "2025-05-24" },
     ],
   
