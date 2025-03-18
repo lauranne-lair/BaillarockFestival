@@ -5,20 +5,6 @@ import arrowAnimation from '../assets/animation/Arrow3.json';
 import siteMap from '../assets/images/Plan_baillarock.png';
 
 
-// Localisation de la salle
-const openMaps = () => {
-  const address = encodeURIComponent("Route du Stade, Saint George les Baillargeaux France");
-  const url = Platform.select({
-    ios: `maps:0,0?q=${address}`, // Apple Maps
-    android: `geo:0,0?q=${address}` // Google Maps
-  });
-
-  if (url) {
-    Linking.openURL(url).catch(() =>
-      Alert.alert("Erreur", "Impossible d'ouvrir l'application de navigation.")
-    );
-  }
-};
 
 // Configuration de la page d'accueil
 export const homeConfig = {
@@ -33,6 +19,7 @@ export const homeConfig = {
     youtube: "https://www.youtube.com/channel/UCUzh0r_ru-REV_5OFLzamAw",
     website: "https://www.baillarockfestival.fr/"
   },
+
   assets: {
     arrowAnimation,
     video, // Fichier vidéo de la page d'accueil
