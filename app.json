@@ -16,11 +16,16 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon_appli_dragon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.baillarock_festival.BaillarockFestival"
+      "package": "com.baillarock_festival.BaillarockFestival",
+      "useNextNotificationsApi": true,
+      "permissions": [
+        "NOTIFICATIONS"
+      ]
     },
     "web": {
       "favicon": "./assets/icon_appli_dragon.png"

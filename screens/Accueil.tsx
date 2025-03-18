@@ -16,7 +16,7 @@ import LottieView from 'lottie-react-native';
 
 const { width, height } = Dimensions.get('window');
 
-const Home: React.FC = ({ navigation }) => {
+const Home: React.FC = () => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<any>(null);
   
@@ -97,9 +97,7 @@ const Home: React.FC = ({ navigation }) => {
     setIsScrolled(contentOffsetY > threshold);
   };
 
-  const navigateToExplore = () => {
-    router.push(homeConfig.internalLinks.programmationPage);
-  };
+
 
   const handleImagePress = (image: any) => {
     console.log("Image sélectionnée :", image);
@@ -139,7 +137,9 @@ const Home: React.FC = ({ navigation }) => {
           <View style={styles.overlay}>
             <Text style={styles.TitleText}>{homeConfig.festivalName}</Text>
             {timeExpired ? (
+
               <Text style={styles.expiredText}>{homeConfig.messages.countdownExpired}</Text>
+
             ) : (
               <>
                 <View style={styles.countdownContainer}>
