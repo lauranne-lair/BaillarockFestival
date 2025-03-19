@@ -9,7 +9,7 @@ import siteMap from '../assets/images/Accueil/Plan_site_festival.png';
 // Configuration de la page d'accueil
 export const homeConfig = {
   festivalName: "BAILLAROCK FESTIVAL",
-  festivalDate: "2025-05-23T18:00:00",
+  festivalDate: "2025-05-23T17:30:00",
   mapsLocalisation: "Route du Stade, Saint Georges Les Baillargeaux, France",
   location: "Saint Georges Les Baillargeaux",
   socialMediaLinks: {
@@ -24,11 +24,7 @@ export const homeConfig = {
     arrowAnimation,
     video, // Fichier vidéo de la page d'accueil
     image, // Image de fond lorsque l'on fait glisser vers le bas pour cacher la vidéo
-<<<<<<< HEAD
-    siteMap,
-=======
     siteMap, 
->>>>>>> 9e18aa5bf37ca14804fd554ca9ffc3a473ada411
     socialIcons: {
       instagram: {
         icon: "instagram",
