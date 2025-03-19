@@ -24,7 +24,7 @@ export const homeConfig = {
     arrowAnimation,
     video, // Fichier vidéo de la page d'accueil
     image, // Image de fond lorsque l'on fait glisser vers le bas pour cacher la vidéo
-    siteMap, // ✅ Correction : maintenant `siteMap` est bien défini ici !
+    siteMap,
     socialIcons: {
       instagram: {
         icon: "instagram",
