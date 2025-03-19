@@ -23,7 +23,7 @@ export default StyleSheet.create({
   text: {
     fontSize: 18,
     color: Colors.white,
-    textAlign: 'left',
+    textAlign: 'justify',
     marginBottom: 10,
     lineHeight: 24,
     flexShrink: 1,
@@ -56,7 +56,7 @@ export default StyleSheet.create({
   socialMediaIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '60%',
+    marginTop: 20,
   },
   socialMediaIcon: {
     width: 40,
