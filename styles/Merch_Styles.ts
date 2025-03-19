@@ -98,7 +98,7 @@ export default StyleSheet.create({
     menuButton: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingRight: 10, // Bouton aligné à droite
+      paddingRight: 10,
     },
     menuText: {
       marginLeft: 5,

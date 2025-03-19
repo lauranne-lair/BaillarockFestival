@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, Text, ScrollView, TouchableOpacity, Linking } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import * as Font from 'expo-font';
 import styles from '../styles/Parrainage_Styles';
 import Colors from '../constants/colors';
@@ -48,6 +50,32 @@ export default function Parrainage() {
           </View>
         ))}
         <Text style={styles.text}>{parrainageConfig.messages.outro}</Text>
+        <View style={styles.socialMediaIcons}>
+          {Object.keys(parrainageConfig.socialMediaLinks).map(key => {
+            const iconData = parrainageConfig.assets.socialIcons[key];
+            if (!iconData) return null;
+        
+            const IconComponent =
+              iconData.iconType === 'FontAwesome' ? FontAwesome :
+              iconData.iconType === 'Ionicons' ? Ionicons :
+              iconData.iconType === 'MaterialIcons' ? MaterialIcons :
+              null;
+        
+            return (
+              <TouchableOpacity
+                key={key}
+                onPress={() => Linking.openURL(parrainageConfig.socialMediaLinks[key])}
+              >
+                <IconComponent
+                  name={iconData.icon}
+                  size={30}
+                  color={iconData.color}
+                  style={styles.socialMediaIcon}
+                />
+              </TouchableOpacity>
+            );
+          })}
+        </View>
       </ScrollView>
     </View>
   );

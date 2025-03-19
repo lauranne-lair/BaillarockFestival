@@ -5,13 +5,9 @@ export const Exposants: ListExpo[] = [
     id: '1',
     name: 'Bee Factory',
     genre: 'Sérigraphie',
-    description: '?',
-    image: require('../assets/images/Logo_Part/SaintG.png'),
-    imageBG: require('../assets/images/Logo_FoodT/bg_ness_no.png'),
-    socialLinks: [ 
-      { name: 'facebook', url: 'https://www.facebook.com/laminuteblonde' },
-      { name: 'instagram', url: 'https://www.instagram.com/laminuteblonde' },
-    ],
+    description: 'Bee Factory est une entreprise Poitevine spécialisée dans la création d’objets publicitaires et la sérigraphie.\n\nDerrière les manettes, il y a Franck. Partenaire depuis la première heure, partageant les valeurs de notre association, Franck est tout simplement considéré comme un membre de notre association par son soutien et son investissement dans l’organisation du Baillarock Festival. Notre relation va au-delà du partenariat, c’est un ami ! Toujours réactif, très professionnel et d’une gentillesse extraordinaire. Il conçoit tous les supports du festival et nous lui sommes très reconnaissant ! Les t-shirts et sweats que vous portez ont été désignés et fabriqué par lui ! Les gobelets du fest et vos bracelets aussi ! Si vous chercher pour votre entreprise ou votre association un professionnel dans la création d’objets publicitaires, foncez les yeux fermés et contactez Franck de chez Bee Factory !\n\nMerci Franck !',
+    image: require('../assets/images/Exposants/Beefactory.jpg'),
+    imageBG: require('../assets/images/Exposants/Beefactory.jpg')
   },
   {
     id: '2',
@@ -43,7 +39,7 @@ export const Exposants: ListExpo[] = [
     name: 'Cap\'s Mary',
     genre: 'Illustratrice',
     description: 'Illustratrice née en 1994 dans le Béarn et d\'origine irlandaise, elle arrive à Nantes en 2019 et lance son activité de travailleuse indépendante. Passionnée par la morphologie et l\'anatomie humaine, elle étudie l\'histoire de l\'art et l\'archéologie à la faculté de Pau, puis l\'animation 2D à l\'école supérieure de LISAA à Paris. Son univers créatif naît dans le darkart à travers l\'occulte, l\'étrange, le macabre et l\'imagerie religieuse ; très inspirée par une culture gothique / horrifique old-school.\n\nElle met ses capacités à la disposition de la scène métal en proposant ses services pour des affiches de concert / festival, pochettes d\'EP / album et en exposant régulièrement à l\'occasion d\'événements alternatifs. En 2024, elle lance sa société La Veuve Blanche, marque de textile alternative, unisexe, inclusive et féministe cherchant à promouvoir le travail des femmes dans le secteur de l\'art graphique.',
-    image: require('../assets/images/Exposants/Logo_noir_caps_mary.png'),
+    image: require('../assets/images/Exposants/Capsmary_logo.png'),
     imageBG: require('../assets/images/Exposants/capsMary_bg.jpg'),
     socialLinks: [
       { name: 'facebook', url: 'https://www.facebook.com/mary.caps.50' },
@@ -90,8 +86,8 @@ export const Exposants: ListExpo[] = [
   },
   {
     id: '8',
-    name: 'Manosymundos',
-    genre: '?',
+    name: 'Manos y Mundos',
+    genre: 'Bijoutier artisanal',
     description: 'Nous sommes un couple d\'artisans commerçants. \nNous proposons un stand plein de beaux bijoux en macramé, métaux et cuir, et aussi quelques accessoires et vêtements dans le style métal-gothique. \nVenez découvrir notre univers créatif.',
     image: require('../assets/images/Exposants/Manosymundos.png'),
     imageBG: require('../assets/images/Exposants/Manosymundos.png'),
@@ -114,15 +110,15 @@ export const Exposants: ListExpo[] = [
   },
   {
     id: '10',
-    name: 'Soeurs d\'encre',
-    genre: 'Association - Tatouage',
-    description: 'Elle accompagne les femmes touchées par un cancer du sein ou une maladie chronique, physiquement par le tatouage artistique de reconstruction, et psychologiquement par la réinsertion sociale et professionnelle en favorisant la prise de confiance et l\'estime de soi.\n\nElle participe aux actions de sensibilisation et dépistage du cancer du sein. L\'association Sœurs d\'Encre milite pour que le tatouage artistique de reconstruction soit reconnu comme alternative ou complément aux formes de reconstructions chirurgicales classiques, en lien avec le milieu médical. L’association Sœurs d’Encre est reconnue comme soin oncologique de support par l\'AFSOS (association francophone pour les soins oncologiques de support); elle a également reçu le Prix Ruban Rose qualité de vie, a signé une convention avec la CPAM et la MSA de la Gironde ainsi que la mutuelle VIASANTÉ.',
-    image: require('../assets/images/Exposants/SoeursDencre_logo.png'), 
-    imageBG: require('../assets/images/Exposants/SoeursDencre_bg.jpg'),
+    name: 'Helpyoung86',
+    genre: 'Association',
+    description: 'Helpyoung86 est une association loi 1901 à but non lucratif fondée en 2022 et basée à Poitiers (86). Son objectif principal est de lutter contre la précarité des jeunes. L’association organise en moyenne trois distributions par soir, tous les jours de la semaine, fournissant des denrées alimentaires, des produits d’hygiène et d’autres biens de première nécessité. Bien que ses bénéficiaires soient principalement des étudiant·e·s, Helpyoung86 accueille tous les jeunes de 17 à 30 ans afin de leur apporter le soutien nécessaire.',
+    image: require('../assets/images/Exposants/Helpyoung_logo.png'), 
+    imageBG: require('../assets/images/Exposants/Helpyoung_bg.png'),
     socialLinks: [
-      { name: 'facebook', url: 'https://www.facebook.com/soeursdencre' },
-      { name: 'link', url: 'http://www.soeursdencre.fr'},
-      { name: 'instagram', url: 'https://www.instagram.com/soeursdencre/' },
+      { name: 'facebook', url: 'https://www.facebook.com/helpyoung86' },
+      { name: 'link', url: 'https://helpyoung86.fr/'},
+      { name: 'instagram', url: 'https://www.instagram.com/helpyoung86/' },
     ],
   },
 ];

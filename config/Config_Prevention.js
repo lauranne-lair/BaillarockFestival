@@ -26,6 +26,6 @@ export const preventionConfig = {
   closingText: "Passe nous voir, nous serons ravis de t'accueillir !",
 
   assets: {
-    image: preventionImage, // ✅ Ajout de l’image ici !
+    image: preventionImage,
   },
 };

@@ -17,7 +17,7 @@ import APropos from '../screens/Apropos';
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
-  const navigation = useNavigation(); // 🔥 Permet d'intercepter la navigation pour la rediriger
+  const navigation = useNavigation(); // Permet d'intercepter la navigation pour la rediriger
 
   return (
     <Drawer.Navigator
@@ -42,7 +42,7 @@ const DrawerNavigation = () => {
         },
       }}
     >
-      {/* 🔥 Accueil - Redirection forcée vers Accueil */}
+      {/* Accueil - Redirection forcée vers Accueil */}
       <Drawer.Screen
         name="Accueil"
         component={BottomTabNavigation}
@@ -55,11 +55,11 @@ const DrawerNavigation = () => {
         }}
         listeners={{
           drawerItemPress: (e) => {
-            e.preventDefault(); // 🔥 Empêche la navigation normale
+            e.preventDefault(); // Empêche la navigation normale
             navigation.dispatch(
               CommonActions.reset({
                 index: 0,
-                routes: [{ name: 'Drawer', params: { screen: 'Accueil' } }], // 🔥 Va directement à l'onglet Accueil
+                routes: [{ name: 'Drawer', params: { screen: 'Accueil' } }], // Va directement à l'onglet Accueil
               })
             );
           },

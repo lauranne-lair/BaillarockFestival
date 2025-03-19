@@ -23,7 +23,7 @@ const openMaps = () => {
 // Configuration de la page d'accueil
 export const homeConfig = {
   festivalName: "BAILLAROCK FESTIVAL",
-  festivalDate: "2025-02-14T11:00:00",
+  festivalDate: "2025-02-T18:00:00",
   mapsLocalisation: "Route du Stade, Saint Georges Les Baillargeaux, France",
   location: "Saint Georges Les Baillargeaux",
   socialMediaLinks: {
