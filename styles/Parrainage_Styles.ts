@@ -38,5 +38,29 @@ export default StyleSheet.create({
   },
   menuButton: {
     paddingRight: 15,
+  },
+  socialMediaContainer: {
+    marginTop: 20,
+    marginBottom: 40,
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: Colors.blacktransparent9,
+    borderRadius: 10,
+  },
+  socialMediaTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: Colors.white,
+    marginBottom: 10,
+  },
+  socialMediaIcons: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '60%',
+  },
+  socialMediaIcon: {
+    width: 40,
+    height: 40,
+    marginHorizontal: 10,
   }
 });

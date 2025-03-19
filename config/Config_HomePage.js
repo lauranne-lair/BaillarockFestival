@@ -2,7 +2,7 @@
 import video from '../assets/videos/videohomepage.mp4';
 import image from '../assets/images/Dragon.png';
 import arrowAnimation from '../assets/animation/Arrow3.json';
-import siteMap from '../assets/images/Plan_baillarock.png';
+import siteMap from '../assets/images/Accueil/Plan_site_festival.png';
 
 
 
