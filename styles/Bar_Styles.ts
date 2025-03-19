@@ -31,13 +31,13 @@ export default StyleSheet.create({
     color: 'black',
   },
   button1: {
-    top: 425, // 🔥 Ajuste la position sur l’image
-    left: width * 0.7, // horrizontal
-    borderRadius: 50, // Cercle parfait !
+    top: 425,
+    left: width * 0.7,
+    borderRadius: 50, 
   },
   button2: {
-    top: 370, // 🔥 Ajuste la position sur l’image
-    left: width * 0.7, // Centré horizontalement
-    borderRadius: 50, // Cercle parfait !
+    top: 370,
+    left: width * 0.7,
+    borderRadius: 50,
   },
 });
