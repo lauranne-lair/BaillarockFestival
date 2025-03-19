@@ -142,7 +142,7 @@ const BottomTabNavigation = () => {
             tabBarButton: () => (
               <View style={{ alignItems: 'center', justifyContent: 'center', height: 54 }}>
                 <TouchableOpacity
-                  style={{ alignItems: 'center', justifyContent: 'center' }} // Assurer l'alignement vertical
+                  style={{ alignItems: 'center', justifyContent: 'center' }}
                   onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                 >
                   <MaterialCommunityIcons

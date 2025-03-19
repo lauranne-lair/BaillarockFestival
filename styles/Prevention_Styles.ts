@@ -69,10 +69,10 @@ export default StyleSheet.create({
     },
     bottomImage: {
       width: '100%',
-      height: 700, // Ajuste la hauteur comme tu veux
+      height: 700,
       resizeMode: 'cover',
-      marginTop: 20, // Un petit espace avant l'image
-      borderRadius: 10, // Ajoute un effet arrondi si tu veux
+      marginTop: 20,
+      borderRadius: 10,
     },
     
   });

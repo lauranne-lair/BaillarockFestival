@@ -163,7 +163,7 @@ const Home: React.FC = () => {
 
             <View style={styles.ArrowAnimation}>
               <LottieView 
-              source={homeConfig.assets.arrowAnimation} // 🔥 Utilisation correcte du fichier JSON
+              source={homeConfig.assets.arrowAnimation}
               autoPlay
               loop
               style={styles.ArrowAnimation} 
