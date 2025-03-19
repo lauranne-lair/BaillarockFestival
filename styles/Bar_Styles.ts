@@ -9,7 +9,7 @@ export default StyleSheet.create({
   imageContainer: {
     position: 'relative', // Permet d'avoir les boutons en absolu SUR l'image
     width: '100%',
-    height: 3000, // Hauteur grande pour scroller
+    height: '100%', // Hauteur grande pour scroller
   },
   backgroundImage: {
     width: '100%',
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     backgroundColor: 'hsla(0, 0.00%, 100.00%, 0.60)',
     paddingVertical: 2.5,
     paddingHorizontal: 5,
-    borderRadius: 2.5,
+    borderRadius: 50, // Garde le bouton rond
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowOffset: { width: 2, height: 2 },
@@ -29,15 +29,5 @@ export default StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
-  },
-  button1: {
-    top: 425,
-    left: width * 0.7,
-    borderRadius: 50, 
-  },
-  button2: {
-    top: 370,
-    left: width * 0.7,
-    borderRadius: 50,
   },
 });
