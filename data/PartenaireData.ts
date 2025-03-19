@@ -30,9 +30,8 @@ export const Partenaires: ListPartners[] = [
 
   {
     id: '3',
-    name: 'Grand Potiers',
+    name: 'Grand Poitiers',
     genre: 'Communauté urbaine',
-    description:'Description Crédit Agricole',
     image: require('../assets/images/Logo_Part/Grand_Poitiers/Logo_GrandPoitiers.png'),
     imageBG: require('../assets/images/Logo_Part/Grand_Poitiers/Bg_GrandPoitiers.png'),
     socialLinks: [
@@ -46,7 +45,6 @@ export const Partenaires: ListPartners[] = [
     id: '4',
     name: 'Saint-Georges lès-Baillargeaux',
     genre: 'Commune',
-    description: 'Description Commune',
     image: require('../assets/images/Logo_Part/SaintG.png'),
     imageBG: require('../assets/images/Logo_Part/SaintG.png'),
     socialLinks: [

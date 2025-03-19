@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "BaillarockFestival",
-    "slug": "BaillarockFestival",
+    "name": "Baillarock Festival",
+    "slug": "Baillarock Festival",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon_appli_dragon.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/icon_appli_dragon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,14 +16,19 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon_appli_dragon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.baillarock_festival.BaillarockFestival"
+      "package": "com.baillarock_festival.BaillarockFestival",
+      "useNextNotificationsApi": true,
+      "permissions": [
+        "NOTIFICATIONS"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon_appli_dragon.png"
     },
     "extra": {
       "eas": {

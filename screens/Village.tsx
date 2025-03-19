@@ -13,10 +13,10 @@ export type ListExpo = {
   id: string;
   name: string;
   genre: string;
-  description: string;
+  description?: string;
   image: number;
   imageBG: number;
-  socialLinks: SocialLink[];
+  socialLinks?: SocialLink[];
 };
 
 export type SocialLink = {
@@ -28,10 +28,10 @@ export type ListFood = {
   id: string;
   name: string;
   genre: string;
-  description: string;
+  description?: string;
   image: number;
   imageBG: number;
-  socialLinks: SocialLink[];
+  socialLinks?: SocialLink[];
 };
 
 export default function Village() {
