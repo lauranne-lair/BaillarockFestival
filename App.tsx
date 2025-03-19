@@ -4,7 +4,7 @@ import { Appearance } from "react-native";
 import * as Notifications from "expo-notifications";
 import messaging from "@react-native-firebase/messaging";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import MainNavigator from "./navigation/MainNavigation"; // Ton navigateur principal
+import MainNavigator from "./navigation/MainNavigation";
 
 export default function App() {
   const [permissionGranted, setPermissionGranted] = useState(false);

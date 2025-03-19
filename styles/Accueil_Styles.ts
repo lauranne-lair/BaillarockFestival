@@ -10,7 +10,8 @@ export default StyleSheet.create({
     left: '50%',          
     transform: [{ translateX: -60 }], 
     width: 120,           
-    height: 80,          
+    height: 80, 
+    opacity: 1,         
   },
   
   safeContainer: {

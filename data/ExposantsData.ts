@@ -86,8 +86,8 @@ export const Exposants: ListExpo[] = [
   },
   {
     id: '8',
-    name: 'Manosymundos',
-    genre: '?',
+    name: 'Manos y Mundos',
+    genre: 'Bijoutier artisanal',
     description: 'Nous sommes un couple d\'artisans commerçants. \nNous proposons un stand plein de beaux bijoux en macramé, métaux et cuir, et aussi quelques accessoires et vêtements dans le style métal-gothique. \nVenez découvrir notre univers créatif.',
     image: require('../assets/images/Exposants/Manosymundos.png'),
     imageBG: require('../assets/images/Exposants/Manosymundos.png'),
