@@ -7,28 +7,28 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const Boisson: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      {/* IMAGE PRINCIPALE */}
+      {/* Image principale */}
       <Image source={barConfig.assets.image} style={styles.backgroundImage} resizeMode="cover" />
 
-      {/* CONTENEUR DES BOUTONS SOUS L'IMAGE */}
+      {/* Section des brasseries avec leurs boutons */}
       <View style={styles.buttonContainer}>
-        {/* BRASSERIE DU XIII + BOUTON 1 */}
+        {/* Brasserie du XVIII */}
         <View style={styles.buttonRow}>
-          <Text style={styles.buttonText}>Brasserie du XIII</Text>
+          <Text style={styles.buttonText}>Brasserie du XVIII</Text>
           <TouchableOpacity 
             style={styles.button} 
             onPress={() => Linking.openURL('https://www.instagram.com/brasserie_du_treize/')}>
-            <FontAwesome name="instagram" size={30} color="#fff" /> 
+            <FontAwesome name="instagram" size={30} color="white" />
           </TouchableOpacity>
         </View>
 
-        {/* BIÈRES DU CLAIN + BOUTON 2 */}
+        {/* Bière du Clain */}
         <View style={styles.buttonRow}>
-          <Text style={styles.buttonText}>Les Pirates du Clain</Text>
+          <Text style={styles.buttonText}>Bière du Clain</Text>
           <TouchableOpacity 
             style={styles.button} 
             onPress={() => Linking.openURL('https://www.instagram.com/piratesduclain/')}>
-            <FontAwesome name="instagram" size={30} color="#fff" /> 
+            <FontAwesome name="instagram" size={30} color="white" />
           </TouchableOpacity>
         </View>
       </View>
