@@ -36,6 +36,7 @@ export default StyleSheet.create({
     },
     container: {
       width: CONTAINER_WIDTH,
+      height: 250,
       padding: 8,
       backgroundColor: Colors.dark.secondary.replace('rgb', 'rgba').replace(')', ', 0.8)'),
       borderRadius: 8,
