@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   scrollContainer: {
@@ -8,15 +8,19 @@ export default StyleSheet.create({
   backgroundImage: {
     width: '100%',
     height: undefined,
-    aspectRatio: 768 / 1086, // Ratio de l'image pour l'afficher entière
+    aspectRatio: 768 / 1086, // Conserve les proportions de l'image
   },
   buttonContainer: {
     marginTop: 15,
     alignItems: 'center',
+    backgroundColor: 'black', // Fond noir pour la section des brasseries
+    paddingVertical: 10,
+    width: '100%',
   },
   buttonRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     marginVertical: 5,
   },
   buttonText: {
@@ -24,12 +28,14 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     marginRight: 10,
+    fontFamily: 'Capsmall', // Utilisation de la police personnalisée
+    textTransform: 'uppercase', 
   },
   button: {
-    backgroundColor: 'hsla(0, 0.00%, 100.00%, 0.60)',
+    backgroundColor: 'black',
     padding: 5,
     borderRadius: 5,
-    shadowColor: '#000',
+    shadowColor: '#fff',
     shadowOpacity: 0.2,
     shadowOffset: { width: 2, height: 2 },
   },
