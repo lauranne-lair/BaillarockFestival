@@ -1,33 +1,36 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const { width } = Dimensions.get('window');
-
 export default StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-  },
-  imageContainer: {
-    position: 'relative', // Permet d'avoir les boutons en absolu SUR l'image
-    width: '100%',
-    height: '100%', // Hauteur grande pour scroller
+    alignItems: 'center',
   },
   backgroundImage: {
     width: '100%',
-    height: '100%',
+    height: undefined,
+    aspectRatio: 768 / 1086, // Ratio de l'image pour l'afficher entière
+  },
+  buttonContainer: {
+    marginTop: 15,
+    alignItems: 'center',
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+    marginRight: 10,
   },
   button: {
-    position: 'absolute',
     backgroundColor: 'hsla(0, 0.00%, 100.00%, 0.60)',
-    paddingVertical: 2.5,
-    paddingHorizontal: 5,
-    borderRadius: 50, // Garde le bouton rond
+    padding: 5,
+    borderRadius: 5,
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowOffset: { width: 2, height: 2 },
-  },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'black',
   },
 });
