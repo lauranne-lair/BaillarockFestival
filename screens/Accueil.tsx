@@ -99,7 +99,7 @@ const Home: React.FC = () => {
   };
 
   const navigateToExplore = () => {
-    router.push('(/screens)/Programmation'); // ✅ Assurez-vous que cette route existe dans votre structure
+    router.push('(/screens)/Programmation'); 
   };
   
   
