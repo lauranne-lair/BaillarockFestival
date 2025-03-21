@@ -7,7 +7,9 @@ export const Exposants: ListExpo[] = [
     genre: 'Sérigraphie',
     description: 'Bee Factory est une entreprise Poitevine spécialisée dans la création d’objets publicitaires et la sérigraphie.\n\nDerrière les manettes, il y a Franck. Partenaire depuis la première heure, partageant les valeurs de notre association, Franck est tout simplement considéré comme un membre de notre association par son soutien et son investissement dans l’organisation du Baillarock Festival. Notre relation va au-delà du partenariat, c’est un ami ! Toujours réactif, très professionnel et d’une gentillesse extraordinaire. Il conçoit tous les supports du festival et nous lui sommes très reconnaissant ! Les t-shirts et sweats que vous portez ont été désignés et fabriqué par lui ! Les gobelets du fest et vos bracelets aussi ! Si vous chercher pour votre entreprise ou votre association un professionnel dans la création d’objets publicitaires, foncez les yeux fermés et contactez Franck de chez Bee Factory !\n\nMerci Franck !',
     image: require('../assets/images/Exposants/Beefactory.jpg'),
-    imageBG: require('../assets/images/Exposants/Beefactory.jpg')
+    imageBG: require('../assets/images/Exposants/Beefactory.jpg'),
+    socialLinks: [
+    ],
   },
   {
     id: '2',
@@ -114,7 +116,7 @@ export const Exposants: ListExpo[] = [
     genre: 'Association',
     description: 'Helpyoung86 est une association loi 1901 à but non lucratif fondée en 2022 et basée à Poitiers (86). Son objectif principal est de lutter contre la précarité des jeunes. L’association organise en moyenne trois distributions par soir, tous les jours de la semaine, fournissant des denrées alimentaires, des produits d’hygiène et d’autres biens de première nécessité. Bien que ses bénéficiaires soient principalement des étudiant·e·s, Helpyoung86 accueille tous les jeunes de 17 à 30 ans afin de leur apporter le soutien nécessaire.',
     image: require('../assets/images/Exposants/Helpyoung_logo.png'), 
-    imageBG: require('../assets/images/Exposants/Helpyoung_bg.png'),
+    imageBG: require('../assets/images/Exposants/Helpyoung_bg.jpg'),
     socialLinks: [
       { name: 'facebook', url: 'https://www.facebook.com/helpyoung86' },
       { name: 'link', url: 'https://helpyoung86.fr/'},
