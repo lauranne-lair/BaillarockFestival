@@ -10,7 +10,7 @@ export default StyleSheet.create({
     left: '50%',          
     transform: [{ translateX: -60 }], 
     width: 120,           
-    height: 80, 
+    height: 100, 
     opacity: 1,         
   },
   
@@ -141,7 +141,7 @@ export default StyleSheet.create({
     paddingVertical: 30,
   },
   planImage: {
-    width: '90%',  
+    width: '110%',  
     height: undefined,
     aspectRatio: 16 / 9,  
     alignSelf: 'center',

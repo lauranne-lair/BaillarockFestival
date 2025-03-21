@@ -1,43 +1,44 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const { width } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
+import Colors from '../constants/colors';
 
 export default StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-  },
-  imageContainer: {
-    position: 'relative', // Permet d'avoir les boutons en absolu SUR l'image
-    width: '100%',
-    height: 3000, // Hauteur grande pour scroller
+    alignItems: 'center',
+    backgroundColor: Colors.darkGray,
   },
   backgroundImage: {
     width: '100%',
-    height: '100%',
+    height: undefined,
+    aspectRatio: 768 / 1086,
   },
-  button: {
-    position: 'absolute',
-    backgroundColor: 'hsla(0, 0.00%, 100.00%, 0.60)',
-    paddingVertical: 2.5,
-    paddingHorizontal: 5,
-    borderRadius: 2.5,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 2, height: 2 },
+  buttonContainer: {
+    marginTop: 15,
+    alignItems: 'center',
+    backgroundColor: Colors.darkGray,
+    paddingVertical: 10,
+    width: '100%',
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 5,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: 'black',
+    color: Colors.white,
+    marginRight: 10,
+    fontFamily: 'Capsmall',
+    textTransform: 'uppercase', 
   },
-  button1: {
-    top: 425,
-    left: width * 0.7,
-    borderRadius: 50, 
-  },
-  button2: {
-    top: 370,
-    left: width * 0.7,
-    borderRadius: 50,
+  button: {
+    backgroundColor: Colors.darkGray,
+    padding: 5,
+    borderRadius: 5,
+    shadowColor: Colors.white,
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 2, height: 2 },
   },
 });
