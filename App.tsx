@@ -7,16 +7,17 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MainNavigator from "./navigation/MainNavigation";
 
 export default function App() {
+  /*
   const [permissionGranted, setPermissionGranted] = useState(false);
 
-  // Demander la permission pour Android 13+
+  // Demander la permission pour les notifications (Android 13+ et iOS)
   const requestNotificationPermission = async () => {
-    if (Platform.OS === "android") {
+    if (Platform.OS === "android" || Platform.OS === "ios") {
       const { status } = await Notifications.requestPermissionsAsync();
       if (status === "granted") {
         console.log("Permission accordée pour les notifications !");
         setPermissionGranted(true);
-        return true; // Retourner vrai si la permission est accordée
+        return true;
       } else {
         console.log("Permission refusée pour les notifications !");
         Alert.alert(
@@ -27,38 +28,36 @@ export default function App() {
             {
               text: "Ouvrir les paramètres",
               onPress: () => {
-                // Afficher un message expliquant à l'utilisateur qu'il doit le faire manuellement
                 Alert.alert(
                   "Ouvrir les paramètres manuellement",
                   "Vous devez ouvrir les paramètres de l'application et activer les notifications manuellement.",
-                  [{ text: "OK", onPress: () => {} }]
+                  [{ text: "OK" }]
                 );
               },
             },
           ]
         );
-        return false; // Retourner faux si la permission est refusée
+        return false;
       }
     }
-    return false; // Par défaut, retourner faux si ce n'est pas Android
+    return false;
   };
 
-  // Vérifier la permission et récupérer le token
+  // Vérifier la permission et récupérer le token FCM
   const checkPermissionAndGetToken = async () => {
-    const permissionGranted = await requestNotificationPermission();
-    if (permissionGranted) {
+    const permission = await requestNotificationPermission();
+    if (permission) {
       try {
         const token = await messaging().getToken();
         console.log("FCM Token:", token);
       } catch (error) {
-        console.error("Error fetching token: ", error);
+        console.error("Erreur lors de la récupération du token:", error);
       }
     } else {
       console.log("Permission non accordée");
     }
   };
 
-  // Vérification du premier lancement
   useEffect(() => {
     const checkFirstLaunch = async () => {
       try {
@@ -83,7 +82,7 @@ export default function App() {
 
     checkFirstLaunch();
 
-    // Gestion des notifications en fonction de l'état de l'application
+    // Gérer les notifications selon l'état de l'application
     messaging()
       .getInitialNotification()
       .then((remoteMessage) => {
@@ -92,7 +91,11 @@ export default function App() {
         }
       });
 
-    messaging().onNotificationOpenedApp((remoteMessage) => {
+    const unsubscribeForeground = messaging().onMessage(async (remoteMessage) => {
+      Alert.alert("Nouveau message reçu", JSON.stringify(remoteMessage));
+    });
+
+    const unsubscribeBackground = messaging().onNotificationOpenedApp((remoteMessage) => {
       console.log("Notification ouverte depuis l'arrière-plan :", remoteMessage.notification);
     });
 
@@ -100,14 +103,16 @@ export default function App() {
       console.log("Message en arrière-plan reçu :", remoteMessage);
     });
 
-    const unsubscribe = messaging().onMessage(async (remoteMessage) => {
-      Alert.alert("Nouveau message reçu", JSON.stringify(remoteMessage));
-    });
-
+    // Activer le mode sombre
     Appearance.setColorScheme("dark");
 
-    return unsubscribe; // Nettoyage de l'écouteur lors du démontage
+    // Nettoyage des écouteurs lors du démontage
+    return () => {
+      unsubscribeForeground();
+      unsubscribeBackground();
+    };
   }, []);
+  */
 
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
