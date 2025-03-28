@@ -3,11 +3,11 @@ import video from '../assets/videos/videohomepage.mp4';
 import image from '../assets/images/Dragon.png';
 import arrowAnimation from '../assets/animation/Arrow3.json';
 import siteMap from '../assets/images/Accueil/Plan_site_festival.png';
-
+import { Platform, Linking } from 'react-native'; 
 
 // Localisation de la salle
-const openMaps = () => {
-  const address = encodeURIComponent("Route du Stade, Saint George les Baillargeaux France");
+export const openMaps = () => {
+  const address = encodeURIComponent("Espace Mérovée, Route du stade, Saint Georges Les Baillargeaux, France");
   const url = Platform.select({
     ios: `maps:0,0?q=${address}`, // Apple Maps
     android: `geo:0,0?q=${address}` // Google Maps
@@ -20,11 +20,12 @@ const openMaps = () => {
   }
 };
 
+
 // Configuration de la page d'accueil
 export const homeConfig = {
   festivalName: "BAILLAROCK FESTIVAL",
   festivalDate: "2025-05-23T17:30:00",
-  mapsLocalisation: "Route du Stade, Saint Georges Les Baillargeaux, France",
+  mapsLocalisation: "Espace Mérovée, Route du stade, Saint Georges Les Baillargeaux, France",
   location: "Saint Georges Les Baillargeaux",
   socialMediaLinks: {
     shop: "https://my.weezevent.com/BaillarockFestival2025",

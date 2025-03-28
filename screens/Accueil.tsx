@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Modal, Image, Linking, SafeAreaView } from 'react-native';
+import {View, Text, ScrollView, Dimensions, TouchableOpacity, Modal, Image, Linking, SafeAreaView } from 'react-native';
 import { Video } from 'expo-av';
 import { useRouter } from 'expo-router';
-import { homeConfig } from '../config/Config_HomePage';
+import { homeConfig, openMaps } from '../config/Config_HomePage'; // Importer openMaps
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import ImageZoom from 'react-native-image-pan-zoom';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -13,7 +13,6 @@ import styles from '../styles/Accueil_Styles';
 
 import * as Font from 'expo-font';
 import LottieView from 'lottie-react-native';
-
 
 const { width, height } = Dimensions.get('window');
 
@@ -38,15 +37,6 @@ const Home: React.FC = () => {
     hours: 'Heures',
     minutes: 'Minutes',
     seconds: 'Secondes',
-  };
-
-  const openMaps = () => {
-    const address = encodeURIComponent(homeConfig.mapsLocalisation);
-    const url = Platform.select({
-      ios: `maps:0,0?q=${address}`,
-      android: `geo:0,0?q=${address}`,
-    });
-    Linking.openURL(url).catch(err => console.error("Erreur d'ouverture des cartes", err));
   };
 
   useEffect(() => {
@@ -101,9 +91,6 @@ const Home: React.FC = () => {
   const navigateToExplore = () => {
     router.push('(/screens)/Programmation'); 
   };
-  
-  
-  
 
   const handleImagePress = (image: any) => {
     console.log("Image sélectionnée :", image);
@@ -193,7 +180,6 @@ const Home: React.FC = () => {
               resizeMode="contain" 
             />
           </TouchableOpacity>
-
 
           <TouchableOpacity onPress={openMaps} style={styles.buttonMaps}>
             <Text style={styles.buttonTextMaps}>Y aller</Text>
