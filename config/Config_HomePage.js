@@ -37,11 +37,7 @@ export const homeConfig = {
     arrowAnimation,
     video, // Fichier vidéo de la page d'accueil
     image, // Image de fond lorsque l'on fait glisser vers le bas pour cacher la vidéo
-<<<<<<< HEAD
-    siteMap, 
-=======
     siteMap,
->>>>>>> fd5481989bbc31be37afc954c4c077639fae4ddd
     socialIcons: {
       instagram: {
         icon: "instagram",
