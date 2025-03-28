@@ -25,7 +25,7 @@ export const openMaps = () => {
 export const homeConfig = {
   festivalName: "BAILLAROCK FESTIVAL",
   festivalDate: "2025-05-23T17:30:00",
-  mapsLocalisation: "Espace Mérovée, Route du stade, Saint Georges Les Baillargeaux, France",
+  mapsLocalisation: "Espace Mérovée, Route du stade, SaintGeorges Les Baillargeaux, France",
   location: "Saint Georges Les Baillargeaux",
   socialMediaLinks: {
     shop: "https://my.weezevent.com/BaillarockFestival2025",
