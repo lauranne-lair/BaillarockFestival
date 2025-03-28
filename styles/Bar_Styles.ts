@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 import Colors from '../constants/colors';
 
 export default StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+    backgroundColor: Colors.black, // Empêche un fond blanc en haut de l'écran
+  },
   scrollContainer: {
     flexGrow: 1,
     alignItems: 'center',
@@ -11,10 +15,9 @@ export default StyleSheet.create({
     width: '100%',
     height: undefined,
     aspectRatio: 768 / 1086,
-    marginTop: 20, // Descendre un peu l’image
   },
   buttonContainer: {
-    marginTop: 0, // Supprime l’espace entre l’image et les boutons
+    marginTop: 0, // Évite tout espace entre l’image et les boutons
     alignItems: 'center',
     backgroundColor: Colors.black,
     width: '100%',
