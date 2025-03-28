@@ -81,7 +81,7 @@ export const dayOneGroups: Group[] = [
 export const dayTwoGroups: Group[] = [
   { 
     id: '6', 
-    name: 'mirabelle.band', 
+    name: 'mirabelle.', 
     genre: 'Heavy Pop-punk', 
     startTime: '17:10', 
     endTime: '17:50', 
