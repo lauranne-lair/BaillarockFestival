@@ -14,7 +14,7 @@ const Boisson: React.FC = () => {
       <View style={styles.buttonContainer}>
         {/* Brasserie du XVIII */}
         <View style={styles.buttonRow}>
-          <Text style={styles.buttonText}>Brasserie du XVIII</Text>
+          <Text style={styles.buttonText}>Brasserie du XIII</Text>
           <TouchableOpacity 
             style={styles.button} 
             onPress={() => Linking.openURL('https://www.instagram.com/brasserie_du_treize/')}>
@@ -24,7 +24,7 @@ const Boisson: React.FC = () => {
 
         {/* Bière du Clain */}
         <View style={styles.buttonRow}>
-          <Text style={styles.buttonText}>Bière du Clain</Text>
+          <Text style={styles.buttonText}>Les Pirates du Clain</Text>
           <TouchableOpacity 
             style={styles.button} 
             onPress={() => Linking.openURL('https://www.instagram.com/piratesduclain/')}>

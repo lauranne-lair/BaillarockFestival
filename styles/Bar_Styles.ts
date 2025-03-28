@@ -5,18 +5,18 @@ export default StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     alignItems: 'center',
-    backgroundColor: Colors.darkGray,
+    backgroundColor: Colors.black,
   },
   backgroundImage: {
     width: '100%',
     height: undefined,
     aspectRatio: 768 / 1086,
+    marginTop: 20, // Descendre un peu l’image
   },
   buttonContainer: {
-    marginTop: 15,
+    marginTop: 0, // Supprime l’espace entre l’image et les boutons
     alignItems: 'center',
-    backgroundColor: Colors.darkGray,
-    paddingVertical: 10,
+    backgroundColor: Colors.black,
     width: '100%',
   },
   buttonRow: {
@@ -34,7 +34,6 @@ export default StyleSheet.create({
     textTransform: 'uppercase', 
   },
   button: {
-    backgroundColor: Colors.darkGray,
     padding: 5,
     borderRadius: 5,
     shadowColor: Colors.white,
