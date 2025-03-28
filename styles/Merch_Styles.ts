@@ -23,6 +23,18 @@ export default StyleSheet.create({
       zIndex: 1,
       paddingBottom: 50,
     },
+    infoText: {
+      textAlign: 'center',
+      color: Colors.white,
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginTop: 10, // Descend un peu le texte
+      paddingVertical: 5, // Ajoute un peu d’espace vertical
+      fontFamily: 'Capsmall',
+      marginHorizontal: 40, // Ajoute de la marge sur les côtés (augmente si besoin)
+    },
+    
+ 
     title: {
       fontSize: 36,
       fontWeight: 'bold',
