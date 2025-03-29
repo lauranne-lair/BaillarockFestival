@@ -7,7 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MainNavigator from "./navigation/MainNavigation";
 
 export default function App() {
-  /*
+  
   const [permissionGranted, setPermissionGranted] = useState(false);
 
   // Demander la permission pour les notifications (Android 13+ et iOS)
@@ -112,7 +112,7 @@ export default function App() {
       unsubscribeBackground();
     };
   }, []);
-  */
+  
 
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
