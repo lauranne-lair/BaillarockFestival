@@ -42,6 +42,11 @@ const Merch: React.FC = () => {
 
   return (
     <View style={styles.container}>
+
+      <Text style={styles.infoText}>
+     Le merch est exclusivement en vente sur place durant le festival.
+      </Text>
+
       <ImageBackground source={MerchConfig.images.background} style={styles.backgroundImage}>
         <View style={styles.overlay} />
       </ImageBackground>

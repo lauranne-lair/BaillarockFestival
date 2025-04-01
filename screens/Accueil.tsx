@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { Platform, View, Text, ScrollView, Dimensions, TouchableOpacity, Modal, Image, Linking, SafeAreaView } from 'react-native';
 import { Video } from 'expo-av';
 import { useRouter } from 'expo-router';
 import { homeConfig } from '../config/Config_HomePage';
+=======
+import {View, Text, ScrollView, Dimensions, TouchableOpacity, Modal, Image, Linking, SafeAreaView } from 'react-native';
+import { Video } from 'expo-av';
+import { useRouter } from 'expo-router';
+import { homeConfig, openMaps } from '../config/Config_HomePage'; // Importer openMaps
+>>>>>>> 00349e1cd329d6e04fb812411a0cddf8f49827d2
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import ImageZoom from 'react-native-image-pan-zoom';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -13,7 +20,10 @@ import styles from '../styles/Accueil_Styles';
 
 import * as Font from 'expo-font';
 import LottieView from 'lottie-react-native';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 00349e1cd329d6e04fb812411a0cddf8f49827d2
 
 const { width, height } = Dimensions.get('window');
 
@@ -39,6 +49,7 @@ const Home: React.FC = () => {
     minutes: 'Minutes',
     seconds: 'Secondes',
   };
+<<<<<<< HEAD
 
   const openMaps = () => {
     const address = encodeURIComponent(homeConfig.mapsLocalisation);
@@ -48,6 +59,8 @@ const Home: React.FC = () => {
     });
     Linking.openURL(url).catch(err => console.error("Erreur d'ouverture des cartes", err));
   };
+=======
+>>>>>>> 00349e1cd329d6e04fb812411a0cddf8f49827d2
 
   useEffect(() => {
     const updateCountdown = () => {

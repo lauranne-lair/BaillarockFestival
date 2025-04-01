@@ -16,7 +16,7 @@ export default function Partenaire() {
 
   useEffect(() => {
     navigation.setOptions({
-      title: 'Partenaires',
+      title: 'Parmi nos nombreux partenaires',
       headerLeft: () => null, 
       headerRight: () => (
         <TouchableOpacity

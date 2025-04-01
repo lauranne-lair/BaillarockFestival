@@ -10,7 +10,7 @@ const AProposConfig = {
       content: [
         {
           heading: "1. ÉDITEUR DE L’APPLICATION",
-          text: "Nom de l’association : United We Fest\nNuméro SIREN : 891 863 029\nForme juridique : Association déclarée\nAdresse : 1 Rue de la Trinquette, 17000 La Rochelle\nEmail de contact : ",
+          text: "Nom de l’association : United We Fest\nNuméro SIREN : 891 863 029\nForme juridique : Association déclarée\nAdresse : 16 Place de la Liberté, 86130 Saint-Georges-Les-Baillargeaux\nEmail de contact : ",
           link: "mailto:applibaillarock@gmail.com",
           linkText: "applibaillarock@gmail.com",
           extraText: "\nDirecteur de la publication : RICHARD Simon",

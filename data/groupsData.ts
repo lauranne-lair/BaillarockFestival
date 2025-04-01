@@ -9,7 +9,7 @@ export const dayOneGroups: Group[] = [
     endTime: '19:10', 
     image: require('../assets/images/programmation/logo_kibosh.jpg'),
     bannerImage: require('../assets/images/programmation/Affiche_KIBOSH.jpg'), 
-    description: 'Kibosh est un groupe de metal hardcore né à Bordeaux en 2021,se distinguant par une musique incisive et chaotique.\n\nLeur son unique fusionne des influences variées, allant du metal extrême à l\'emo, tout en conservant une énergie et une intensité résolument punk hardcore.' ,
+    description: 'Kibosh est un groupe de metal hardcore né à Bordeaux en 2021, se distinguant par une musique incisive et chaotique.\n\nLeur son unique fusionne des influences variées, allant du metal extrême à l\'emo, tout en conservant une énergie et une intensité résolument punk hardcore.' ,
     socialLinks: [
       { name: "facebook", url: "https://www.facebook.com/kiboshkiboshkibosh/?_rdr" },
       { name: "youtube", url: "https://www.youtube.com/channel/UCzuOUfj-xZKZ-yoXpe_gx0w" },
@@ -81,7 +81,7 @@ export const dayOneGroups: Group[] = [
 export const dayTwoGroups: Group[] = [
   { 
     id: '6', 
-    name: 'mirabelle.band', 
+    name: 'mirabelle.', 
     genre: 'Heavy Pop-punk', 
     startTime: '17:10', 
     endTime: '17:50', 
